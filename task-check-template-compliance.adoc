@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: task-check-template-compliance.html 
+keywords: templates, resource templates, application templates, volume templates, drift, compliant 
+summary: 'Cloud Manager 可以监控使用 " 偏移 " 功能创建资源时使用的参数值。Drift 用于标识已更改且不再符合模板设置的资源。' 
+---
+= 检查资源是否符合模板要求
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 可以监控使用 " 偏移 " 功能创建资源时使用的参数值。Drift 用于标识已更改且不再符合模板设置的资源。
+
+此时，偏移会标识资源中更改的参数—您必须手动调整资源，使其恢复与模板的合规性。
+
+
+
+== 漂移的工作原理
+
+Drift 可识别不合规的参数，如下所示：
+
+. 创建模板时，您可以为不希望用户更改的某些参数启用偏移。例如，您可能要求对通过模板创建的所有卷使用 "Default" 策略创建 Snapshot 副本。
++
+image:screenshot_template_drift_on_param.png["显示如何对模板中的单个参数启用偏移的屏幕截图。"]
+
+. 打开模板的偏移，然后保存模板。
++
+image:screenshot_template_drift_on_template.png["显示如何为模板启用偏移的屏幕截图。"]
+
+. 存储管理员运行此模板以创建卷。
+. 稍后，存储管理员将编辑卷并禁用 Snapshot 副本。
+. 您可以对所有模板运行偏移检查，并且 AppTemplates 服务会将 Snapshot 副本模板设置与卷中的当前设置进行比较。系统会标记任何不合规值，以便您可以修复不正确的设置。
+
+
+
+
+== Drift 信息板
+
+Drift 信息板显示了使用模板创建的资源总数（例如卷），仍然符合模板的数量，不合规（偏离）的数量以及在禁用 Drift 的情况下创建的数量。
+
+image:screenshot_template_drift_dashboard.png["AppTemplates 服务的 Drift 信息板的屏幕截图。"]
+
+* 通过每列顶部的控件，您可以按数字或字母顺序对结果进行排序。
+* 。 image:screenshot_plus_icon.gif[""] 用于按模板名称，偏移策略和状态以及操作类型筛选结果。例如：
++
+image:screenshot_template_filter_drift_status.png["显示如何使用筛选器小工具细化资源列表的屏幕截图。"]
+
+* 通过搜索栏，您可以搜索特定的卷名称或模板名称。
+* 要了解有关实际资源（或卷）的更多详细信息，例如工作环境和 Storage VM ，您可以单击 image:screenshot_sync_status_icon.gif[""]。
++
+image:screenshot_template_drift_vol_details.png["显示偏移信息板中卷详细信息的屏幕截图。"]
+
+
+
+
+
+== 填充 Drift 信息板
+
+您必须先对模板运行偏移检查，然后模板才能填充偏移信息板中的值。
+
+您可以从模板信息板对所有模板运行偏移检查：
+
+image:screenshot_template_drift_for_all.png["显示如何对所有模板运行偏移检查的屏幕截图。"]
+
+您可以从模板信息板对单个模板运行偏移检查：
+
+image:screenshot_template_drift_for_one.png["显示如何对单个模板运行偏移检查的屏幕截图。"]
+
+
+
+== 为不合规资源创建偏移报告
+
+您可以查看单个资源的偏移报告，也可以运行报告下载所有资源的报告。使用此报告，您可以将操作分配给系统管理员，以便进行更改，使资源恢复与模板的合规性。
+
+您可以单击 " 漂移信息板 " 中某个资源的 " 漂移 " 图标以查看每个不合规资源中的参数列表。
+
+image:screenshot_template_drift_report_one_resource.png["单个资源的偏移报告的屏幕截图。"]
+
+要查看通过模板创建的资源的偏移报告，请单击 image:button_download.png[""] 下载 .CSV 文件。漂移报告反映了当前在页面上筛选的内容 - 它不会显示所有资源，除非您尚未在页面上应用任何筛选器。
+
+
+
+=== 偏移报告中的复制运行状况详细信息
+
+时间 link:task-define-templates.html#add-replication-functionality-to-a-volume["使用模板在卷上启用复制"]，您可以选择通过在 " 启用复制运行状况监控 " 字段中启用偏移来在偏移报告中显示更详细的复制信息。启用后，偏移报告将显示复制关系的运行状况是运行状况良好还是运行状况不正常（偏离），以及 SnapMirror 滞后时间，状态和上次传输时间。
+
+此屏幕截图显示了偏移报告中运行状况不正常的 SnapMirror 关系的复制详细信息。
+
+image:screenshot_template_drift_snapmirror_details.png["Drift 报告的屏幕截图，显示运行状况不正常的 SnapMirror 关系的复制详细信息。"]
+
+* 注意： * 由于复制最初应用于卷，因此运行状况将返回为 "False" ，这意味着它运行状况不正常。几分钟后，将显示实际复制状态。

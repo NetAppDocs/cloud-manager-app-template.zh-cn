@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: task-using-tags.html 
+keywords: tags, resource tags, volume tags, add tags, delete tags, view tags 
+summary: 您可以使用 Cloud Manager 标记服务查看，添加，修改和删除分配给现有资源的标记。这样，您就可以组织和简化资源管理。 
+---
+= 管理资源的标记
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 Cloud Manager 标记服务查看，添加，修改和删除分配给现有资源的标记。这样，您就可以组织和简化资源管理。
+
+
+
+== 搜索具有特定标记的资源
+
+如果要查看具有特定标记或特定标记和标记键值的所有资源，可以搜索这些标记。您可以搜索所有资源，也可以仅搜索某些资源类别。
+
+.步骤
+. 选择 * 应用模板 * 服务，然后单击 * 标记 * 选项卡。
+. 如有必要，请在 * 选择凭据 * 字段中选择特定云提供商的凭据。
+. 在 _Resource Type_ 字段中，选择资源，例如 * ONTAP ： CVO ： volume* 以搜索所有 Cloud Volumes ONTAP 卷。
+. 在 _Tag Key_ 字段中，选择标记，例如 * Env* ，以将搜索限制为带有 "Env" 标记的卷。
+. 在 _Tag value_ 字段中，选择键值，例如 * 生产 * ，以将搜索范围限定为标记名称为 "Env" 且标记值为 "production" 的卷。
++
+image:screenshot_tags_search_single_1.png["选择一组搜索条件以返回具有特定标记键和标记值的资源的屏幕截图。"]
+
+. 单击 image:screenshot_plus_icon.gif[""] 将此搜索条件添加到搜索区域。
++
+image:screenshot_tags_search_single_2.png["添加到搜索行的标记搜索条件的屏幕截图。"]
+
+. 如果完成了搜索，请单击 * 搜索 * ，搜索结果将显示在 "Resources" 部分中。
++
+image:screenshot_tags_search_single_result.png["符合标记搜索条件的资源的结果的屏幕截图。"]
+
++
+如果要添加其他搜索条件，请再次执行步骤 3 到 6 ，然后单击 * 搜索 * 。
+
+
+
+
+
+=== 搜索规则
+
+定义搜索时，请遵循以下规则：
+
+* 选择资源类型后，如果要列出具有任何密钥和任何密钥值的所有资源，可以将标记密钥字段和标记值字段留空。
+* 您可以选择单个搜索，也可以在 " 资源 " 部分定义多个搜索以细化结果。
+* 定义多组搜索条件时：
++
+** 如果两次搜索的条件适用于不同的资源类型，则此操作将被视为 " 或 " 操作，并且结果将显示这两次搜索中的资源。例如，以下搜索将返回具有 "Environment ： dema" 标记值的所有 Azure NetApp Files 卷以及具有 "Environment ： dema" 标记值的所有 Cloud Volumes ONTAP 卷。
++
+image:screenshot_tags_search_or.png[""]
+
+** 如果两次搜索的条件是针对同一资源类型，则此操作将被视为 " 和 " 操作，并且结果仅显示与 * 两次 * 搜索匹配的资源。例如，以下搜索将返回同时具有 "Environment ： dema" 标记值和 "Group ： Finance" 标记值的 Azure NetApp Files 卷。
++
+image:screenshot_tags_search_and.png[""]
+
+
+
+* 如果您定义了多个搜索条件，然后决定删除一个，只需单击 image:button_delete_tag_search.png[""] 以将其从搜索区域中删除。
+
+
+
+
+== 向现有资源添加标记
+
+您可以将标记应用于单个资源或多个资源。这些资源可能具有现有标记或没有当前标记。
+
+link:concept-tagging.html#resources-that-you-can-tag["查看此时可标记的资源列表。"]
+
+.步骤
+. 从 * 标记 * 选项卡中，创建搜索条件并单击 * 搜索 * 。
+. 选择要标记的一个或多个资源。
++
+** 要选择页面上的所有资源，请选中标题行（image:button_select_all_resources.png[""]）。
+** 要选择多个资源，请选中每个资源对应的框（image:button_backup_1_volume.png[""]）。
+** 要选择单个资源，请单击 image:button_select_1_resource.png["加号按钮"] 资源图标。
++
+image:screenshot_tags_how_2_select_resources.png["显示如何选择单个资源，多个资源或所有资源的屏幕截图。"]
+
+
+
+. 单击 * 管理标记 * ，此时将显示 _Resource Tags 对话框。任何现有标记将显示在此对话框中。
++
+image:screenshot_tags_resource_tags_dialog.png["显示资源标记对话框的屏幕截图，您可以在其中查看当前分配的标记并添加新标记。"]
+
+. 单击 * 添加新标记 * ，此时对话框中将显示一个空白的标记密钥和标记值行。
+. 输入标记密钥和标记值。如果要在此资源上添加更多标记，请此时添加更多标记，然后单击 * 审阅并应用 * 。
+. 如果在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，此时新标记将添加到资源或所有选定资源中。
+
+
+
+
+== 更改资源的标记值
+
+您可以更改分配给资源的标记，也可以更改应用于现有标记的标记值。
+
+.步骤
+. 从 * 标记 * 选项卡中，创建搜索条件并单击 * 搜索 * 。
+. 选择要更改标记的一个或多个资源。
+. 单击 * 管理标记 * ，此时将显示 _Resource Tags 对话框。
++
+image:screenshot_tags_modify_tag.png["显示如何修改某个资源或多个资源的标记的屏幕截图。"]
+
+. 为标记值输入一个新值，然后单击 * 审阅并应用 * 。
+. 如果您在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，此时将更改资源或所有选定资源的标记值。
+
+
+
+
+== 从资源中删除标记
+
+您可以从单个资源或多个资源中删除标记键 / 值对。
+
+.步骤
+. 从 * 标记 * 选项卡中，创建搜索条件并单击 * 搜索 * 。
+. 选择要从中删除标记的一个或多个资源。
+. 单击 * 管理标记 * ，此时将显示 _Resource Tags 对话框。
++
+image:screenshot_tags_delete_tag.png["显示如何从资源或多个资源中删除标记的屏幕截图。"]
+
+. 单击 image:button_delete_tag_pair.png[""] 对于要删除的标记键 / 值对，该行将被删除，然后单击 * 审阅并应用 * 。
+. 如果您在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，标记键 / 值对将从资源或所有选定资源中删除。
+

@@ -1,0 +1,168 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
+summary: 了解应用程序模板和标记中的新增功能。 
+---
+= 应用程序模板和标记的新增功能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+了解应用程序模板和标记中的新增功能。
+
+
+
+== 2022 年 3 月 3 日
+
+
+
+=== 现在，您可以构建一个模板来查找特定的工作环境。
+
+使用 " 查找现有资源 " 操作，您可以确定工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。 link:task-define-templates.html#examples-of-finding-existing-resources-and-enabling-services-using-templates["有关详细信息，请访问此处"]。
+
+
+
+=== 能够在 AWS 中创建 Cloud Volumes ONTAP HA 工作环境。
+
+现有的 Cloud Volumes ONTAP AWS 工作环境创建支持范围已得到扩展，除了创建单节点系统之外，还可以创建高可用性系统。 link:task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["请参见如何为 Cloud Volumes ONTAP 工作环境创建模板"]。
+
+
+
+== 2022 年 2 月 9 日
+
+
+
+=== 现在，您可以构建一个模板来查找特定的现有卷，然后启用 Cloud Backup 。
+
+使用新的 " 查找资源 " 操作，您可以确定要启用 Cloud Backup 的所有卷，然后使用 Cloud Backup 操作在这些卷上启用备份。
+
+目前支持 Cloud Volumes ONTAP 和内部 ONTAP 系统上的卷。 link:task-define-templates.html#find-existing-volumes-and-activate-cloud-backup["有关详细信息，请访问此处"]。
+
+
+
+== 2021 年 10 月 31 日
+
+
+
+=== 现在，您可以标记同步关系，以便对其进行分组或分类，以便于访问。
+
+link:concept-tagging.html["了解有关资源标记的更多信息"]。
+
+
+
+== 2021 年 10 月 11 日
+
+
+
+=== 现在，您可以创建现有模板的副本。
+
+如果您希望创建与现有模板非常相似的新模板，创建副本可以节省大量时间。只需使用新名称创建副本，然后更改使模板唯一的几个项即可。 link:task-define-templates.html#make-a-copy-of-a-template["请参见如何创建模板副本"]。
+
+
+
+=== 现在，在使用模板创建的卷上启用服务会更加简单。
+
+在需要选择变量以标识工作环境， Storage VM 和卷名称之前。现在，模板将为您添加此信息。这样可以简化向新创建的卷添加 Cloud Backup ， Cloud Compliance 和 Replication 服务的过程。
+
+
+
+=== 添加了支持，因此您可以为某些 GCP 资源添加标签。
+
+现在，您可以使用 Cloud Manager 标记服务管理 GCP 资源上的标签。您可以查看已应用于资源的 GCP 标签和标签值，也可以将这些标签应用于您管理的其他 GCP 资源。 link:concept-tagging.html#resources-that-you-can-tag["请参见您可以标记的 GCP 资源"]。
+
+
+
+== 2021 年 9 月 2 日
+
+
+
+=== 现在，您可以使用标记服务管理 Azure 资源上的标记。
+
+您可以查看已应用于资源的 Azure 标记和标记值，也可以将这些标记应用于您正在管理的其他 Azure 资源。 link:concept-tagging.html#resources-that-you-can-tag["查看您可以标记的 Azure 资源"]。
+
+
+
+=== 现在，可以标记其他一些 AWS EC2 资源。
+
+
+
+== 2021 年 8 月 8 日
+
+
+
+=== 现在，您可以使用模板创建 Cloud Volumes ONTAP 工作环境。
+
+此支持目前仅适用于 AWS 环境，并且仅适用于单节点集群。请参见操作说明 link:task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["为 Cloud Volumes ONTAP 工作环境创建模板"]。
+
+
+
+=== 通过一项新功能，您可以在卷模板中向卷添加标记。
+
+通过标记功能，您可以对不同的资源进行分组，以确定应用程序，区域或部门，以便执行自动化或将成本分配给某些部门或区域。
+
+
+
+=== 现在，您可以在 Cloud Manager 中管理 AWS EC2 实例中的标记。
+
+您可以查看应用于 EC2 实例的 AWS 标记和标记值，并将这些标记应用于您管理的其他 EC2 实例。 link:concept-tagging.html["了解有关标记的更多信息"]。
+
+
+
+== 2021 年 7 月 13 日
+
+
+
+=== 添加了在定义模板时使用复制服务的支持。
+
+现在，您可以添加所需的模板 link:task-define-templates.html#add-replication-functionality-to-a-volume["复制要创建的卷中的数据"] 到另一个卷 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["复制服务"]。
+
+在将数据复制到其他 NetApp 存储系统并持续更新二级数据时，您的数据将保持最新，并在需要时保持可用。
+
+
+
+=== 下载一份报告，其中包含从模板设置 " 偏离 " 的所有卷。
+
+通过这种方式，您可以识别这些卷并分配人员以使这些卷恢复合规性。请参见 link:task-check-template-compliance.html#create-a-drift-report-for-non-compliant-resources["如何下载偏移报告"]。
+
+
+
+=== 已发布新标记服务。
+
+您可以通过一项新的 Cloud Manager 功能为现有 ONTAP 资源应用标记，以帮助组织和管理这些资源。标记是元数据，可用于对资源进行分组，以确定应用程序，环境，区域，计费代码，云提供商， 等等。
+
+link:concept-tagging.html["了解有关标记的更多信息"]。
+
+
+
+== 2021 年 6 月 7 日
+
+
+
+=== 现在，您可以在用户运行模板时有条件地启用某些操作。
+
+例如，如果在创建 Cloud Volumes ONTAP 卷时启用了 NetApp 存储效率，则该卷也会启用 Cloud Backup 。如果未启用存储效率，则不会启用 Cloud Backup 。
+
+
+
+=== 现在，您可以使用模板在内部 ONTAP 系统上创建卷。
+
+
+
+=== 在创建模板时，添加了一个称为 " 偏移 " 的新功能。
+
+通过此功能， Cloud Manager 可以监控您为模板中的参数输入的硬编码值。存储管理员使用该模板创建卷后，如果 Cloud Manager 稍后发现参数值已更改，从而不再与模板定义对齐，则可以查看设计的模板中 " 偏离 " 的所有卷。通过这种方式，您可以识别这些卷并进行更改，使其恢复合规性。
+
+
+
+== 2021 年 5 月 2 日
+
+
+
+=== 现在，您可以在创建卷模板时集成 Cloud Data sense 。
+
+现在，您可以为每个新创建的卷启用 Data sense ，为每个新创建的卷启用 Cloud Backup ，或者创建一个模板，以便在创建的卷上同时启用 Backup 和 Compliance 。

@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: concept-tagging.html 
+keywords: tags, overview, conceptual, resource tags, volume tags, AWS tags, Azure tags 
+summary: 您可以通过 Cloud Manager 将标记应用于 _exist_ 资源，以帮助组织和管理这些资源。标记是元数据，可用于对资源进行分组，以确定应用程序，环境，区域，计费代码，云提供商， 等等。 
+---
+= 了解标记
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以通过 Cloud Manager 将标记应用于 _exist_ 资源，以帮助组织和管理这些资源。标记是元数据，可用于对资源进行分组，以确定应用程序，环境，区域，计费代码，云提供商， 等等。
+
+标记由 * 标记键 * 和 * 标记值 * 组成。例如，您可以创建一个名为 " 环境 " 的标记密钥，然后添加 "production" 和 "Test" 的标记值。将这些资源应用到您的资源后，您可以快速搜索和查看与密钥 / 值对匹配的资源。
+
+您可以在创建工作环境或 Azure NetApp Files 卷时向 _new_ 资源添加标记密钥 / 值对。您还可以在中定义标记键 / 值对 link:task-define-templates.html["您构建的 Cloud Manager 模板"] 适用于存储管理员和 DevOps 工程师。
+
+您可以使用标记服务添加新标记，也可以更改或删除现有标记。
+
+
+
+== 功能
+
+标记服务具有以下功能和优势：
+
+* 创建与环境中使用的术语匹配的标记密钥和标记值
+* 在您的环境中组织资源，以便于监控和管理
+* 按资源类型添加，删除和编辑标记密钥和标记值
+* 从 AWS 和 Azure 标记您环境中的 ONTAP 资源和资源。
+
+
+
+
+== 定价和许可证
+
+为资源添加标记无需许可，所有具有帐户管理员或工作空间管理员角色的 Cloud Manager 用户均可免费使用。
+
+
+
+== 您可以标记的资源
+
+您可以将标记应用于以下资源。
+
+[cols="30,35,35"]
+|===
+| 提供程序 | 服务 | 资源 
+
+
+.3+| ONTAP | Cloud Volumes ONTAP | 聚合 Storage VM 卷 
+
+
+| 内部部署 ONTAP | 聚合 Storage VM 卷 
+
+
+| Azure NetApp Files | Volume 
+
+
+| NetApp 服务 | 同步 | 关系 
+
+
+| AWS | EC2 | 实例安全组子网卷 VPC 
+
+
+.4+| Azure 酒店 | 计算 | Snapshot 虚拟机 
+
+
+| 网络 | 安全组虚拟网络 
+
+
+| 资源 | Resource Group 
+
+
+| 存储 | 存储帐户 
+
+
+.2+| GCP | 计算 | 实例 
+
+
+| 存储 | 存储分段 
+|===
+有关 AWS EC2 标记的信息，请参见 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html["AWS 文档：标记 Amazon EC2 资源"^]。
+
+有关 Azure 标记的信息，请参见 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json["Azure 文档：标记 Azure 资源"^]。
+
+有关 Google 标签的信息，请参见 https://cloud.google.com/compute/docs/labeling-resources["Google Cloud 文档：标记 Google Cloud 资源"^]。
+
+
+
+== 前提条件
+
+
+
+=== 验证您的 AWS Connector 权限
+
+如果您使用 Cloud Manager 3.9.10 或更高版本创建了 Connector ，则表示您已设置完毕。如果您使用早期版本的 Cloud Manager 创建了 Connector ，则需要为 Cloud Manager IAM 角色添加一些必需的权限，以便为 AWS EC2 实例添加标记：
+
+[source, json]
+----
+{
+  "Action": [
+    "ec2:CreateTags",
+    "ec2:DeleteTags",
+    "ec2:DescribeTags",
+    "tag:getResources",
+    "tag:getTagKeys",
+    "tag:getTagValues",
+    "tag:TagResources",
+    "tag:UntagResources"
+  ],
+  "Resource": "*",
+  "Effect": "Allow",
+  "Sid": "tagServicePolicy"
+}
+----
+
+
+=== 验证 Azure Connector 权限
+
+如果您使用 Cloud Manager 3.9.10 或更高版本创建了 Connector ，则表示您已设置完毕。如果您使用早期版本的 Cloud Manager 创建了 Connector ，则需要为 Cloud Manager 操作员 IAM 角色添加一些必需的权限才能标记 Azure 资源：
+
+[source, json]
+----
+{
+  "id": "<ID>",
+  "properties": {
+    "roleName": "Cloud Manager Operator-<ID>",
+    "description": "Cloud Manager Operator",
+    "assignableScopes": [
+      "/subscriptions/<SUBSCRIPTION-ID>"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Resources/tags/read",
+          "Microsoft.Resources/tags/write",
+          "Microsoft.Resources/tags/delete",
+          "Microsoft.ClassicCompute/virtualMachines/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
+----
+
+
+== 标记规则和限制
+
+创建标记密钥和标记值时，应遵循以下规则：
+
+* 最大密钥长度： 128 个字符
+* 最大密钥值长度： 256 个字符
+* 有效的标记和标记值字符：字母，数字，空格和特殊字符（ _ ， @ ， & ， * 等）
+* 标记区分大小写。
+* 每个资源的最大标记数： 30
+* 每个资源的每个标记密钥都必须是唯一的
+
+
+
+
+=== 标记示例
+
+[cols="50,50"]
+|===
+| 密钥 | 值 
+
+
+| ENV | 生产测试 
+
+
+| 部门 | 财务销售人员 
+
+
+| 所有者 | 管理存储 
+|===

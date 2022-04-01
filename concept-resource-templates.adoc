@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: concept-resource-templates.html 
+keywords: templates, overview, conceptual, resource templates, application templates, volume templates 
+summary: '通过应用程序模板服务，您可以在工作环境中标准化资源创建。例如，您可以在 " 卷模板 " 中硬编码所需的参数，存储管理员稍后使用该模板创建卷时会应用这些参数。这可能包括所需的磁盘类型，大小，协议，快照策略，云提供商， 等等。您还可以为每个创建的卷启用某些服务，例如 Cloud Backup 。' 
+---
+= 了解应用程序模板
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过应用程序模板服务，您可以在工作环境中标准化资源创建。例如，您可以在 " 卷模板 " 中硬编码所需的参数，存储管理员稍后使用该模板创建卷时会应用这些参数。这可能包括所需的磁盘类型，大小，协议，快照策略，云提供商， 等等。您还可以为每个创建的卷启用某些服务，例如 Cloud Backup 。
+
+通过模板，存储管理员可以轻松创建针对每个已部署应用程序（例如数据库，电子邮件或流式服务）的工作负载要求进行优化的卷。而且，由于每个卷都是为每个应用程序创建的，因此存储架构师可以更加轻松地使用它。
+
+
+
+== 功能
+
+应用程序模板具有以下功能和优势：
+
+* 自动化并改进基础架构的设计和开发
+* 提供一个位置来激活不同的 NetApp 云服务，例如 Cloud Backup 和 Cloud Data sense
+* 确定已更改且不再符合模板的资源（使用 " 偏移 " 功能）
+
+
+
+
+==== 什么是 " 漂移 " ？
+
+"Drift " 允许 Cloud Manager 监控使用模板创建资源时使用的参数值。此时， " 偏差 " 可以确定资源何时发生更改，以便您可以手动进行调整，使其恢复与模板的合规性。将来，我们可以在资源不合规时向您发送通知，甚至可以反转用户的更改，以便从模板创建的所有资源自动恢复合规。
+
+link:task-check-template-compliance.html["了解有关漂移的更多信息"]。
+
+
+
+== 可用模板操作
+
+模板是一系列 " 操作 " ，其中包含一些预定义值。您可以构建包含以下操作的模板：
+
+* 资源操作： *
+
+* 创建 Cloud Volumes ONTAP 卷（在 AWS ， Azure 或 GCP 上）
+* 创建 Azure NetApp Files 卷
+* 创建内部 ONTAP 卷
+* 创建 Cloud Volumes ONTAP 工作环境（ AWS 上的单节点或 HA 系统）
+* 查找满足特定条件的现有资源（以便您可以对现有资源应用 " 服务 " 操作）
+
+
+* 服务操作： *
+
+* 激活 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^] 在卷上（不适用于 Azure NetApp Files ）
+* 激活 https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^] 在卷上
+* 激活 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["Replication"^] 在卷上（不适用于 Azure NetApp Files ）
+
+
+例如，您可以创建一个用于创建 Cloud Volumes ONTAP 卷的模板。或者，创建 Cloud Volumes ONTAP 卷，然后在该卷上启用 Cloud Backup 。或者创建 Cloud Volumes ONTAP 卷，然后在该卷上启用 Cloud Backup_and_ Cloud Data sense 。
+
+NetApp 将随着时间的推移添加更多操作。
+
+
+
+== 应用程序模板的工作原理
+
+应用程序模板服务由 3 个部分组成。可用模板 " 操作 " ，自定义应用程序模板以及因运行此模板而部署的资源。下图显示了每个组件之间的关系：
+
+image:diagram_template_flow1.png["创建和使用应用程序模板所涉及的不同用户的示意图。"]
+
+从较高层面来看，模板的工作原理如下：
+
+. NetApp 定义了可用的模板 " 操作 " 。
++
+例如，用于创建 Cloud Volumes ONTAP 卷或 Azure NetApp Files 卷的 " 操作 " 。
+
+. 存储架构师会选择要用于创建应用程序模板的 " 操作 " ，然后对列出的参数的某些值进行硬编码。
++
+例如，他们为 Cloud Volumes ONTAP 卷选择了高速磁盘和大量 RAM ，这些磁盘将用于处理 Oracle 数据库的工作负载。它们要求为每个卷创建备份。
+
+. 存储管理员可以使用这些模板创建针对要使用的应用程序进行优化的资源。
++
+例如，他们使用为数据库创建的卷模板创建一个要用于 Oracle 数据库的卷。
+
+. 该服务使用存储架构师确定的 " 偏移 " 功能跟踪模板中定义的某些资源设置。
+
+
+
+
+== 定价和许可证
+
+应用程序模板功能无需许可，所有 Cloud Manager 用户均可免费使用。
+
+
+NOTE: 通过模板，您可以将云服务应用于已创建的资源，例如，在每个卷上启用 Cloud Backup 。在这种情况下，使用备份服务以及备份文件所使用的对象存储空间需要付费。
+
+
+
+== 限制
+
+* 任何 Gov Cloud 地区或无法访问 Internet 的站点均不支持应用程序模板服务。
+* 您不能使用模板在现有聚合上创建 Cloud Volumes ONTAP 卷。新卷将在新聚合中创建。
+

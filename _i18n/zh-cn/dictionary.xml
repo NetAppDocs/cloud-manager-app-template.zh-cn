@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="8c56922858331beaa2fea4df2fc792c6" category="summary">您可以通过 Cloud Manager 将标记应用于 _exist_ 资源，以帮助组织和管理这些资源。标记是元数据，可用于对资源进行分组，以确定应用程序，环境，区域，计费代码，云提供商， 等等。</block>
+  <block id="bed434cdb82938c37e10ec775ee39334" category="doc">了解标记</block>
+  <block id="40fa3ed3deb11f4523fb01c3e53cd533" category="paragraph">标记由 * 标记键 * 和 * 标记值 * 组成。例如，您可以创建一个名为 " 环境 " 的标记密钥，然后添加 "production" 和 "Test" 的标记值。将这些资源应用到您的资源后，您可以快速搜索和查看与密钥 / 值对匹配的资源。</block>
+  <block id="3ebce6b779786d56694bbe904777f9b7" category="inline-link-macro">您构建的 Cloud Manager 模板</block>
+  <block id="c076b5a8076ba06e9f4f25544552b0f8" category="paragraph">您可以在创建工作环境或 Azure NetApp Files 卷时向 _new_ 资源添加标记密钥 / 值对。您还可以在中定义标记键 / 值对 <block ref="cccec4231e26dd3cfde8f707c64ce7d6" category="inline-link-macro-rx"></block> 适用于存储管理员和 DevOps 工程师。</block>
+  <block id="126a062727c3057b3a937eb69aaa1597" category="paragraph">您可以使用标记服务添加新标记，也可以更改或删除现有标记。</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
+  <block id="5e30e27f68a75ca7a2e3182f2dd12b16" category="paragraph">标记服务具有以下功能和优势：</block>
+  <block id="3ea3f03a9826c525b7f8e89cf5f45bb0" category="list-text">创建与环境中使用的术语匹配的标记密钥和标记值</block>
+  <block id="39aff6391798a3cbbbd4f8b8cd74dc8c" category="list-text">在您的环境中组织资源，以便于监控和管理</block>
+  <block id="9a9d09dff347b4f762cb3ea1cb1761a1" category="list-text">按资源类型添加，删除和编辑标记密钥和标记值</block>
+  <block id="4aeb19e9643ca4bd7c08134d7f5d73ad" category="list-text">从 AWS 和 Azure 标记您环境中的 ONTAP 资源和资源。</block>
+  <block id="8c3c2e38ab977ab43a9ebd00e29973df" category="section-title">定价和许可证</block>
+  <block id="15a9a77c4cf2e80203ba12f1c0e8550c" category="paragraph">为资源添加标记无需许可，所有具有帐户管理员或工作空间管理员角色的 Cloud Manager 用户均可免费使用。</block>
+  <block id="9b3643d929067c43445625ecc4b23130" category="section-title">您可以标记的资源</block>
+  <block id="b087cfd5a6751cde85bc43abdbea1db3" category="paragraph">您可以将标记应用于以下资源。</block>
+  <block id="27703c8f150ac4bb0a3a83a7857353af" category="cell">提供程序</block>
+  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="cell">服务</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">资源</block>
+  <block id="253b40ae359ba25b56231803430c4873" category="cell">ONTAP</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="cell">Cloud Volumes ONTAP</block>
+  <block id="4d69d42719426a48d653efcd0d9add65" category="cell">聚合 Storage VM 卷</block>
+  <block id="342ce22b061856522db3129652a55efb" category="cell">内部部署 ONTAP</block>
+  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="cell">Azure NetApp Files</block>
+  <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="cell">Volume</block>
+  <block id="808c50beba133531e42fe04b9b13b86d" category="cell">NetApp 服务</block>
+  <block id="d8e87c0927539672f54462c837be0b7f" category="cell">同步</block>
+  <block id="fbc97786af4bf30dc5b07809a950792c" category="cell">关系</block>
+  <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="cell">AWS</block>
+  <block id="81b22456f78954c460ce2f531b5e048f" category="cell">EC2</block>
+  <block id="44418c8dd436ba2904b49d544d4c90b8" category="cell">实例安全组子网卷 VPC</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="cell">Azure 酒店</block>
+  <block id="a623a8d0366bf079411aa30be45b2d10" category="cell">计算</block>
+  <block id="0f8732d258fffa0be0320d1a4e5bdccb" category="cell">Snapshot 虚拟机</block>
+  <block id="eec89088ee408b80387155272b113256" category="cell">网络</block>
+  <block id="6c096562a66b477196cc713915b16952" category="cell">安全组虚拟网络</block>
+  <block id="dd23acac46f17cbfd4d5541f8ee3c7a1" category="cell">Resource Group</block>
+  <block id="8c4aa541ee911e8d80451ef8cc304806" category="cell">存储</block>
+  <block id="add55592acf21be3b81edc0cbd46b3c5" category="cell">存储帐户</block>
+  <block id="c731f72e1d22a7c5e01a7cb789a8885e" category="cell">GCP</block>
+  <block id="d9a17c1c9e8ef6866e4dbeef41c741b2" category="cell">实例</block>
+  <block id="30edf70db68aa84f05d3e72326807b0c" category="cell">存储分段</block>
+  <block id="ab2bc7358191e02d5aacdd2ddaa4233d" category="inline-link">AWS 文档：标记 Amazon EC2 资源</block>
+  <block id="aa00eddbc27bae0a6cb4210ab565c4df" category="paragraph">有关 AWS EC2 标记的信息，请参见<block ref="9bd250e03cdf80384a24635f16673602" category="inline-link-rx"></block>。</block>
+  <block id="d25af39a1cc1d41b4b78226055c6969d" category="inline-link">Azure 文档：标记 Azure 资源</block>
+  <block id="cd3891a596fb71f2018f9febccdc9311" category="paragraph">有关 Azure 标记的信息，请参见<block ref="132818a7eea2f1dd8c5e1c57244359ed" category="inline-link-rx"></block>。</block>
+  <block id="044bd5bc02d27eb17ed3cc5a11be4f3b" category="inline-link">Google Cloud 文档：标记 Google Cloud 资源</block>
+  <block id="3b0992b7e8536fc1e15651502081b6e6" category="paragraph">有关 Google 标签的信息，请参见<block ref="5b102b4e66babd115f4b84c9458d0cfc" category="inline-link-rx"></block>。</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
+  <block id="2e555eb89efbc4fa0651bd1f644cf78e" category="section-title">验证您的 AWS Connector 权限</block>
+  <block id="ede60e0200bc22484e50c25ec183617f" category="paragraph">如果您使用 Cloud Manager 3.9.10 或更高版本创建了 Connector ，则表示您已设置完毕。如果您使用早期版本的 Cloud Manager 创建了 Connector ，则需要为 Cloud Manager IAM 角色添加一些必需的权限，以便为 AWS EC2 实例添加标记：</block>
+  <block id="f684df81e4cb924eb887af3d63731c28" category="section-title">验证 Azure Connector 权限</block>
+  <block id="55e86ad3487f5a74e4a7f3adf4c7d04c" category="paragraph">如果您使用 Cloud Manager 3.9.10 或更高版本创建了 Connector ，则表示您已设置完毕。如果您使用早期版本的 Cloud Manager 创建了 Connector ，则需要为 Cloud Manager 操作员 IAM 角色添加一些必需的权限才能标记 Azure 资源：</block>
+  <block id="2a6cf45576e45e1753cb8e4a3218f9bf" category="section-title">标记规则和限制</block>
+  <block id="310e25dd524b7da8c8ff6eb8edf50e5f" category="paragraph">创建标记密钥和标记值时，应遵循以下规则：</block>
+  <block id="47c6baf2a93fb70987f8d50230d68450" category="list-text">最大密钥长度： 128 个字符</block>
+  <block id="00b61ace6d8de8337a462fc4b2ca3c47" category="list-text">最大密钥值长度： 256 个字符</block>
+  <block id="ccf8bf5880815b88f3f09c36d316225e" category="list-text">有效的标记和标记值字符：字母，数字，空格和特殊字符（ _ ， @ ， &amp; ， * 等）</block>
+  <block id="451514576a381fcadab95c07d22ca563" category="list-text">标记区分大小写。</block>
+  <block id="392a91200b1b67f84f30feca1ddfdf35" category="list-text">每个资源的最大标记数： 30</block>
+  <block id="377d030d59bcd66d28017369cb57f768" category="list-text">每个资源的每个标记密钥都必须是唯一的</block>
+  <block id="ddddcee4ac303defe9ce2211f2d4acc6" category="section-title">标记示例</block>
+  <block id="897356954c2cd3d41b221e3f24f99bba" category="cell">密钥</block>
+  <block id="c82a6100dace2b41087ba6cf99a5976a" category="cell">值</block>
+  <block id="aa9f9a8454a370443372f6259447844e" category="cell">ENV</block>
+  <block id="0c36db035cf92c76b7ade068ae9b8d68" category="cell">生产测试</block>
+  <block id="269e78d1f721be5126be1f09bb4b091b" category="cell">部门</block>
+  <block id="f6ab9ceccae969405a9121790a11420d" category="cell">财务销售人员</block>
+  <block id="b6f4a2ec6356bbd56d49f2096bf9d3d3" category="cell">所有者</block>
+  <block id="329185ee9cca0721a94429c99d157bdf" category="cell">管理存储</block>
+  <block id="29a899084977c92604a3d26b10f54ca5" category="summary">了解应用程序模板和标记中的新增功能。</block>
+  <block id="79c7b182e7e188861d00e5c2e6128d94" category="doc">应用程序模板和标记的新增功能</block>
+  <block id="42b5df730d6616520195746bafa566eb" category="section-title">2022 年 3 月 3 日</block>
+  <block id="750accbcb5f7845669ac5669ec7c505f" category="section-title">现在，您可以构建一个模板来查找特定的工作环境。</block>
+  <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">有关详细信息，请访问此处</block>
+  <block id="ac8cf21a43287b3320eadc26dc46e2c7" category="paragraph">使用 " 查找现有资源 " 操作，您可以确定工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。 <block ref="3f0db9ccbd4470dc6418f8b2c27bf220" category="inline-link-macro-rx"></block>。</block>
+  <block id="eb256592f50cf81901c9060f4f530714" category="section-title">能够在 AWS 中创建 Cloud Volumes ONTAP HA 工作环境。</block>
+  <block id="6eed6fdcaa0bf2c22f0c8e78ff686d29" category="inline-link-macro">请参见如何为 Cloud Volumes ONTAP 工作环境创建模板</block>
+  <block id="6bdac40b84678366207c23a1f065fcfd" category="paragraph">现有的 Cloud Volumes ONTAP AWS 工作环境创建支持范围已得到扩展，除了创建单节点系统之外，还可以创建高可用性系统。 <block ref="cd0284b4ef2d7bb07ef04a4c4b7f4a15" category="inline-link-macro-rx"></block>。</block>
+  <block id="9fe54dabf8677a2dd216b421ca613a20" category="section-title">2022 年 2 月 9 日</block>
+  <block id="a209c13ddcd9cf86d87b010a08e4eb6e" category="section-title">现在，您可以构建一个模板来查找特定的现有卷，然后启用 Cloud Backup 。</block>
+  <block id="98b343467576e58f6658965bc67f83c1" category="paragraph">使用新的 " 查找资源 " 操作，您可以确定要启用 Cloud Backup 的所有卷，然后使用 Cloud Backup 操作在这些卷上启用备份。</block>
+  <block id="5f7aca397c1159eec8840243c23d21ef" category="paragraph">目前支持 Cloud Volumes ONTAP 和内部 ONTAP 系统上的卷。 <block ref="669569957f8d1752c3d36c9709b3f805" category="inline-link-macro-rx"></block>。</block>
+  <block id="f113b79a4bb13850776b0f197bc567c4" category="section-title">2021 年 10 月 31 日</block>
+  <block id="4ae195844f422b6b1648655974f47ef9" category="section-title">现在，您可以标记同步关系，以便对其进行分组或分类，以便于访问。</block>
+  <block id="049ebb609707e4c76f578eb98777ffdc" category="inline-link-macro">了解有关资源标记的更多信息</block>
+  <block id="ed96aae04d87996c1167c958ef57d92d" category="paragraph"><block ref="c58eac1aa8c871fffca9a439e5057057" category="inline-link-macro-rx"></block>。</block>
+  <block id="a4ff224d7ed6d77fb230202cc45ed6fa" category="section-title">2021 年 10 月 11 日</block>
+  <block id="381310632f9a1c2882832a480711e4cf" category="section-title">现在，您可以创建现有模板的副本。</block>
+  <block id="addd83032f7bc85573c2d778fbce152b" category="inline-link-macro">请参见如何创建模板副本</block>
+  <block id="d8297eba97a5465d726b7dfc48cc13ea" category="paragraph">如果您希望创建与现有模板非常相似的新模板，创建副本可以节省大量时间。只需使用新名称创建副本，然后更改使模板唯一的几个项即可。 <block ref="f91157bfd2bb5cbf5e539da6f97e4710" category="inline-link-macro-rx"></block>。</block>
+  <block id="d440557ac106d95fbf19b42c851e2fd9" category="section-title">现在，在使用模板创建的卷上启用服务会更加简单。</block>
+  <block id="0cb0eeda22a2ab5a3af95e330a22a74c" category="paragraph">在需要选择变量以标识工作环境， Storage VM 和卷名称之前。现在，模板将为您添加此信息。这样可以简化向新创建的卷添加 Cloud Backup ， Cloud Compliance 和 Replication 服务的过程。</block>
+  <block id="91d5a3b2a51a086529628af9b87ef105" category="section-title">添加了支持，因此您可以为某些 GCP 资源添加标签。</block>
+  <block id="db1b81be614bd9a5ca7dc44b22c02310" category="inline-link-macro">请参见您可以标记的 GCP 资源</block>
+  <block id="e4e712eb035bdea737277dd1b8993a0a" category="paragraph">现在，您可以使用 Cloud Manager 标记服务管理 GCP 资源上的标签。您可以查看已应用于资源的 GCP 标签和标签值，也可以将这些标签应用于您管理的其他 GCP 资源。 <block ref="409286efa16f3a61c8f6160b0cdd3b73" category="inline-link-macro-rx"></block>。</block>
+  <block id="3b7a1a77cdd08778e0827fbf312442b7" category="section-title">2021 年 9 月 2 日</block>
+  <block id="bd96464dcc320a50a052dba445c1ddaa" category="section-title">现在，您可以使用标记服务管理 Azure 资源上的标记。</block>
+  <block id="b4b08857877112938961aaa3e2a131f2" category="inline-link-macro">查看您可以标记的 Azure 资源</block>
+  <block id="44e0789645e569abc1d8998ab3015e3d" category="paragraph">您可以查看已应用于资源的 Azure 标记和标记值，也可以将这些标记应用于您正在管理的其他 Azure 资源。 <block ref="566291be7033a26e1b235b2a2d2ef8ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="beea1e5bb8f2f2bd9be93638d03e8b08" category="section-title">现在，可以标记其他一些 AWS EC2 资源。</block>
+  <block id="25a162aef74775e949e086ee904f94a8" category="section-title">2021 年 8 月 8 日</block>
+  <block id="29c6c5f2894fd20d3b18533527bec317" category="section-title">现在，您可以使用模板创建 Cloud Volumes ONTAP 工作环境。</block>
+  <block id="984956ca6b0ab2e60f484c9bada495b5" category="inline-link-macro">为 Cloud Volumes ONTAP 工作环境创建模板</block>
+  <block id="05ef6a32f83373b0aaaab04a0cfb067e" category="paragraph">此支持目前仅适用于 AWS 环境，并且仅适用于单节点集群。请参见操作说明 <block ref="b3c0e34ddc6f02981e8f634895a0f3cf" category="inline-link-macro-rx"></block>。</block>
+  <block id="5080a441e3384a34bcb118757e9e578f" category="section-title">通过一项新功能，您可以在卷模板中向卷添加标记。</block>
+  <block id="adb5f80ec3b6f1b0d9ad3b40327218db" category="paragraph">通过标记功能，您可以对不同的资源进行分组，以确定应用程序，区域或部门，以便执行自动化或将成本分配给某些部门或区域。</block>
+  <block id="de916a0d3ee8a38938e86c4a5f7624aa" category="section-title">现在，您可以在 Cloud Manager 中管理 AWS EC2 实例中的标记。</block>
+  <block id="587a3b529ee36768600b3185997270b8" category="inline-link-macro">了解有关标记的更多信息</block>
+  <block id="87c0200a60cc25f90f7d11c9af5852e4" category="paragraph">您可以查看应用于 EC2 实例的 AWS 标记和标记值，并将这些标记应用于您管理的其他 EC2 实例。 <block ref="78bc354b5bc36ea6c1a33109df4c795e" category="inline-link-macro-rx"></block>。</block>
+  <block id="148ac7400035f34ce9532083a87fe872" category="section-title">2021 年 7 月 13 日</block>
+  <block id="162b6bf7486ecd21043d4097434cc0c0" category="section-title">添加了在定义模板时使用复制服务的支持。</block>
+  <block id="367ca1b4aadef246752fe5dc9dbfa720" category="inline-link-macro">复制要创建的卷中的数据</block>
+  <block id="bd78b220c8f6ffb11029e676aca762e1" category="inline-link">复制服务</block>
+  <block id="18b66794f04012b531d4cc5914f5f8f3" category="paragraph">现在，您可以添加所需的模板 <block ref="6738ace5df735ae0ff117275f600ff2e" category="inline-link-macro-rx"></block> 到另一个卷<block ref="0cbc5a9fd380783b2e1491fb4decd0c8" category="inline-link-rx"></block>。</block>
+  <block id="b97e650c4494f3305ee0ac31ef6caa19" category="paragraph">在将数据复制到其他 NetApp 存储系统并持续更新二级数据时，您的数据将保持最新，并在需要时保持可用。</block>
+  <block id="25a58af15883a08e4b6d4b8172538f5a" category="section-title">下载一份报告，其中包含从模板设置 " 偏离 " 的所有卷。</block>
+  <block id="8b521b3330e37ed57ab6eea2702514ff" category="inline-link-macro">如何下载偏移报告</block>
+  <block id="d995a583774874e6dfba85f30dc14514" category="paragraph">通过这种方式，您可以识别这些卷并分配人员以使这些卷恢复合规性。请参见 <block ref="3861ce04d0fce9eae63955cfc17ca34d" category="inline-link-macro-rx"></block>。</block>
+  <block id="9664d641acdd3bc45e6d8085c3ffe14d" category="section-title">已发布新标记服务。</block>
+  <block id="b2c5f55555590a4c06851e0098a9fbbd" category="paragraph">您可以通过一项新的 Cloud Manager 功能为现有 ONTAP 资源应用标记，以帮助组织和管理这些资源。标记是元数据，可用于对资源进行分组，以确定应用程序，环境，区域，计费代码，云提供商， 等等。</block>
+  <block id="bef30da0bb60a2c21060e5694267abfe" category="paragraph"><block ref="78bc354b5bc36ea6c1a33109df4c795e" category="inline-link-macro-rx"></block>。</block>
+  <block id="945fb8f32f58d1cc36cb9f1e9e4c6fe5" category="section-title">2021 年 6 月 7 日</block>
+  <block id="62b85539ed6ee5532da4e1a797b67ee6" category="section-title">现在，您可以在用户运行模板时有条件地启用某些操作。</block>
+  <block id="a1b4bb66baa87c6181574db8b88c8d3d" category="paragraph">例如，如果在创建 Cloud Volumes ONTAP 卷时启用了 NetApp 存储效率，则该卷也会启用 Cloud Backup 。如果未启用存储效率，则不会启用 Cloud Backup 。</block>
+  <block id="264a2b52fa92c42819a82c4ea6445d6a" category="section-title">现在，您可以使用模板在内部 ONTAP 系统上创建卷。</block>
+  <block id="4cf9c1afc78ae2e8f1491942ce078eb8" category="section-title">在创建模板时，添加了一个称为 " 偏移 " 的新功能。</block>
+  <block id="011741db456ebe1ea2d73d2c43f93efc" category="paragraph">通过此功能， Cloud Manager 可以监控您为模板中的参数输入的硬编码值。存储管理员使用该模板创建卷后，如果 Cloud Manager 稍后发现参数值已更改，从而不再与模板定义对齐，则可以查看设计的模板中 " 偏离 " 的所有卷。通过这种方式，您可以识别这些卷并进行更改，使其恢复合规性。</block>
+  <block id="824b76af9549cb14fd2443aa485afb15" category="section-title">2021 年 5 月 2 日</block>
+  <block id="9a1219498574a089f3be1a4a45143586" category="section-title">现在，您可以在创建卷模板时集成 Cloud Data sense 。</block>
+  <block id="96e3f6826df4638ccb92b90bd780b773" category="paragraph">现在，您可以为每个新创建的卷启用 Data sense ，为每个新创建的卷启用 Cloud Backup ，或者创建一个模板，以便在创建的卷上同时启用 Backup 和 Compliance 。</block>
+  <block id="ce21e7ae4271271294ccbf54c8fd6864" category="summary">NetApp 通过多种方式为 Cloud Manager 提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link-macro"></block>
+  <block id="7ccaf84febc0ed633fbdbadb8d488a7e" category="paragraph"><block ref="7ccaf84febc0ed633fbdbadb8d488a7e" category="inline-link-macro-rx"></block></block>
+  <block id="cc371045494864a1be09aecf8486813b" category="summary">选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构建一个应用程序模板，您的组织可以使用该模板开始优化资源创建。</block>
+  <block id="7b7aa0d4bd1d1332a50f445e21889bc8" category="doc">为您的组织构建应用程序模板</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="section-title">快速入门</block>
+  <block id="91e06e9a9ef97681b798e2e5e007ba97" category="paragraph">按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。</block>
+  <block id="a6a9590c22384e37e4e414bf579a3278" category="list-title">跨度 class="image&gt;&lt;img src=<block ref="0c3becc25d95e48b9ca863002a042824" category="inline-link-rx"></block> Alt-one"&gt;&lt;/span&gt; 验证所需的前提条件</block>
+  <block id="53eecd7f53fddfec88f1dbaf29600d72" category="list-text">在用户使用模板为 Cloud Volumes ONTAP ，内部 ONTAP 或 Azure NetApp Files 系统创建卷之前，请确保他们能够访问要部署此卷的适当工作环境。</block>
+  <block id="dad57e95fc9a5390302ad830888cbdb9" category="inline-link">云备份</block>
+  <block id="d882bf73cd5caf1e5aa39edbf893ad74" category="inline-link">云数据感知</block>
+  <block id="45ebff704e28730c0e631bb5f09b2205" category="list-text">如果您计划向模板添加云服务 " 操作 " ，例如<block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block> 或<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block>，确保此服务在您的环境中处于活动状态并已获得许可。</block>
+  <block id="42ad9e938d3f22547c490ccfc69261fe" category="paragraph">选择 * 应用模板 * 服务，单击 * 编辑器 * 选项卡，然后选择要在模板中使用的操作。</block>
+  <block id="ba13d007a4f76ded358c0280157f648b" category="paragraph">按照创建步骤进行操作，并定义模板要执行的操作。</block>
+  <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要求</block>
+  <block id="4b09bdd4ca435f6a4b77b142f9481573" category="paragraph">请阅读以下要求，以确保您的配置受支持。</block>
+  <block id="23e0e07c56fc07b2d6bc44d30e5187d4" category="inline-link">请参见如何创建连接器</block>
+  <block id="880e0da9ea31d472fa96b1ad7e4be6ad" category="list-text">如果您还没有 Connector ，<block ref="0e90a2191f59a8f46190195b37c75156" category="inline-link-rx"></block> 适用于 AWS ， Azure 和 GCP 。</block>
+  <block id="45ef42d49d3545c2dc4c85b1084a47e4" category="list-text">创建 Cloud Volumes ONTAP 卷模板时，请确保您的用户可以使用 Cloud Volumes ONTAP 工作环境。请参见如何在中启动 Cloud Volumes ONTAP 系统<block ref="9d7ce7d64938e2f7608d2bb2edf0463c" category="inline-link-rx"></block>，<block ref="24f9dba5182403aa08072eb715753c19" category="inline-link-rx"></block>或中的<block ref="50ded4108906004e3a51ae63e78f7f8d" category="inline-link-rx"></block>。</block>
+  <block id="b927c65793ede8840d859f745c1070b4" category="inline-link">发现内部部署的 ONTAP 系统</block>
+  <block id="c8901a7a496874759b4b8b60b0de5c3d" category="list-text">创建内部 ONTAP 卷模板时，请确保您的用户可以使用内部 ONTAP 工作环境。请参见操作说明<block ref="73a5fece0c926f1d97e300f9e1e63b86" category="inline-link-rx"></block> 在 Cloud Manager 中。</block>
+  <block id="89bbeb90a25e5540f1875c6148fc07a6" category="inline-link">创建 Azure NetApp Files 工作环境</block>
+  <block id="9d2d3321463aff7e73ef30b5a3ce32a8" category="list-text">创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明<block ref="4701cc78270032c8498a3da46c645bc0" category="inline-link-rx"></block> 在 Cloud Manager 中。</block>
+  <block id="e6ed2b3f4bf8b70c7dffd440bfa20748" category="list-text">如果您计划使用 Cloud Backup 备份模板中的卷，请确保您的环境已激活 Cloud Backup 。</block>
+  <block id="375fb9ecf54511eed57c23439aba8fa9" category="list-text">如果您计划使用 Cloud Data sense 扫描模板中的卷，请确保您的环境已激活 Cloud Data sense 。</block>
+  <block id="b2db245c1e7b0de62f61003787ba3eb2" category="list-text">如果您计划在此模板中启用复制，并且此模板适用于内部 ONTAP 卷，则 ONTAP 集群必须具有活动的 SnapMirror 许可证。</block>
+  <block id="ec83027c05d71f4e7343616a10e8b48e" category="section-title">使用模板创建资源的示例</block>
+  <block id="54efaa09fa271348667d3925486f25d8" category="paragraph">通过资源模板，您可以创建新卷或新的 Cloud Volumes ONTAP 工作环境。</block>
+  <block id="030a036b48378de1f3003036be2d3597" category="section-title">为 Cloud Volumes ONTAP 卷创建模板</block>
+  <block id="ab93b13353c035a51f382bda0bfbed96" category="inline-link">如何配置 Cloud Volumes ONTAP 卷</block>
+  <block id="95fc8ac0e9e615981015162965b46e17" category="paragraph">请参见<block ref="b4d90a018392b441728748f197c63579" category="inline-link-rx"></block> 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。</block>
+  <block id="e9e4c331008e320c9b03b119f438ec84" category="paragraph">在此示例中，我们将创建一个名为 "CVO volume for databases" 的模板，其中包括以下 2 项操作：</block>
+  <block id="6115c1aa690e31fcf33eef72f8accb32" category="list-text">创建 Cloud Volumes ONTAP 卷</block>
+  <block id="4611422bf9a4ff570849e7d651f9c0a2" category="paragraph">为 AWS 环境创建卷，为其配置 100 GB 的存储，将 Snapshot 策略设置为 " 默认 " 并启用存储效率。</block>
+  <block id="d0285b972453920d44e9bfc537f86825" category="list-text">启用 Cloud Backup</block>
+  <block id="0e7b1101bfe909f1f24d1bc082d8cb0b" category="paragraph">创建 30 个每日备份， 13 个每周备份和 3 个每月备份（使用 _3 个月保留 _ 策略）。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
+  <block id="e4b455f83d8a2cbf227e5a6b6bd7ed8c" category="list-text">选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。</block>
+  <block id="12800accdcea8213a17428d96d3f650b" category="paragraph">此时将显示 _Select_A Template_ 页面。</block>
+  <block id="ac454ecfe801e40640fcab274d8376c7" category="inline-image-macro">显示如何选择要使用此模板执行的主要操作的屏幕截图。</block>
+  <block id="badf0b64af7e4dbccc924f1b86d16441" category="paragraph"><block ref="badf0b64af7e4dbccc924f1b86d16441" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e9d6286a0d87815f2dfb97a9d19be924" category="list-text">选择 * 用于 Cloud Volumes ONTAP 的卷 + 备份 * 作为要创建的资源类型，然后单击 * 开始使用 * 。</block>
+  <block id="2e40b56b7fa804a6923caf652b7c25aa" category="paragraph">此时将显示 _Create Volume in Cloud Volumes ONTAP Action Definition_ 页面。</block>
+  <block id="99d5fcac810e0357f1ce55dabd9aadfd" category="inline-image-macro">显示您需要填写的空白 CVO 模板的屏幕截图。</block>
+  <block id="c300df2aa9b635b7e59061b7084d3807" category="paragraph"><block ref="c300df2aa9b635b7e59061b7084d3807" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="801e9079b48c523d52a05513463997fe" category="list-text">* 操作名称 * ：也可以输入自定义操作名称，而不是默认值。</block>
+  <block id="7cbfd40e0aecc60c4a4efbc45ba21139" category="list-text">* 上下文： * 输入 Cloud Volumes ONTAP 工作环境上下文；如果需要，请输入此上下文。</block>
+  <block id="059515978a375903c4b939adacaa923b" category="paragraph">当用户从现有工作环境启动模板时，此信息将自动填充。</block>
+  <block id="9723c14ceead0bcb4a1db0b77671f08a" category="paragraph">当用户从模板信息板启动模板时（不在工作环境环境环境中），他们需要选择工作环境以及要创建卷的 SVM 。这就是这些字段被标记为 " 可编辑 " 的原因。</block>
+  <block id="5ea98d0d0acbef5bd9f5c07ca7a061be" category="list-text">* 详细信息： * 输入卷名称和大小。</block>
+  <block id="6f16a5f8ff5d75ab84c018adacdfcbb7" category="cell">字段</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Description</block>
+  <block id="5a33fdd3ad048388d676b3cfe62a76b4" category="cell">卷名称</block>
+  <block id="2883dfc230f7a5fee0fceab3e724eed1" category="cell">单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。例如，您可以指定 "db" 为所需的前缀，后缀或包含；要求用户添加卷名称，例如 "db_vol1" ， "vol1_db" 或 "vol_db_1" 。</block>
+  <block id="191fac23c2b2ea4e948178972521292f" category="cell">卷大小</block>
+  <block id="00c8763f564b8663e70d7c5282bfb116" category="cell">您可以指定允许的值范围，也可以指定固定大小。此值以 GB 为单位。在本示例中，我们可以添加一个固定值 * 。 100* 。</block>
+  <block id="189f63f277cd73395561651753563065" category="cell">Tags</block>
+  <block id="5c383dfd487b893537243d1ff2b9c575" category="cell">输入要与此卷关联的标记的名称和值对。例如，您可以将 "Cost Center" 作为标记名称，并将成本中心代码 "6655829" 作为值。您可以通过添加更多标记名称和值对将多个标记与卷关联。</block>
+  <block id="8cb0ac47c325f07198a8d894befe84b4" category="list-text">* 保护： * 选择此卷是否将通过选择 " 默认 " 或其他策略创建 Snapshot 副本，或者如果您不想创建 Snapshot 副本，则选择 " 无 " 。</block>
+  <block id="14e9a0afe9a24320a6cbef6a736df90e" category="list-text">* 使用情况配置文件： * 选择是否对卷应用 NetApp 存储效率功能。其中包括精简配置，重复数据删除和数据压缩。在我们的示例中，保持启用存储效率。</block>
+  <block id="9a58906a5890a61a2ba00a2bc5f6a847" category="list-text">* 磁盘类型： * 选择云存储提供程序和磁盘类型。对于某些磁盘选择，您还可以选择最小和最大 IOPS 或吞吐量（ MB/ 秒）值；基本定义特定服务质量（ QoS ）。</block>
+  <block id="8a199052157229eefe6d69b9e724047a" category="list-text">* 协议选项： * 选择 * NFS * 或 * SMB * 以设置卷的协议。然后，将提供协议详细信息。</block>
+  <block id="5dc73c128ec631156d8581bb645e55cc" category="cell">NFS 字段</block>
+  <block id="8aaaedc342a0dce1d73d33f3fb69a2af" category="cell">访问控制</block>
+  <block id="4a3d2f4e3aa9bd79e413c5b9fa744ab3" category="cell">选择是否需要访问控制来访问卷。</block>
+  <block id="8dadce9de6b5f104b9f1990b73f191f0" category="cell">导出策略</block>
+  <block id="565e7c939f0a1769928e7ea0649f804b" category="cell">创建导出策略以定义子网中可访问卷的客户端。</block>
+  <block id="97e382ecf7e6f1064476764cbcc5b429" category="cell">NFS 版本</block>
+  <block id="7d357e387e1a68e43d79ca61a0b67fb9" category="cell">选择卷的 NFS 版本： _NFSv3_ 或 _NFSv4_ ，或者您也可以同时选择这两者。</block>
+  <block id="ba1dcdd66cd4d8a61910f9d39950817a" category="cell">SMB 字段</block>
+  <block id="d30b23c0886d5712f5995a7793376942" category="cell">共享名称</block>
+  <block id="6e94b2e72c0376574fc6b13ca0384876" category="cell">单击字段并选择 5 个选项之一。您可以让管理员输入任何名称（自由文本），也可以指定共享名称必须具有特定前缀或后缀，它包含 _ 个特定字符，或者它遵循您输入的正则表达式（正则表达式）中的规则。</block>
+  <block id="d08ccf52b4cdd08e41cfb99ec42e0b29" category="cell">权限</block>
+  <block id="81075cbf19436268ea82309abe5e2fbf" category="cell">选择用户和组对共享的访问级别（也称为访问控制列表或 ACL ）。</block>
+  <block id="3d0a35be70eebb15d947ea1010db1320" category="cell">用户 / 组</block>
+  <block id="ea73180f9c8cb441163847f36b7e315b" category="cell">指定本地或域 Windows 用户或组，或者 UNIX 用户或组。如果指定域 Windows 用户名，则必须使用 domain\username 格式包含用户的域。</block>
+  <block id="979ea4704bcee326b5ea5d2bc6a4a89b" category="list-text">* 分层： * 选择要应用于卷的分层策略，如果不希望将此卷中的冷数据分层到对象存储，则将此策略设置为 " 无 " 。</block>
+  <block id="e8ef245792950f46479876f766e2e142" category="inline-link">卷分层策略</block>
+  <block id="b0e17b25c2ac5fdfcde0ef543eb85101" category="inline-link">将非活动数据分层到对象存储</block>
+  <block id="ee33f204180d62cfb217e1aec2a2f775" category="paragraph">请参见<block ref="51ba3de2fe0f2a8abd8380ab98f33811" category="inline-link-rx"></block> 有关概述，请参见<block ref="d98e4cd2c7e92258651d80578af83733" category="inline-link-rx"></block> 以确保您的环境已设置为分层。</block>
+  <block id="dcbae1cdee8a3f08d129ff3de6884125" category="list-text">定义完此操作所需的参数后，单击 * 应用 * 。</block>
+  <block id="7566e7b2ebc49252e3a55e0d5dd8d796" category="paragraph">如果模板值已正确完成，则会在 "Create Volume in Cloud Volumes ONTAP " 框中添加一个绿色复选标记。</block>
+  <block id="edabbad74c4bab7275b00df22d1795fb" category="list-text">单击 * 在卷上启用云备份 * 框，此时将显示 _Enable Cloud Backup on Volume Action Definition_ 对话框，以便您填写 Cloud Backup 详细信息。</block>
+  <block id="e7b2940e4c4ae2261e85a3d7a22c8cb5" category="inline-image-macro">显示可添加到已创建卷的其他操作的屏幕截图。</block>
+  <block id="1d52e1ed02fe4b810c04939e74af1f18" category="paragraph"><block ref="1d52e1ed02fe4b810c04939e74af1f18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f558391a06df755ed33bfad6325d0441" category="list-text">选择 * 3 个月保留 * 备份策略可创建 30 个每日备份， 13 个每周备份和 3 个每月备份。</block>
+  <block id="ee90c4ccb63dcb129be28139926904d8" category="inline-xref">如何填写这些字段</block>
+  <block id="ec713828140b03b149e442465903607d" category="list-text">在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 <block ref="2ed015b52e0ac4a30a046a0842ac9c50" category="inline-xref-macro-rx"></block>。</block>
+  <block id="0728b4f74021dc704fab300222094c8b" category="list-text">单击 * 应用 * ，此时将保存 Cloud Backup 对话框。</block>
+  <block id="46725495896c458f104f504d53b4b320" category="list-text">在左上角输入用于 Databases* （本示例）的模板名称 * CVO volume 。</block>
+  <block id="d69be6c531037f06436630d128988a41" category="list-text">单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。</block>
+  <block id="7d1cada9a49f8783660b223f3fef2678" category="paragraph">通过 Drift ， Cloud Manager 可以监控您在创建此模板时为参数输入的硬编码值。</block>
+  <block id="069cf34ab6ca64e85728193a5aab0a4e" category="list-text">单击 * 保存模板 * 。</block>
+  <block id="8b8745414ffb4d1bc70671bfa839ed7d" category="paragraph">此时将创建此模板，并将您返回到模板信息板，此时将显示新模板。</block>
+  <block id="5e0cbbeb0c7fbcd015cc8264aa380cf6" category="inline-xref">您应该向用户介绍有关模板的信息</block>
+  <block id="0a45425eb0911358963a7a4da437beeb" category="paragraph">请参见 <block ref="2fb234aaf0c174d8c17b6003cc9fc11d" category="inline-xref-macro-rx"></block>。</block>
+  <block id="0723f0287083e700309ab63bd37a0c33" category="section-title">为 Azure NetApp Files 卷创建模板</block>
+  <block id="38c68ceb833297ed3631cc6cc44141ab" category="paragraph">为 Azure NetApp Files 卷创建模板的方式与为 Cloud Volumes ONTAP 卷创建模板的方式相同。</block>
+  <block id="98165316f4a6a7eb3b2eea00a7c71656" category="inline-link">如何配置 Azure NetApp Files 卷</block>
+  <block id="1dcec9f35c7e20c4011388d6173a9a3e" category="paragraph">请参见<block ref="71642e13367a6341a10e13f459821e6e" category="inline-link-rx"></block> 有关需要在 ANF 卷模板中完成的所有参数的详细信息。</block>
+  <block id="31ea9a5156da1667ca8c913660cb04e8" category="paragraph"><block ref="31ea9a5156da1667ca8c913660cb04e8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b1198c02b1425b74b6391ffd99cbc74b" category="list-text">选择 * 空白模板 * ，然后单击 * 开始使用 * 。</block>
+  <block id="ddc839fd59d3af096b5f24caa0aac73e" category="list-text">选择 * 在 Azure NetApp Files 中创建卷 * 作为要创建的资源类型，然后单击 * 应用 * 。</block>
+  <block id="d7f05890785a6be968f73b8eaead7a27" category="paragraph">此时将显示 _Create Volume in Azure NetApp Files Action Definition_ 页面。</block>
+  <block id="d64e3f9a180b7c834241b44a88d16f4d" category="inline-image-macro">显示需要填写的空白 ANF 模板的屏幕截图。</block>
+  <block id="bea9505dd83d12b3dd7397d8682eb37b" category="paragraph"><block ref="bea9505dd83d12b3dd7397d8682eb37b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="09ff1b3fa74cf72dc0a62eaa7242effd" category="list-text">* 卷详细信息： * 输入卷名称和大小，并可选择为此卷指定标记。</block>
+  <block id="c44953330b995fcda50e59d40ea3a049" category="cell">您可以指定允许的值范围，也可以指定固定大小。此值以 GB 为单位。</block>
+  <block id="f727b1e918e496981ef541497e02f03e" category="list-text">* 协议： * 选择 * NFSv3* ， * NFSv4.1* 或 * SMB/C* 以设置卷的协议。然后，将提供协议详细信息。</block>
+  <block id="cb4d2c1623299b4c2878da3019af962f" category="cell">卷路径</block>
+  <block id="377c42289584cc56d1ca3a47af882648" category="cell">从 5 个选项中选择一个。您可以通过选择 * 自由文本 * 让管理员输入任何路径，也可以指定路径名称必须具有特定前缀或后缀，包含 _ 个字符，或者遵循您输入的正则表达式（ regex ）中的规则。</block>
+  <block id="9f669007b0241e85f918bbf51c094ed1" category="cell">导出策略规则</block>
+  <block id="bcccd81c3a412f1013995a215560e6f4" category="list-text">* 上下文： * 输入 Azure NetApp Files 工作环境，新 Azure NetApp Files 帐户或现有 帐户的详细信息以及其他详细信息。</block>
+  <block id="68049d5b86773fa123aee6b5162b46ba" category="cell">工作环境</block>
+  <block id="66618d802ff15f9772bf7cabf1ccccd5" category="cell">当存储管理员用户从现有工作环境启动模板时，此信息将自动填充。当用户从模板信息板启动模板时（而不是在工作环境环境中），则需要选择要创建卷的工作环境。</block>
+  <block id="baac6f97c8e7e8e6270cc894e6bdbe8c" category="cell">NetApp 帐户名称</block>
+  <block id="32fe392abad2a40de341773cc015c9ed" category="cell">输入要用于帐户的名称。</block>
+  <block id="5094b7a12b4988ad4d43027cff543c44" category="cell">Azure 订阅 ID</block>
+  <block id="9d50dad1baec8117f193564ab3e971b7" category="cell">输入 Azure 订阅 ID 。此 ID 为完整 ID ，格式类似于 "2b04f26-7de6-42eb-9234-e2903d7s327" 。</block>
+  <block id="f447ac856e7e72435904956e3b15f433" category="cell">Region</block>
+  <block id="bc24e6fad764484fb6365689ca4d656e" category="inline-link">内部区域名称</block>
+  <block id="db11e34ee53f07b67134b18d34ea5869" category="cell">使用输入区域<block ref="982c814c46363bccb479e928a36b737e" category="inline-link-rx"></block>。</block>
+  <block id="a35ce6a7b02cbfd98e9837032a457dd5" category="cell">资源组名称</block>
+  <block id="01652266b6c049dc9e680639d9932631" category="cell">输入要使用的资源组的名称。</block>
+  <block id="0941eb13d6f2381bd092f5083e63aed8" category="cell">容量池名称</block>
+  <block id="4fd739db287e5a16b75e3489f92360b2" category="cell">输入现有容量池的名称。</block>
+  <block id="9770c6469e9d27585d6c0c389ede7bc3" category="cell">Subnet</block>
+  <block id="4c695379c0a2d8fa6d7f8c59bda94b06" category="cell">输入 vNet 和子网。此值包括完整路径，其格式类似于 "/subscriptions/&lt;subscription_id&gt;/resourcegroups/&lt;resource_group&gt;/providers/Microsoft.Network/virtualNetworks/&lt;vpc_name&gt;/subnets/&lt;subhet_name&gt;" 。</block>
+  <block id="c8cef9ee8b7303419027647a212fda91" category="list-text">* Snapshot 副本： * 如果要使用现有卷的特征创建此新卷，请输入现有卷 Snapshot 的 Snapshot ID 。</block>
+  <block id="18801e3c62d625d360e2e7ea2b62c1b7" category="list-text">在左上方输入要用于模板的名称。</block>
+  <block id="56b6bad4ad8b3fcc1c2572a38f72bbbc" category="section-title">为内部 ONTAP 卷创建模板</block>
+  <block id="d3a13fb50cc9406d1e6091d1a798ff8a" category="inline-link">如何配置内部 ONTAP 卷</block>
+  <block id="2ae042576bd53fa925dc0c175ec115a2" category="paragraph">请参见<block ref="66f502a6d6407b2e7db3bd3d647a7434" category="inline-link-rx"></block> 有关需要在内部部署 ONTAP 卷模板中完成的所有参数的详细信息。</block>
+  <block id="abea42b586bcc6693bfcf53290293b41" category="paragraph">此时将显示 _Add New Action_ 页面。</block>
+  <block id="4f58f599c7e133b39a2f56df4f449c81" category="inline-image-macro">显示如何从 " 添加新操作 " 页面中选择主操作的屏幕截图。</block>
+  <block id="b9a9d1475979d9d1c4cd0440dd88810d" category="paragraph"><block ref="b9a9d1475979d9d1c4cd0440dd88810d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6c6e50215d08a8e2a4d4b3b967318d88" category="list-text">选择 * 在内部部署 ONTAP 中创建卷 * 作为要创建的资源类型，然后单击 * 应用 * 。</block>
+  <block id="a00fd358a9eee9d23c91c9d79c7b6e51" category="paragraph">此时将显示 _Create Volume in On-Premises ONTAP Action Definition_ 页面。</block>
+  <block id="75ded3aff94ceea416f4a8ab89a32002" category="inline-image-macro">显示需要填写的空白 Onprem ONTAP 模板的屏幕截图。</block>
+  <block id="89035127115cb3301d3a94b49531ed51" category="paragraph"><block ref="89035127115cb3301d3a94b49531ed51" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b30775865ed56b7c2909b414f5bb5416" category="list-text">* 上下文： * 根据需要输入内部 ONTAP 工作环境上下文。</block>
+  <block id="27ca463515b4c83e76d5222e013a0079" category="paragraph">当用户从模板信息板启动模板时（不在工作环境环境环境中），他们需要选择工作环境， SVM 以及要创建卷的聚合。</block>
+  <block id="6b8f1d602895dd119fb811094bedb73b" category="list-text">* 使用情况配置文件： * 选择是否对卷应用 NetApp 存储效率功能。其中包括精简配置，重复数据删除和数据压缩。</block>
+  <block id="40e5030f72431662e47f324512075e1a" category="paragraph">如果模板值已正确完成，则 " 在内部部署 ONTAP 中创建卷 " 框会添加一个绿色复选标记。</block>
+  <block id="b74bc7581cece8a120da088eb00d917f" category="list-text">在左上方输入模板名称。</block>
+  <block id="679e23d213be6214a99d26fb979d6001" category="paragraph">此时将创建此模板，并将您返回到显示新模板的模板信息板。</block>
+  <block id="216d716a4c08d31f3e40260ee58f2904" category="section-title">为 Cloud Volumes ONTAP 工作环境创建模板</block>
+  <block id="0d489881f98fefa7f8b791c4f4e7d7a1" category="paragraph">您可以使用模板创建单节点或高可用性 Cloud Volumes ONTAP 工作环境。</block>
+  <block id="07b221aacb78d81a6389d6512f7b46cc" category="list-text">此支持目前仅适用于 AWS 环境。</block>
+  <block id="cc46cd379c9c1e14c8c28bca9392395f" category="list-text">此模板不会在工作环境中创建第一个卷。要创建卷，必须在模板中添加 " 在 Cloud Volumes ONTAP 中创建卷 " 操作。</block>
+  <block id="af78f376877c8c8c70d830fc500a2cca" category="inline-link">如何在 AWS 中启动单节点 Cloud Volumes ONTAP 系统</block>
+  <block id="27b91813df07253f9b34c2c33a28dc25" category="inline-link">AWS 中的 Cloud Volumes ONTAP HA 对</block>
+  <block id="418f4922cc1e2119f950d8b304057241" category="paragraph">请参见<block ref="17218100ebd265ac766a5fc208b6c6f8" category="inline-link-rx"></block> 或<block ref="fdfa6348617f66045251f1495e58b8bb" category="inline-link-rx"></block> 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。</block>
+  <block id="982967d26b8426889a4c2982331cbefe" category="paragraph"><block ref="982967d26b8426889a4c2982331cbefe" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40bb655abcddd337fbc3dc9a23c1c92b" category="list-text">选择 * 在 AWS 中创建工作环境（单节点） * 或 * 在 AWS 中创建工作环境（高可用性） * 作为要创建的资源类型，然后单击 * 应用 * 。</block>
+  <block id="e8547bfeacec12f30aa5d7de4fbd86b4" category="paragraph">在此示例中，将显示 _Create Working Environment in AWS （ single node ） _ 页面。</block>
+  <block id="d70355e885e82b6e2a9347467809fc82" category="inline-image-macro">屏幕截图显示了您需要填写的空白 Cloud Volumes ONTAP 工作环境模板。</block>
+  <block id="3232ff2033d10cf395332723ec31481e" category="paragraph"><block ref="3232ff2033d10cf395332723ec31481e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ab59d67e05a3f51373ba331faa69f02e" category="list-text">* 详细信息和凭据 * ：选择要使用的 AWS 凭据，输入工作环境名称，并根据需要添加标记。</block>
+  <block id="09eb13e81cc007418ee8fa04feb8088f" category="paragraph">本页中的某些字段是不言自明的。下表介绍了可能需要指导的字段：</block>
+  <block id="2daf1cb573c2c61422faf64610cf9402" category="cell">凭据</block>
+  <block id="64917fe8c1577c91426bd43a4aef38db" category="cell">这些是 Cloud Volumes ONTAP 集群管理员帐户的凭据。您可以使用这些凭据通过 ONTAP System Manager 或其 CLI 连接到 Cloud Volumes ONTAP 。</block>
+  <block id="2cebc28eab2cacd2695a37777c14a93f" category="cell">工作环境名称</block>
+  <block id="98fed17197f2edc82ba68578c571fdbe" category="cell">Cloud Manager 使用工作环境名称来命名 Cloud Volumes ONTAP 系统和 Amazon EC2 实例。如果您选择了预定义安全组的前缀，则它还会使用该名称作为前缀。单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定工作环境名称必须具有特定前缀或后缀，它包含 _ 个特定字符，或者它遵循您输入的正则表达式（ regex ）中的规则。</block>
+  <block id="b94b3141dd708a0d291780bdda339320" category="cell">AWS 标记是 AWS 资源的元数据。Cloud Manager 将这些标记添加到 Cloud Volumes ONTAP 实例以及与该实例关联的每个 AWS 资源。有关标记的信息，请参见<block ref="9bd250e03cdf80384a24635f16673602" category="inline-link-rx"></block>。</block>
+  <block id="6101eef8fd3b11affed5baa0379eb7b5" category="inline-link">AWS 工作表</block>
+  <block id="21e39bab34fec6294e31fe4e65b232c7" category="list-text">* 位置和连接 * ：输入您在中记录的网络信息<block ref="837a3d1b1486e7cc7dba08a5d4a77996" category="inline-link-rx"></block>。其中包括 AWS 地区， VPC ，子网和安全组。</block>
+  <block id="6f27ddf091b10f1dfd4ab13be0759ec7" category="paragraph">如果您有 AWS 前台，则可以通过选择前台 VPC 在该前台部署单节点 Cloud Volumes ONTAP 系统。体验与 AWS 中的任何其他 VPC 相同。</block>
+  <block id="e01401f96474df4861317e5b4493deca" category="list-text">* 身份验证方法 * ：选择要使用的 SSH 身份验证方法：密码或密钥对。</block>
+  <block id="94b720129da1fad395a78adb9dd8004f" category="list-text">* 数据加密 * ：不选择数据加密或 AWS 管理的加密。</block>
+  <block id="8d4e0ae3c5be71d9c725659a6203fb6f" category="paragraph">对于 AWS 管理的加密，您可以从您的帐户或其他 AWS 帐户中选择其他客户主密钥（ CMK ）。</block>
+  <block id="7238e3ed6732433c6a3fc43c882f2749" category="inline-link">了解如何为 Cloud Volumes ONTAP 设置 AWS KMS</block>
+  <block id="2dff4bc0654f658707793fc687e4a17f" category="paragraph"><block ref="aab3f238743393f06eea77a640671e14" category="inline-link-rx"></block>。</block>
+  <block id="84fee0ef7a3aad23dfb27e9c3b17b961" category="list-text">* 充电方法 * ：指定要在此系统中使用的充电选项。</block>
+  <block id="9dbd3ac8bddbf4313a163e34e79476bf" category="inline-link">了解这些充电方法</block>
+  <block id="c2e9e869bf938477d84b552043f7a81a" category="paragraph"><block ref="0cc5783cded63ddb149e3f9f53e8f86e" category="inline-link-rx"></block>。</block>
+  <block id="8ac4cd210de5bd5fe91a871c186e8be3" category="list-text">* NetApp 支持站点帐户 * ：选择一个 NetApp 支持站点帐户。</block>
+  <block id="f6b1eeef6a894819bc1138daa571ecaa" category="list-text">* 预配置软件包 * ：从四个预配置软件包中选择一个，该软件包将确定在工作环境中创建的卷的多个因素。</block>
+  <block id="cb2bbd3723ec0171f93e30cb1d35ebc4" category="list-text">* SMB 配置 * ：如果您计划在此工作环境中使用 SMB 部署卷，则可以设置 CIFS 服务器和相关配置要素。</block>
+  <block id="80a0d065fe120a53a92d1cbae6bd3fa2" category="paragraph">如果模板值已正确完成，则会在 "Create work Environment in AWS （ single node ） " 框中添加一个绿色复选标记。</block>
+  <block id="daa7684c9693e9b5412a05c7d060a1ef" category="inline-image-macro">加号按钮</block>
+  <block id="abd25867aae2404fdbef96ae0b0057ee" category="inline-xref">为 Cloud Volumes ONTAP 卷创建模板</block>
+  <block id="520d34c754a3e963e32a0fc19ab1421c" category="list-text">您可能需要在此模板中添加另一项操作，以便为此工作环境创建卷。如果是，请单击 <block ref="f928d2751b49d5f69d575bc7f78c5aae" category="inline-image-macro-rx" type="image"></block> 并添加该操作。请参见操作说明 <block ref="f498f1e6b10c72f9f04179db4da15305" category="inline-xref-macro-rx"></block> 了解详细信息。</block>
+  <block id="6375b33aa338dc1017d6313b28a3c363" category="section-title">使用模板查找现有资源和启用服务的示例</block>
+  <block id="68f7b83818f20b7e8979e2dda6a61b21" category="paragraph">使用 _find existing resources_ 操作，您可以查找特定的工作环境或查找现有卷并在这些卷上启用云服务。此操作提供了各种筛选器，因此您可以缩小搜索范围，仅搜索您感兴趣的资源。</block>
+  <block id="595f244394c7e3873ac213fc3b4a7521" category="admonition">此时，您只能在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您只能在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。</block>
+  <block id="3f20fe561065439fa56df3c9ca94e6ed" category="section-title">查找现有卷并激活 Cloud Backup</block>
+  <block id="0ba4ecc2c8a2452e16fbf3776c91fda1" category="paragraph">通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略。因此，这些工作环境中未来的所有卷都可以使用相同的备份策略。</block>
+  <block id="6d0c20318ee7bcc13d58fa262e33c7d2" category="inline-image-macro">显示如何从添加新操作页面中选择查找现有资源操作的屏幕截图。</block>
+  <block id="0e9d27a36a1187dea1616df501ce108d" category="paragraph"><block ref="0e9d27a36a1187dea1616df501ce108d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="11c981e1d4ed40ea0925d9ae06dae41f" category="list-text">选择 * 查找现有资源 * 作为要定义的操作类型，然后单击 * 应用 * 。</block>
+  <block id="1b733abaf243d15600d33f844e9bdc13" category="paragraph">此时将显示 _Find Existing Resources Action Definition_ 页面。</block>
+  <block id="10798727522d9d9973a80cddbbd083ac" category="inline-image-macro">屏幕截图显示了一个空白的 " 查找现有资源 " 模板，您需要填写此模板。</block>
+  <block id="23b2538202f81713f750e06e99508701" category="paragraph"><block ref="23b2538202f81713f750e06e99508701" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d453807788f3b6bbd3ea47f9cbe56875" category="list-text">* 操作名称 * ：输入自定义操作名称，而不是默认值。例如， " 在集群 ABC 上查找大型卷并启用备份 " 。</block>
+  <block id="463c18d84d5e845ea1d485923b7349ce" category="list-text">* 资源类型： * 选择要查找的资源类型。在这种情况下，您可以选择 * Cloud Volumes ONTAP 中的卷 * 。</block>
+  <block id="7d61d7a876b512b9951ebcd6b058cc77" category="paragraph">这是此操作唯一需要的条目。您可以单击 * 立即继续 * ，此时将收到环境中所有 Cloud Volumes ONTAP 系统上所有卷的列表。</block>
+  <block id="af2373ef86f3287751a203259821db48" category="paragraph">相反，建议您填写几个筛选器，以减少要应用 Cloud Backup 操作的结果数（在本例中为卷）。</block>
+  <block id="759a269bf5c05fa6647b728a4b6acab7" category="list-text">在 _context_ 区域中，您可以选择特定的工作环境以及有关该工作环境的其他一些详细信息。</block>
+  <block id="70b9fbef4c70dff460de52b0d7c1eb40" category="inline-image-macro">显示可应用于 " 查找现有资源 " 模板的上下文筛选器的屏幕截图。</block>
+  <block id="7a978f856247996229928441e0d8ef1d" category="paragraph"><block ref="7a978f856247996229928441e0d8ef1d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7ce9821e289ff97c6897cdf26f259fa8" category="list-text">在 _Details_area 中，您可以选择卷名称和卷大小。</block>
+  <block id="f3ab419ac906615be19ae0d551c2ddd6" category="paragraph">对于卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。</block>
+  <block id="8567823797f59455548dc8dd1f03f80e" category="paragraph">对于卷大小，您可以指定一个范围；例如，介于 100 GiB 和 500 GiB 之间的所有卷。</block>
+  <block id="be9642dda4ebe2b728f2c474b3d3a411" category="inline-image-macro">屏幕截图显示了可应用于 " 查找现有资源 " 模板的详细信息筛选器。</block>
+  <block id="817d077440da0b77af9b35e673301360" category="paragraph"><block ref="817d077440da0b77af9b35e673301360" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c253b1193d9cac2bb6fdffc90caab002" category="list-text">单击 * 继续 * ，页面将更新以显示您在模板中定义的搜索条件。</block>
+  <block id="9fc88e3f72037f83544b6dc4a0f0e114" category="inline-image-macro">显示为查找现有资源模板定义的搜索条件的屏幕截图。</block>
+  <block id="7dd1bb02dcba000872f2025a15ad1520" category="paragraph"><block ref="7dd1bb02dcba000872f2025a15ad1520" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a8bf8eaff65aa0f4ae0660056e385701" category="list-text">单击 * 立即测试搜索条件 * 以查看当前结果。</block>
+  <block id="27d7b10352920ea311d933853a157434" category="inline-image-macro">编辑铅笔图标</block>
+  <block id="33e49b40585f164240484bc804e648ef" category="list-text">如果结果与您的预期不同，请单击 <block ref="8e860c5cca0144ac9d126d75205476b6" category="inline-image-macro-rx" type="image"></block> 在 _Search Criteria_ 旁边，进一步细化搜索范围。</block>
+  <block id="95d491c21e0c934c6282c13d886a25c9" category="list-text">如果结果正常，请单击 * 完成 * 。</block>
+  <block id="902215290e82837ad3918c6de3db9e64" category="paragraph">已完成的 _find existing resources_ 操作将显示在编辑器窗口中。</block>
+  <block id="9979d1ff76d2ea7068844b0cfd0bdb76" category="list-text">单击加号以添加其他操作，选择 * 启用卷上的云备份 * ，然后单击 * 应用 * 。</block>
+  <block id="7ebacdda898134e4d1b0a44a8ce8b373" category="paragraph">此时将向窗口添加 _Enable Cloud Backup on Volume_ 操作。</block>
+  <block id="bbc24d39829a188624fd31cd99972f84" category="inline-image-macro">显示向模板添加 Cloud Backup 操作的步骤的屏幕截图。</block>
+  <block id="a4cbf43d9463d6f510a4d2c7af8800f2" category="paragraph"><block ref="a4cbf43d9463d6f510a4d2c7af8800f2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="629026899287206b23bf1b8d05d2e57c" category="inline-xref">向卷添加备份功能</block>
+  <block id="0864e2983319d781f957de96128569d4" category="list-text">现在，您可以按中所述定义备份条件 <block ref="567736f0dbefe603b86c06be6821957e" category="inline-xref-macro-rx"></block> 以便模板将正确的备份策略应用于从 _find existing resources_ 操作中选择的卷。</block>
+  <block id="2cd168ea59a502ef9e27e6003134ad57" category="list-text">单击 * 应用 * 保存对备份操作所做的自定义设置，然后在完成后单击 * 保存模板 * 。</block>
+  <block id="fb88189ee911a47d2e0e233fefd1523c" category="section-title">查找现有工作环境</block>
+  <block id="1399c696c7891af3d1972a47be151f0a" category="paragraph">使用 _find existing resources_ 操作，您可以找到工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。</block>
+  <block id="ee14a216e8a337c2bb79d6d82521a077" category="paragraph"><block ref="ee14a216e8a337c2bb79d6d82521a077" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="68ad7010ce50e08f51cc603a02813591" category="list-text">* 操作名称 * ：输入自定义操作名称，而不是默认值。例如， " 查找包括达拉斯的工作环境 " 。</block>
+  <block id="d12d07cdc05a227cd72eb672e87e4f6a" category="list-text">* 资源类型： * 选择要查找的资源类型。在这种情况下，您应选择 * 工作环境 * 。</block>
+  <block id="293a4f358df2db5ec8b84c40b989f884" category="paragraph">这是此操作唯一需要的条目。您可以单击 * 立即继续 * ，此时将收到环境中所有工作环境的列表。</block>
+  <block id="8be93188ada53e1878b3d730f33c567d" category="paragraph">建议您填写几个筛选器以减少结果数量（此处为工作环境）。</block>
+  <block id="8a6cf07a7afb6950374a6137dd3207ed" category="list-text">在 _Details_区域 中定义了一些筛选器后，您可以选择特定的工作环境。</block>
+  <block id="e4b9d87ee0a05c6ace352d34259ff623" category="list-text">单击 * 继续 * 以保存设置，然后单击 * 完成 * 。</block>
+  <block id="04589f02205d83ab5273554763f29cef" category="list-text">在左上方输入模板名称，然后单击 * 保存模板 *</block>
+  <block id="1c2460f99ff766a130c121d2511fc817" category="section-title">使用模板启用服务的示例</block>
+  <block id="411375f96ccfa37e0dbc3d0cc4f2819d" category="paragraph">通过服务模板，您可以在新创建的卷上激活 Cloud Backup ， Cloud Data sense 或 Replication （ SnapMirror ）服务。</block>
+  <block id="d09587f155f4de501e417ae05bd6c246" category="section-title">向卷添加备份功能</block>
+  <block id="1ccabcbf7b43011ff18a0521cbf426d2" category="paragraph">创建卷模板时，您可以使用在模板中添加要定期创建卷备份的模板<block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block> 服务</block>
+  <block id="8e50b75e57684da1ad2c63f7281c1bb2" category="admonition">此操作不适用于 Azure NetApp Files 卷。</block>
+  <block id="cc7c4a3dbe40e7192b900e2b4a3f22d4" category="inline-image-macro">页面的屏幕截图，用于为卷启用备份功能。</block>
+  <block id="3a5623787eadb0de7109dbf1472e4723" category="paragraph"><block ref="3a5623787eadb0de7109dbf1472e4723" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="390ceefd694c59851dd3cce7b5560a77" category="list-text">* 策略 * ：选择要使用的备份策略。</block>
+  <block id="2ec2f9ba216ad598e0f2a06ca8613ab2" category="list-text">* 上下文 * ：默认情况下，系统会为工作环境， Storage VM 和卷填充变量，以指示您将为先前在此同一模板中创建的卷创建备份。因此，如果您希望这样做，您就可以完全满足要求。</block>
+  <block id="45c479a3827985134b6c11fc5b56fe19" category="inline-link-macro">填写上下文字段</block>
+  <block id="55ec93141dffeda07c8ca26ba1fa8f75" category="paragraph">如果要为其他卷创建备份，可以手动输入这些详细信息。请参见操作说明 <block ref="be096e16163144495d696eb6dce624e2" category="inline-link-macro-rx"></block> 以指示其他卷。</block>
+  <block id="1af1dabe0aa1f41e5209035cdc7e766d" category="list-text">单击 * 应用 * 以保存所做的更改。</block>
+  <block id="b5c5217c35ca5ffa37ec218b349e4d8e" category="section-title">向卷添加数据感知功能</block>
+  <block id="7da7de40922950422b249e15e2c3102a" category="paragraph">创建卷模板时，您可以使用在模板中添加要扫描卷的合规性和分类的内容<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block> 服务</block>
+  <block id="b6af640e26399bc8467a4465b802ea47" category="inline-image-macro">页面的屏幕截图，用于为卷启用扫描功能。</block>
+  <block id="3f95813bf3f9fe4ef1653df2a79b2b7d" category="paragraph"><block ref="3f95813bf3f9fe4ef1653df2a79b2b7d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="273ef973fddf0605397f60b2a725e43e" category="list-text">* 上下文 * ：默认情况下，系统会为工作环境，卷名称，卷 UUID ，卷路径和协议填充变量，以指示您将扫描先前在此同一模板中创建的卷的数据。因此，如果您希望这样做，您就可以完全满足要求。</block>
+  <block id="38c9050a05ab7ae3bc16a77a1ce8e787" category="paragraph">如果要扫描其他卷的数据，可以手动输入这些详细信息。请参见操作说明 <block ref="be096e16163144495d696eb6dce624e2" category="inline-link-macro-rx"></block> 以指示其他卷。</block>
+  <block id="e0c791fcd9f870d36b0118528bd195c2" category="section-title">向卷添加复制功能</block>
+  <block id="8c340dc334134096f68b880b42a8692c" category="inline-link">Replication</block>
+  <block id="df4d3e197dd1d9726bb6d04f4f1e8c3b" category="paragraph">创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据<block ref="cce583fd996b3229b9a775a453c32d13" category="inline-link-rx"></block> 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。</block>
+  <block id="8dcc2a374ce8c093526cc5152324230d" category="paragraph">复制功能包括三个部分：选择源卷，选择目标卷以及定义复制设置。下面将介绍每个部分。</block>
+  <block id="4da2d6a9396d0b82185925638b423b25" category="list-text">* 源详细信息 * ：输入要复制的源卷的详细信息：</block>
+  <block id="cfae220ef6bc70299c0d06988e12e0b6" category="inline-image-macro">用于定义复制源卷位置的页面的屏幕截图。</block>
+  <block id="db81be12438b4e3c3bdf3beca6e831f7" category="paragraph"><block ref="db81be12438b4e3c3bdf3beca6e831f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a91218a8b9b25c1cc8cec554d31e45c0" category="list-text">默认情况下，系统会为工作环境， Storage VM 和卷填写前三个变量，以指示您将复制先前在此同一模板中创建的卷。因此，如果您希望这样做，您就可以完全满足要求。</block>
+  <block id="7983c642c200e679fc182d6cda6332be" category="paragraph">如果要复制其他卷，可以手动输入这些详细信息。请参见操作说明 <block ref="be096e16163144495d696eb6dce624e2" category="inline-link-macro-rx"></block> 以指示其他卷。</block>
+  <block id="f5eccf7ec10f562fd7945167b11881ca" category="list-text">复制要求源和目标工作环境通过其集群间 LIF 进行连接。输入源工作环境的集群间 LIF IP 地址。</block>
+  <block id="174102b086067ead19a50d7ce2f8211a" category="paragraph">要获取此信息，请双击工作环境，单击菜单图标，然后单击信息。</block>
+  <block id="af686206beaeefe98fe2a5a5cac4ffec" category="list-text">* 目标详细信息 * ：输入有关将通过复制操作创建的目标卷的详细信息：</block>
+  <block id="c5c1dec1eb73121500306c6b9b8bd6c6" category="inline-image-macro">用于定义复制目标卷位置的页面的屏幕截图。</block>
+  <block id="5cf0c8384bbad7232646ccbe04ed32b0" category="paragraph"><block ref="5cf0c8384bbad7232646ccbe04ed32b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99b3d3bf418d271f350304cf1acdcd45" category="list-text">选择要创建卷的工作环境。</block>
+  <block id="faccd2324eec8e1960bb88fd7aa8cdb6" category="list-text">选择卷所在的 Storage VM 。</block>
+  <block id="34a5bd93b44b1a265bd952eb2c9f4c52" category="list-text">将卷复制到 Cloud Volumes ONTAP 集群（而不是本地 ONTAP 集群）时，您需要指定目标提供程序（ AWS ， Azure 或 GCP ）。</block>
+  <block id="744304af5427c93a0de90b14d5d0a697" category="list-text">将卷复制到 Cloud Volumes ONTAP 集群时，您可以指定是否在目标卷上启用卷分层。</block>
+  <block id="8658f363929ef58e4d7bb3ba3dfa8f72" category="list-text">对于目标卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。</block>
+  <block id="5fa8f034006e1b96b6e2a47890b3ae33" category="list-text">复制要求源和目标工作环境通过其集群间 LIF 进行连接。输入目标工作环境的集群间 LIF IP 地址。</block>
+  <block id="7fcd5d25a42a71b6edb4a94ce9593493" category="list-text">选择卷所在的聚合。</block>
+  <block id="cd5d05c14061b6263cc650d83d3d5659" category="list-text">将卷复制到 Cloud Volumes ONTAP 集群（而不是本地 ONTAP 集群）时，您需要指定要用于新卷的磁盘类型。</block>
+  <block id="4d10b6637923bf1b343d93d2f5f97467" category="list-text">* 复制详细信息 * ：输入有关复制操作类型和频率的详细信息：</block>
+  <block id="e735bf2a268997d317453aed9b1e1464" category="inline-image-macro">页面的屏幕截图，用于定义此关系的复制设置。</block>
+  <block id="6903a733d838513debd657e6e4b52918" category="paragraph"><block ref="6903a733d838513debd657e6e4b52918" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2e05b02199241577d21f467e3a216fc1" category="inline-link">复制策略</block>
+  <block id="23647b4aee667229f438bac6d37c6f14" category="list-text">选择<block ref="fce626f96b8a582bd914af9774e3f4bd" category="inline-link-rx"></block> 要使用的。</block>
+  <block id="28b7ceda6afe52e7cddb056ae1cc1b42" category="list-text">选择一次性副本或重复复制计划。</block>
+  <block id="a890fcd17657bbd0255d609a9ac66f87" category="inline-link-macro">请在漂移报告中查看这种情况</block>
+  <block id="550aba8dd2351fcca6220e9726d1b0b4" category="list-text">如果希望偏移报告包含 SnapMirror 关系的复制运行状况以及滞后时间，状态和上次传输时间，请启用复制运行状况监控。 <block ref="e9afe1d61d7f4e2024b782abd0cbb1af" category="inline-link-macro-rx"></block>。</block>
+  <block id="a17ec67a32a0998705df91c25c3b8420" category="list-text">选择是否要设置传输速率限制，然后输入可传输数据的最大速率（以 KB/ 秒为单位）。您可以输入一个固定值，也可以提供最小值和最大值，并让存储管理员在该范围内选择一个值。</block>
+  <block id="e03c4d2a8455ec2482acf1f509382257" category="section-title">创建模板后要执行的操作</block>
+  <block id="856a9d1850ea33e764f9c6e201455be4" category="paragraph">创建模板后，您应通知存储管理员在创建新的工作环境和卷时使用此模板。</block>
+  <block id="73d6735a0765fae8b09bab1a9aa14293" category="inline-link-macro">使用模板创建资源</block>
+  <block id="916d7a2812bff61e120f6cb051a97f08" category="paragraph">您可以将其指向 <block ref="00987a40189f413ef051200970901187" category="inline-link-macro-rx"></block> 了解详细信息。</block>
+  <block id="a0aa6f0787dc9e06db535b8b92d3da0a" category="section-title">编辑或删除模板</block>
+  <block id="ffb2a1eed8ad8c67507aad3d1a39caa3" category="paragraph">如果需要更改任何参数，您可以修改模板。保存更改后，从模板创建的所有未来资源将使用新参数值。</block>
+  <block id="47ea4ecfbdf34424db879d30ee9d311b" category="paragraph">如果您不再需要某个模板，也可以将其删除。删除模板不会影响使用该模板创建的任何资源。但是，删除模板后，无法执行任何偏移合规性检查。</block>
+  <block id="b44b7e1f0ab25d2be436ede5d937b8c0" category="inline-image-macro">显示如何修改模板或删除模板的屏幕截图。</block>
+  <block id="e11c8770592f0241028d35b02f4f9619" category="paragraph"><block ref="e11c8770592f0241028d35b02f4f9619" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3b35f794b6029f799ac51ebc0e6aa73" category="section-title">创建模板副本</block>
+  <block id="03332676c38cbd1189f2240710881e3a" category="paragraph">您可以创建现有模板的副本。如果您要创建与现有模板非常相似的新模板，这可以节省大量时间。只需使用新名称进行复制，然后您可以编辑此模板以更改使此模板唯一的几个项。</block>
+  <block id="763165e5bc9a9a1c445da7d2ef9edaf1" category="inline-image-macro">显示如何复制模板的屏幕截图。</block>
+  <block id="45a0059a48c059287929332e05648327" category="paragraph"><block ref="45a0059a48c059287929332e05648327" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
+  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
+  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
+  <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">有关 Cloud Manager 3.9 的注意事项</block>
+  <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
+  <block id="b5b938da8856a26053eadd6c64760087" category="inline-link-macro">应用程序模板注意事项</block>
+  <block id="c5339dceaf3a5c5a6c1b7dc27a40604b" category="list-text"><block ref="c5339dceaf3a5c5a6c1b7dc27a40604b" category="inline-link-macro-rx"></block></block>
+  <block id="f56a22734fbef43dcef97b492e9cd352" category="summary">在构建模板时，您可以使用某些功能在操作之间传递值（例如卷名称），在有条件的情况下分支以将操作连接在一起（在新卷上启用备份），以及帮助用户在使用此模板时自定义资源。</block>
+  <block id="889ecb758e53f24c9efd4553bc09c14a" category="doc">模板组件</block>
+  <block id="4312f94678a5f3a99677eff317710d96" category="section-title">特殊模板控件</block>
+  <block id="d5e78bfdae44e43da50bb405d5cd401f" category="paragraph">在开始创建模板之前，您应了解在模板中预先填充参数值时可以设置的一些特殊选项。</block>
+  <block id="f7951f72b872a8abe85b8d46142331e7" category="inline-image-macro">您可以为参数值设置的选项的可编辑和偏移屏幕截图。</block>
+  <block id="f20206d79ec146d281beed50d8e29708" category="paragraph"><block ref="f20206d79ec146d281beed50d8e29708" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="92c1f46b9da02a5d7bbcff6543bd9588" category="section-title">可编辑复选框</block>
+  <block id="3f8e4e6365aa394b3479fdef75fe9f72" category="paragraph">选中此框可使存储管理员覆盖您在模板中输入的预填充值。这样，存储管理员就可以为该值提供建议，但可以在创建资源时自定义该值。</block>
+  <block id="c1740fe5b39f93f6c892f09718e037b2" category="paragraph">如果未选中此复选框，则用户无法更改此值，并且管理员部署资源时始终会使用模板中的硬编码值。</block>
+  <block id="c476134c72fb48531290a4040a823edc" category="section-title">Drift 复选框</block>
+  <block id="85ae8cb8d8b796e60de4989a08de70c5" category="paragraph">选中此框可使 Cloud Manager 监控使用模板创建资源时为参数输入的硬编码值。稍后，您可以运行 " 漂移报告 " 来查看哪些配置了 " 漂移 " 的字段不再符合模板设置。</block>
+  <block id="b24825d81b9d78c2ec0b3766ce0f0e29" category="paragraph">如果未选中此复选框，则用户可以在创建资源后将此值更改为任何值。</block>
+  <block id="dc61d8962272ba87fc289d3611028a92" category="admonition">要使偏移功能正常工作，在为模板中的某些参数定义偏移后，必须为此模板启用偏移功能。这是创建模板的最后一步。如果为某个参数启用了偏移，但尚未在模板上启用该偏移，则该偏移将不起作用。</block>
+  <block id="14425fa948dd33c64b1ac596d827664d" category="section-title">在字段中使用正则表达式（ regex ）</block>
+  <block id="789deba0d8cee492441e0edbdd3b1443" category="paragraph">模板中有几个字段可用于输入正则表达式以定义管理员可以在字段中输入的值，例如 " 卷名称 " 和 " 共享名称 " 。</block>
+  <block id="92d0236acb01b23304b36e13b20df879" category="inline-image-macro">使用正则表达式定义卷名称允许的值的屏幕截图。</block>
+  <block id="8618076424bfb56bff4b8d378642afb7" category="paragraph"><block ref="8618076424bfb56bff4b8d378642afb7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bd79c94f5c040103b6ee92a27142a209" category="paragraph">例如，如果您输入 "^ [a-zA-Z][0-9a-zA-Z_] ｛ 0 ， 149 ｝ $" 作为卷名称的正则表达式，则表示 "_the name should start with an alife character ， it can contain only numbers ， letters ， or the underscore ， and it should be 150 or fewer characters in lage_".</block>
+  <block id="d9b7b2a8c18514b566365444476ee67b" category="section-title">在模板操作之间传递值</block>
+  <block id="49c2ea485e68d2177e58bb2d451473c8" category="paragraph">模板可以使用先前操作中的信息在未来操作中填充字段。例如，在定义要启用 Cloud Backup 功能的卷的名称时，您可以指示备份操作使用在创建 Cloud Volumes ONTAP 操作中输入的存储管理员值作为卷的名称。</block>
+  <block id="317d9ac287a0bb30f0b154a9372237b4" category="paragraph">AppTemplate 服务可以使用三种类型的信息：</block>
+  <block id="79bc4a04a5f308a67f608558bf0e314a" category="list-text">输入值—这是存储管理员在先前模板操作的字段中输入的实际值。</block>
+  <block id="86d263367d069f32b10ed5bb15d5876b" category="list-text">输出值—这是 Cloud Manager 通过先前的模板操作创建资源后生成的值。</block>
+  <block id="cb1be534cc7a13fb27acf340f07c83b6" category="list-text">输入您自己的值—这是您输入的值；不能通过模板中的先前操作访问它。</block>
+  <block id="fc8fb6e55d63eccfe4d2093ef3d494bf" category="paragraph">例如，要对卷启用合规性扫描， Cloud Data sense 服务既需要存储管理员输入的 " 卷名称 " （输入值），也需要 Cloud Manager 在创建卷时生成的 " 卷 uuid" （输出值）。</block>
+  <block id="536e2c2dd1b0f2e4362deffc386760c4" category="paragraph">下图显示了如何在模板的 " 云数据感知操作 " 部分中输入此信息。</block>
+  <block id="a4d99746ded90308d15ecf5dc8850229" category="inline-image-macro">显示如何使用在上一操作中输入的值在另一操作中填充字段的图示。</block>
+  <block id="eefa405d25c68122a3d10c7be99b3fed" category="paragraph"><block ref="eefa405d25c68122a3d10c7be99b3fed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e7ffb254a56e57a7a94185e202f98b7" category="section-title">使用条件根据逻辑语句执行不同的操作</block>
+  <block id="933e850f0252230afcc3081c478f82cb" category="paragraph">条件指示模板执行不同的操作，具体取决于存储管理员运行模板时条件是 true 还是 false 。您可以通过选择 * 逻辑条件 * 操作来添加条件：</block>
+  <block id="80f465f960c99f0bf9c9dda68bd2ff80" category="inline-image-macro">有关如何在模板中添加条件语句的屏幕截图。</block>
+  <block id="2f732de965d52c1cf23ba8cc9dbdc7b1" category="paragraph"><block ref="2f732de965d52c1cf23ba8cc9dbdc7b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e7972af994bafc7ee1059b02b60c648d" category="paragraph">例如，您可能有一条准则，即如果卷的容量大于 50 GB ，则需要在该卷上启用 Cloud Backup 。如果卷的容量较小，则不会启用 Cloud Backup 。您可以在模板中实施此功能，如下所示。</block>
+  <block id="af1dd10b1395740a8581cea239cb13fc" category="inline-image-macro">屏幕截图显示了如何在模板中使用条件以有条件地启用 Cloud Backup 。</block>
+  <block id="81943cf2af4bc753aa5e517503f627e6" category="paragraph"><block ref="81943cf2af4bc753aa5e517503f627e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d94635611474af73ec85b190b28449bd" category="paragraph">条件包括两部分：</block>
+  <block id="01928da743a4e955b96a5b859c5f4bc4" category="list-text">rules —要检查的项目是否为 true 或 false 。</block>
+  <block id="07876d2610f838d9cb19ae7aeadd98be" category="list-text">和 / 或语句—允许您使用多个规则来进一步细化是否添加其他操作。</block>
+  <block id="c962626fb4ad9b65cc3a4217695f094c" category="paragraph">规则由三部分组成：</block>
+  <block id="7960c7072233e2369dad8e54b3c23d04" category="paragraph">* 源字段 * —从中获取值进行比较的位置。</block>
+  <block id="46b1885cab50ba7f852ee7e4296586b1" category="list-text">从操作中获取输入值—存储管理员在先前模板操作的字段中输入的实际值。</block>
+  <block id="2e1dd6450d9c9986cc77c74a7e699498" category="list-text">从操作中获取输出值—通过先前的模板操作创建资源后生成的值 Cloud Manager 。</block>
+  <block id="ac2e89a4baae83530e11a9c64165f130" category="list-text">输入值 - 这是您输入的值；不能通过模板中的先前操作访问此值。此值可以是已存在的资源的值，例如现有卷。</block>
+  <block id="f7d6dca310f4edc482b1d3bd0cdfb18f" category="paragraph">* 运算符 * —用于比较的运算符。选项包括 * 等效 * ， * 不等 * ， * 大于 * ， * 小于 * ， * 大于或等于 * ， * 小于或等于 * 。</block>
+  <block id="67547dca721bdbf95912a7906fe534d0" category="paragraph">* 字段值 * —要比较的实际值。这些选项与 _Source field_ 的选项相同。</block>
+  <block id="b0d1e1e2323f9c0a905de14efcf597fc" category="paragraph">通过和 / 或语句，您可以根据多个规则的评估结果为 True 还是 False ，在用户运行模板时为其有条件地添加更多操作。* 和 * 要求所有规则均为 true 或 false ， * 或 * 仅要求其中一个规则必须为 true 或 false 。</block>
+  <block id="ebb6a65b01a975d2a1a81fadb941a41c" category="paragraph">在规则中同时使用 AND 和 OR 语句时，评估过程遵循标准数学顺序，即 "and" 在 "or" 前面。例如：</block>
+  <block id="d53609834d8e761d8b38e21f9aa36fda" category="list-text">&lt;Rule1&gt; 或 &lt;Rule2&gt; 和 &lt;Rule3&gt;</block>
+  <block id="313a2072e1da794cb340b46d310d902f" category="paragraph">此语句按以下顺序进行评估： &lt;Rule1&gt; 或（ &lt;Rule2&gt; 和 &lt;Rule3&gt; ）</block>
+  <block id="56d67841b13dbb098570cf7a145dc5e2" category="summary">通过应用程序模板服务，您可以在工作环境中标准化资源创建。例如，您可以在 " 卷模板 " 中硬编码所需的参数，存储管理员稍后使用该模板创建卷时会应用这些参数。这可能包括所需的磁盘类型，大小，协议，快照策略，云提供商， 等等。您还可以为每个创建的卷启用某些服务，例如 Cloud Backup 。</block>
+  <block id="1e224f34533457876fc2705dd7d627b7" category="doc">了解应用程序模板</block>
+  <block id="02bd563567bb9af0bfe52e899eb30ab6" category="paragraph">通过应用程序模板服务，您可以在工作环境中标准化资源创建。例如，您可以在 " 卷模板 " 中硬编码所需的参数，存储管理员稍后使用该模板创建卷时会应用这些参数。这可能包括所需的磁盘类型，大小，协议，快照策略，云提供商， 等等。您还可以为每个创建的卷启用某些服务，例如 Cloud Backup 。</block>
+  <block id="29c77a5a00dda7efae90c176f1eaa37b" category="paragraph">通过模板，存储管理员可以轻松创建针对每个已部署应用程序（例如数据库，电子邮件或流式服务）的工作负载要求进行优化的卷。而且，由于每个卷都是为每个应用程序创建的，因此存储架构师可以更加轻松地使用它。</block>
+  <block id="210f5d9b5eb905e1dad5d3a9236d73af" category="paragraph">应用程序模板具有以下功能和优势：</block>
+  <block id="3a07949495aa0f10524a38b2f8b42ff9" category="list-text">自动化并改进基础架构的设计和开发</block>
+  <block id="628898f2daed85c109f1e353f32ae510" category="list-text">提供一个位置来激活不同的 NetApp 云服务，例如 Cloud Backup 和 Cloud Data sense</block>
+  <block id="b56e74814d72e13b8bd9eb4561010dba" category="list-text">确定已更改且不再符合模板的资源（使用 " 偏移 " 功能）</block>
+  <block id="8c1079a8c3d5e5b11329bf8605fb5f44" category="section-title">什么是 " 漂移 " ？</block>
+  <block id="118aedda50dccbbf52d8108f072f5aed" category="paragraph">"Drift " 允许 Cloud Manager 监控使用模板创建资源时使用的参数值。此时， " 偏差 " 可以确定资源何时发生更改，以便您可以手动进行调整，使其恢复与模板的合规性。将来，我们可以在资源不合规时向您发送通知，甚至可以反转用户的更改，以便从模板创建的所有资源自动恢复合规。</block>
+  <block id="535863b7811f106bde3e7f273a118764" category="inline-link-macro">了解有关漂移的更多信息</block>
+  <block id="ab043d15e26e04a4e88771647e66f422" category="paragraph"><block ref="070f7b254d8faecc6fc5a699202bdab9" category="inline-link-macro-rx"></block>。</block>
+  <block id="04d8b8693a17205c619758eaa8d300e2" category="section-title">可用模板操作</block>
+  <block id="1521fcd4ef1bd7f293c2968ccf8c8162" category="paragraph">模板是一系列 " 操作 " ，其中包含一些预定义值。您可以构建包含以下操作的模板：</block>
+  <block id="d7b818155971ac6a308c49db2d58706d" category="paragraph">* 资源操作： *</block>
+  <block id="afc7000b969456a3160fc4505fb2cc0b" category="list-text">创建 Cloud Volumes ONTAP 卷（在 AWS ， Azure 或 GCP 上）</block>
+  <block id="13a5ac55db7d05c915e23a24a2096643" category="list-text">创建 Azure NetApp Files 卷</block>
+  <block id="aa2021a9b8c47541aa967f65a329bdea" category="list-text">创建内部 ONTAP 卷</block>
+  <block id="4850ffe766acbb8beb6c7c24ebcfaf4b" category="list-text">创建 Cloud Volumes ONTAP 工作环境（ AWS 上的单节点或 HA 系统）</block>
+  <block id="d1287a3b275ab8ba01a5fff6e4888348" category="list-text">查找满足特定条件的现有资源（以便您可以对现有资源应用 " 服务 " 操作）</block>
+  <block id="de66c35536cd0fdc78f33d76a51b81ab" category="paragraph">* 服务操作： *</block>
+  <block id="c7f54fc101fff8114fd0bab318e81454" category="list-text">激活<block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block> 在卷上（不适用于 Azure NetApp Files ）</block>
+  <block id="b691f77f5b87583a1ecac4f114cb70cf" category="list-text">激活<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block> 在卷上</block>
+  <block id="99869d72f8362c5cb7e7d08bc7a9ad39" category="list-text">激活<block ref="f2bb37938a60ba7c308705367c1f4d0b" category="inline-link-rx"></block> 在卷上（不适用于 Azure NetApp Files ）</block>
+  <block id="1872302bd774dd65cb025cb6c760357c" category="paragraph">例如，您可以创建一个用于创建 Cloud Volumes ONTAP 卷的模板。或者，创建 Cloud Volumes ONTAP 卷，然后在该卷上启用 Cloud Backup 。或者创建 Cloud Volumes ONTAP 卷，然后在该卷上启用 Cloud Backup_and_ Cloud Data sense 。</block>
+  <block id="3fb67d827d434a38ea3f2b8aca181ada" category="paragraph">NetApp 将随着时间的推移添加更多操作。</block>
+  <block id="1374295994ebaaa886b32c9c6c0e7031" category="section-title">应用程序模板的工作原理</block>
+  <block id="587ef6992d7b60381821e833b1402f19" category="paragraph">应用程序模板服务由 3 个部分组成。可用模板 " 操作 " ，自定义应用程序模板以及因运行此模板而部署的资源。下图显示了每个组件之间的关系：</block>
+  <block id="f5afa7cf8be08a4f697b8293dad144b2" category="inline-image-macro">创建和使用应用程序模板所涉及的不同用户的示意图。</block>
+  <block id="ecfa39b6560418cfe2345a90c8e7e31b" category="paragraph"><block ref="ecfa39b6560418cfe2345a90c8e7e31b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fed74dbc8e98acceae8b4538b3ad2067" category="paragraph">从较高层面来看，模板的工作原理如下：</block>
+  <block id="83fe213d4e31bface1f9e62afb1dec57" category="list-text">NetApp 定义了可用的模板 " 操作 " 。</block>
+  <block id="d5faf5a6584d91a0f5b4616090f2ec8c" category="paragraph">例如，用于创建 Cloud Volumes ONTAP 卷或 Azure NetApp Files 卷的 " 操作 " 。</block>
+  <block id="1ad8e87e4651a2cc69c46159a02233b3" category="list-text">存储架构师会选择要用于创建应用程序模板的 " 操作 " ，然后对列出的参数的某些值进行硬编码。</block>
+  <block id="2c0f798d8b592eb8938ac2f2c3e3a12a" category="paragraph">例如，他们为 Cloud Volumes ONTAP 卷选择了高速磁盘和大量 RAM ，这些磁盘将用于处理 Oracle 数据库的工作负载。它们要求为每个卷创建备份。</block>
+  <block id="480b6a5d9ee4db8a0ae283b6de8df01f" category="list-text">存储管理员可以使用这些模板创建针对要使用的应用程序进行优化的资源。</block>
+  <block id="f8f85ac75a9d32ac7e4bd19a88c88489" category="paragraph">例如，他们使用为数据库创建的卷模板创建一个要用于 Oracle 数据库的卷。</block>
+  <block id="537f35739e01ac333f01ac9b4cbc3e9f" category="list-text">该服务使用存储架构师确定的 " 偏移 " 功能跟踪模板中定义的某些资源设置。</block>
+  <block id="918477379facc98d5afa72e735ec908b" category="paragraph">应用程序模板功能无需许可，所有 Cloud Manager 用户均可免费使用。</block>
+  <block id="2aa9db43c73bb2f52c729395f9446dd5" category="admonition">通过模板，您可以将云服务应用于已创建的资源，例如，在每个卷上启用 Cloud Backup 。在这种情况下，使用备份服务以及备份文件所使用的对象存储空间需要付费。</block>
+  <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">限制</block>
+  <block id="2dac04d6ed3555b2d2d489b2bc8c35cd" category="list-text">任何 Gov Cloud 地区或无法访问 Internet 的站点均不支持应用程序模板服务。</block>
+  <block id="5853165343224a78fee94389519a9b28" category="list-text">您不能使用模板在现有聚合上创建 Cloud Volumes ONTAP 卷。新卷将在新聚合中创建。</block>
+  <block id="cbabd9bfcb3ce90ea05504c320db481e" category="summary">选择您的组织为创建针对特定工作负载和应用程序优化的工作环境或卷而构建的一个应用程序模板。您还可以通过模板在卷或现有卷上激活 Cloud Backup ， Cloud Data sense 和 Replication （ SnapMirror ）。</block>
+  <block id="2d26910773af1a0f9d4d48400c5c93b1" category="doc">使用模板创建或修改资源</block>
+  <block id="c66b8415e6c06857c4a2df8e4beb665d" category="inline-link">复制（ SnapMirror ）</block>
+  <block id="9552710f5d08d8e046e5e38b40dd0754" category="paragraph">选择您的组织为创建针对特定工作负载和应用程序优化的工作环境或卷而构建的一个应用程序模板。您还可以通过模板激活<block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block>，<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block>，和<block ref="7b4b255123bb321e706fd8a6488dad10" category="inline-link-rx"></block> 在已创建的卷或现有卷上。</block>
+  <block id="5f29105c4fcb4fd7664c9b573f2325b4" category="paragraph">通过模板，您可以为 Cloud Volumes ONTAP ， Azure NetApp Files 和内部 ONTAP 系统创建卷。</block>
+  <block id="e0fb2c2abefd11630ebc42b8a6eb3570" category="list-text">在使用模板为 Cloud Volumes ONTAP ，内部 ONTAP 或 Azure NetApp Files 系统创建卷之前，请确保您有权访问要部署此卷的适当工作环境。</block>
+  <block id="e04a6c526d4b3218b5b39dab077db37c" category="list-text">如果模板激活卷上的云服务，例如<block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block> 或<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block>，确保此服务在您的环境中处于活动状态并已获得许可。</block>
+  <block id="f931f9fe2a71453ad570183c341aa8ad" category="paragraph">选择 * 应用模板 * 服务，然后单击 * 模板 * 选项卡。</block>
+  <block id="8e11a084ad23a73bf5ea573d54dded8e" category="paragraph">选择模板，单击 * 运行模板 * ，然后在可编辑字段中输入值以创建资源。</block>
+  <block id="72e3ca24265542fce89dd834f12f4619" category="list-text">创建 Cloud Volumes ONTAP 卷时，请确保您有一个可用的 Cloud Volumes ONTAP 工作环境。</block>
+  <block id="be34f1201bb3e74c3a66c39a92d09bee" category="list-text">创建内部 ONTAP 卷时，请确保您具有可用的内部 ONTAP 工作环境。</block>
+  <block id="05c907c9bac7ddec874ec0fcb09aad0c" category="list-text">创建 Azure NetApp Files 卷时，请确保您有一个可用的 Azure NetApp Files 工作环境。</block>
+  <block id="a499c28f4eb5f5209b3bea27baae8295" category="list-text">如果模板激活卷上的云服务，例如 <block ref="65043dfb781746b8fde5bfddb319eb97" category="inline-link-rx"></block>，<block ref="4af4db8698c4a0998b2c93dbadcf8efe" category="inline-link-rx"></block>或<block ref="7b4b255123bb321e706fd8a6488dad10" category="inline-link-rx"></block>，确保此服务在您的环境中处于活动状态并已获得许可。</block>
+  <block id="b2da214653ffb084521bfa6c178ff811" category="section-title">选择并运行卷模板</block>
+  <block id="7e74b3cdfd5537c5b51af1069f462892" category="paragraph">可以通过多种方法选择和运行模板来创建新卷。</block>
+  <block id="41ff95e1ea070071cb2436d312ea3115" category="list-text">从工作环境运行卷模板</block>
+  <block id="7d732f0050089fa03a5ccaf0ef3972e8" category="list-text">从模板信息板运行卷模板</block>
+  <block id="2b408048493f7891ab8a18339cbef7b1" category="paragraph">无论选择哪种方法，您都可以在以下部分中查看有关必须定义的所需卷参数的详细信息：</block>
+  <block id="1d4cf496ca25a3cab66cbc73d2b1c000" category="inline-link">如何配置 Cloud Volumes ONTAP 卷</block>
+  <block id="fd2dc88b92570ea35c3a58cc7d5e0985" category="list-text"><block ref="fd2dc88b92570ea35c3a58cc7d5e0985" category="inline-link-rx"></block></block>
+  <block id="96483bf24dd5d282884c28a8c230bfde" category="inline-link">如何配置 Azure NetApp Files 卷</block>
+  <block id="002a9d28d8b22f7755aac03a979f0a60" category="list-text"><block ref="002a9d28d8b22f7755aac03a979f0a60" category="inline-link-rx"></block></block>
+  <block id="df4a9164b01ccf35f74c9520638ad0b7" category="inline-link">如何配置内部 ONTAP 卷</block>
+  <block id="34b8afcdd2d501d158f8dfa46a70068b" category="list-text"><block ref="34b8afcdd2d501d158f8dfa46a70068b" category="inline-link-rx"></block></block>
+  <block id="c07fd60a71244d7a4ab72c83beb068d6" category="section-title">从工作环境运行卷模板</block>
+  <block id="2342f0281f4d2a90f7477ed651c18e7f" category="paragraph">您可以从 _Working Environment_ 页面和 _Volume Details_页面 向现有工作环境添加卷。</block>
+  <block id="847533f76f2539591f2ed541ef5ef72e" category="list-text">在 _Working Environment_ 页面或 _Volume Details_ 页面中，单击 * 从模板添加卷 * 。</block>
+  <block id="0ac913640e05ca365f5a393962934e01" category="inline-image-macro">两个屏幕截图显示了用户如何使用模板创建新卷。</block>
+  <block id="2d892e3cbbb0b29eb197061deb0539cd" category="paragraph"><block ref="2d892e3cbbb0b29eb197061deb0539cd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="866e23a1c4ed5bf233d7e358044b8e25" category="paragraph">此时将显示 _Templates Dashboard_ ，它仅列出适用于选定工作环境的模板，例如，它仅显示 Cloud Volumes ONTAP 模板。</block>
+  <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">更多图标</block>
+  <block id="0107b14a93ef1d128a47eab0a257362b" category="list-text">单击 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 和 * 运行模板 * 。</block>
+  <block id="ef7dd761a51f95d983604b03095ba47b" category="inline-image-macro">显示如何从模板信息板运行模板的屏幕截图</block>
+  <block id="764523b69b476a762d8f6178a65eee14" category="paragraph"><block ref="764523b69b476a762d8f6178a65eee14" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f505856a4a971e934b73488d7faffec5" category="paragraph">此时将显示 _Add Volume from Template_ 页面。</block>
+  <block id="190737142dd783de87873656b362e980" category="list-text">在可编辑字段中输入值以创建卷，然后单击 * 运行模板 * 。</block>
+  <block id="6e3b3a4e03da2c7a0fbae4147925038b" category="inline-image-macro">屏幕截图显示了使用模板创建卷所需定义的参数。</block>
+  <block id="3e4296163753c591705e041795661a6c" category="paragraph"><block ref="3e4296163753c591705e041795661a6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="29dfbe5727531f456e16c418443650fb" category="section-title">从模板信息板运行卷模板</block>
+  <block id="79a5be6184496e04a800701c03275ada" category="paragraph">您可以从 _Templates Dashboard_ 向现有工作环境添加卷。</block>
+  <block id="ab5def1a97337779a1bc393108327177" category="paragraph">此时将显示 _Templates Dashboard_ 。</block>
+  <block id="596f8bd98917485511472f81dd61ef9e" category="list-text">对于要使用的模板，请单击 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 和 * 运行模板 * 。</block>
+  <block id="034adad7c67d2e9a9dd3a8019b40eb84" category="paragraph"><block ref="034adad7c67d2e9a9dd3a8019b40eb84" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a918532ef256d4238d742eaee5308f7f" category="paragraph">此时将显示 _Run Template_ 页面。</block>
+  <block id="80ff21e45244c476e2be6b71de223d38" category="list-text">在可编辑字段中输入值以创建卷，然后单击 * 运行模板 * 。</block>
+  <block id="dbe672112d3378110db8fa7757b6ec30" category="paragraph"><block ref="dbe672112d3378110db8fa7757b6ec30" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0008e4b80c15d6d38bd1f6234a51330c" category="paragraph">请注意，从信息板运行模板时，需要选择工作环境和其他变量（例如 Storage VM 和 / 或聚合）。从工作环境运行模板时，工作环境会自动填充。</block>
+  <block id="9ab493f5de85b8e5a3705fe61fdf293d" category="section-title">选择并运行工作环境模板</block>
+  <block id="01a2a85f3cd4ec0dcb3da1124102db42" category="paragraph">如果贵公司已为此功能创建了模板，则可以从 _Templates Dashboard_ 创建新的工作环境。</block>
+  <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link">在 AWS 中启动 Cloud Volumes ONTAP</block>
+  <block id="03fdeb1a058aa425a68019c66e34e6ca" category="paragraph">如果您对创建工作环境所需的详细信息有任何疑问，请参见<block ref="497bfdbba9caf2f6a6f7d799eda40dc3" category="inline-link-rx"></block>。</block>
+  <block id="6195381a3e6e204f9315912ad2e31d58" category="paragraph"><block ref="6195381a3e6e204f9315912ad2e31d58" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4532596496eaadd10e82985d53d942d9" category="list-text">在可编辑字段中输入值以创建工作环境和第一个卷，然后单击 * 运行模板 * 。</block>
+  <block id="f208614ddd4a42d1fe01800107447f9d" category="inline-image-macro">屏幕截图显示了使用模板创建工作环境所需定义的参数。</block>
+  <block id="c1f52c2315cb68ab5da30355d493efa8" category="paragraph"><block ref="c1f52c2315cb68ab5da30355d493efa8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="798178653cd4f1b33a2dc3600f51d489" category="section-title">选择并运行一个可查找现有资源的模板</block>
+  <block id="8d320e289935a3bc0309b4430f10862f" category="paragraph">您可以运行一个模板来查找某些资源（例如卷），然后在这些资源（例如 Cloud Backup ）上启用云服务（前提是贵公司已使用此功能创建了一个模板）。运行此模板时，您可以进行一些小调整，以便仅将云服务应用于相应的资源。</block>
+  <block id="f256ffa6b4a4136dfb85dcf69983ada2" category="paragraph"><block ref="f256ffa6b4a4136dfb85dcf69983ada2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="026ba222ebdf2fd2c82a0d12c610c566" category="paragraph">此时将显示 _Run Template_ 页面，并立即运行模板中定义的搜索，以查找符合条件的卷。</block>
+  <block id="89c185a4d78a8567859db775ed13246b" category="list-text">在 _Volume Results_ 区域中查看返回的卷列表。</block>
+  <block id="b1fcd481a40253a09785803da0077de9" category="inline-image-macro">显示从查找资源搜索条件返回的卷的屏幕截图。</block>
+  <block id="1dc5726bf39154cb21baff6b494f9fad" category="paragraph"><block ref="1dc5726bf39154cb21baff6b494f9fad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca98aa84984d29ab9e65eedb02a68ba7" category="list-text">如果结果符合您的预期，请使用模板的 _Enable Cloud Backup on Volume_ 部分中的条件选中要启用 Cloud Backup 的每个卷对应的复选框，然后单击 * 运行模板 * 。</block>
+  <block id="f3b757371a9961d5ce7c320198eb268b" category="paragraph">如果结果与您的预期不同，请单击 <block ref="8e860c5cca0144ac9d126d75205476b6" category="inline-image-macro-rx" type="image"></block> 在 _Search Criteria_ 旁边，进一步细化搜索范围。</block>
+  <block id="c6eb5da2af16b1f095636b3b5fc6a252" category="paragraph">此模板将运行，并在您根据搜索条件检查的每个卷上启用 Cloud Backup 。</block>
+  <block id="ad065cba81dd0205f37aa602c122c6aa" category="paragraph">任何错误都会显示在 _Running Your Template_ 页面中，您可以根据需要解决这些问题。</block>
+  <block id="ea71cf04f7239c133ac6882358bee38e" category="summary">您可以使用 Cloud Manager 标记服务查看，添加，修改和删除分配给现有资源的标记。这样，您就可以组织和简化资源管理。</block>
+  <block id="9b07b7a435eb3748887ec84eac33cf64" category="doc">管理资源的标记</block>
+  <block id="f02ce38105e0bd4e1492a696a42fc111" category="section-title">搜索具有特定标记的资源</block>
+  <block id="572b98a402ed12dbaca0370b0814a61c" category="paragraph">如果要查看具有特定标记或特定标记和标记键值的所有资源，可以搜索这些标记。您可以搜索所有资源，也可以仅搜索某些资源类别。</block>
+  <block id="d021504cd210ca3c99557d4026f93fe9" category="list-text">选择 * 应用模板 * 服务，然后单击 * 标记 * 选项卡。</block>
+  <block id="8a4ccdfb1d164c3e3a6da2758ea59afa" category="list-text">如有必要，请在 * 选择凭据 * 字段中选择特定云提供商的凭据。</block>
+  <block id="f58ddfd9537b922f14de15f169e66a44" category="list-text">在 _Resource Type_ 字段中，选择资源，例如 * ONTAP ： CVO ： volume* 以搜索所有 Cloud Volumes ONTAP 卷。</block>
+  <block id="55048905cb51ad2998c06b578a1e485e" category="list-text">在 _Tag Key_ 字段中，选择标记，例如 * Env* ，以将搜索限制为带有 "Env" 标记的卷。</block>
+  <block id="57adb397c0fe3b63204853bc9186e49e" category="list-text">在 _Tag value_ 字段中，选择键值，例如 * 生产 * ，以将搜索范围限定为标记名称为 "Env" 且标记值为 "production" 的卷。</block>
+  <block id="6b02683fa96542dc90cc0d413eec17d1" category="inline-image-macro">选择一组搜索条件以返回具有特定标记键和标记值的资源的屏幕截图。</block>
+  <block id="901753ca5c92cd91b11940a9fac8569a" category="paragraph"><block ref="901753ca5c92cd91b11940a9fac8569a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03e94c53a1f4fdaa62202db4528531d6" category="list-text">单击 <block ref="3fd7363714f2e2423924118bfd6b7147" category="inline-image-macro-rx" type="image"></block> 将此搜索条件添加到搜索区域。</block>
+  <block id="f0586e3a2b694cbeec93e35dd7f9e28e" category="inline-image-macro">添加到搜索行的标记搜索条件的屏幕截图。</block>
+  <block id="05f475f79d5cf10dced9154d17d0b41c" category="paragraph"><block ref="05f475f79d5cf10dced9154d17d0b41c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="604b0f66d5091b97f5e89f0d8da1d314" category="list-text">如果完成了搜索，请单击 * 搜索 * ，搜索结果将显示在 "Resources" 部分中。</block>
+  <block id="88248f0ac65beba333e31aa507b13202" category="inline-image-macro">符合标记搜索条件的资源的结果的屏幕截图。</block>
+  <block id="3e5ec3afb8a45d440659ebaabc265963" category="paragraph"><block ref="3e5ec3afb8a45d440659ebaabc265963" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fb5a5dce727f3d71f986467d11667dcb" category="paragraph">如果要添加其他搜索条件，请再次执行步骤 3 到 6 ，然后单击 * 搜索 * 。</block>
+  <block id="a6e513182fed1ef73b8c8b9327893161" category="section-title">搜索规则</block>
+  <block id="b01996a98368a45c3a5d4d8738338eae" category="paragraph">定义搜索时，请遵循以下规则：</block>
+  <block id="c3bdabf571c3082715580eb6be3e2ca2" category="list-text">选择资源类型后，如果要列出具有任何密钥和任何密钥值的所有资源，可以将标记密钥字段和标记值字段留空。</block>
+  <block id="f9b300b7e39032247e57d7ad64986d1d" category="list-text">您可以选择单个搜索，也可以在 " 资源 " 部分定义多个搜索以细化结果。</block>
+  <block id="659ca7552f6a8fe6a78aea2256b3c46f" category="list-text">定义多组搜索条件时：</block>
+  <block id="1545b6e4202e3be562a850752e48b452" category="list-text">如果两次搜索的条件适用于不同的资源类型，则此操作将被视为 " 或 " 操作，并且结果将显示这两次搜索中的资源。例如，以下搜索将返回具有 "Environment ： dema" 标记值的所有 Azure NetApp Files 卷以及具有 "Environment ： dema" 标记值的所有 Cloud Volumes ONTAP 卷。</block>
+  <block id="9213e2140560ed1d8608498467b31c23" category="paragraph"><block ref="9213e2140560ed1d8608498467b31c23" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bbaf8508cb8ab19b7d4c993760f453ae" category="list-text">如果两次搜索的条件是针对同一资源类型，则此操作将被视为 " 和 " 操作，并且结果仅显示与 * 两次 * 搜索匹配的资源。例如，以下搜索将返回同时具有 "Environment ： dema" 标记值和 "Group ： Finance" 标记值的 Azure NetApp Files 卷。</block>
+  <block id="8ae0853ee1ff58fc47451430f34aa261" category="paragraph"><block ref="8ae0853ee1ff58fc47451430f34aa261" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1e76587827a2c444b42731f500f5f7b9" category="list-text">如果您定义了多个搜索条件，然后决定删除一个，只需单击 <block ref="45d4efe5d85352e2c35a12e8ace91564" category="inline-image-macro-rx" type="image"></block> 以将其从搜索区域中删除。</block>
+  <block id="79eb09e7fc546bf99c72cd7650e9fbb4" category="section-title">向现有资源添加标记</block>
+  <block id="3e44cde650bf6f59b09127a99de693cc" category="paragraph">您可以将标记应用于单个资源或多个资源。这些资源可能具有现有标记或没有当前标记。</block>
+  <block id="4b6fca08a3864d4de4c51a0388dbf758" category="inline-link-macro">查看此时可标记的资源列表。</block>
+  <block id="77d77a7d08e31270683303811b271c71" category="paragraph"><block ref="77d77a7d08e31270683303811b271c71" category="inline-link-macro-rx"></block></block>
+  <block id="0625a37343409c38dad5c4f59fbd1548" category="list-text">从 * 标记 * 选项卡中，创建搜索条件并单击 * 搜索 * 。</block>
+  <block id="073ac7d814e9437e4970cec883c2f383" category="list-text">选择要标记的一个或多个资源。</block>
+  <block id="527c3932c7cf0390db001df885ea8f28" category="list-text">要选择页面上的所有资源，请选中标题行（<block ref="b0be32365b13649b2a4ad63a5c5db9d7" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="af03b66389cfbec8c481c73a89728046" category="list-text">要选择多个资源，请选中每个资源对应的框（<block ref="f3b0afa317fb06ade03449dd632d08e0" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="cb5c297ef8dc3fe424475fa62b79e3e8" category="list-text">要选择单个资源，请单击 <block ref="e7e0e095d9ce72479b1102c3b9ff5a5b" category="inline-image-macro-rx" type="image"></block> 资源图标。</block>
+  <block id="cff1dfada6d6b7b98fd30ee02a0d1db9" category="inline-image-macro">显示如何选择单个资源，多个资源或所有资源的屏幕截图。</block>
+  <block id="b57ec2fd08f04b37b6a4067b53b493c2" category="paragraph"><block ref="b57ec2fd08f04b37b6a4067b53b493c2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="953499073a80db33d37fc0e65d574cd3" category="list-text">单击 * 管理标记 * ，此时将显示 _Resource Tags 对话框。任何现有标记将显示在此对话框中。</block>
+  <block id="6628e1b5975a42c2be2ff5186caf860c" category="inline-image-macro">显示资源标记对话框的屏幕截图，您可以在其中查看当前分配的标记并添加新标记。</block>
+  <block id="9a25b58325689888cd22d9f62778dd88" category="paragraph"><block ref="9a25b58325689888cd22d9f62778dd88" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1fb12afa3bbd8081db730626d9cf128e" category="list-text">单击 * 添加新标记 * ，此时对话框中将显示一个空白的标记密钥和标记值行。</block>
+  <block id="c69b390a7a1622a148e2febd4ca307bf" category="list-text">输入标记密钥和标记值。如果要在此资源上添加更多标记，请此时添加更多标记，然后单击 * 审阅并应用 * 。</block>
+  <block id="fb8530a1e792fa11ae22927c4489794a" category="list-text">如果在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，此时新标记将添加到资源或所有选定资源中。</block>
+  <block id="55b2371e859e7dd661d62883c0e93f48" category="section-title">更改资源的标记值</block>
+  <block id="8500d002f3036b9ac76b10f3975fa5b6" category="paragraph">您可以更改分配给资源的标记，也可以更改应用于现有标记的标记值。</block>
+  <block id="c6d44c78dac6303ee6c3d0525ffa451c" category="list-text">选择要更改标记的一个或多个资源。</block>
+  <block id="96be093270f8207adaa28aaa45ee837b" category="list-text">单击 * 管理标记 * ，此时将显示 _Resource Tags 对话框。</block>
+  <block id="1400af94919e7ee1a09ca726e8b85d80" category="inline-image-macro">显示如何修改某个资源或多个资源的标记的屏幕截图。</block>
+  <block id="ad331f4f30c579537be3c11e0e0dc081" category="paragraph"><block ref="ad331f4f30c579537be3c11e0e0dc081" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ac9723812108c87763a081c3ff4f1c08" category="list-text">为标记值输入一个新值，然后单击 * 审阅并应用 * 。</block>
+  <block id="4cb2f4e76ebfa58ef36c58684a15abd0" category="list-text">如果您在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，此时将更改资源或所有选定资源的标记值。</block>
+  <block id="06b4175113796fd327444f906e00e5b0" category="section-title">从资源中删除标记</block>
+  <block id="a3b429240e21705b5497678d9a1a450d" category="paragraph">您可以从单个资源或多个资源中删除标记键 / 值对。</block>
+  <block id="442b989d73b53c1398a30d27048bd411" category="list-text">选择要从中删除标记的一个或多个资源。</block>
+  <block id="25aa36d137bcf84c1df93b9abee71af1" category="inline-image-macro">显示如何从资源或多个资源中删除标记的屏幕截图。</block>
+  <block id="01c2aeb5ca936bbe9aa0ad9699706a64" category="paragraph"><block ref="01c2aeb5ca936bbe9aa0ad9699706a64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c2b9a18179af322bffbbd1fc093f0e6a" category="list-text">单击 <block ref="ccf4df3a8e9a80d7b6ff904049041296" category="inline-image-macro-rx" type="image"></block> 对于要删除的标记键 / 值对，该行将被删除，然后单击 * 审阅并应用 * 。</block>
+  <block id="6f195138d995bb3980eb20df6cd6b372" category="list-text">如果您在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，标记键 / 值对将从资源或所有选定资源中删除。</block>
+  <block id="e1f059ce610c426bc048a916e53ae32d" category="summary">Cloud Manager 可以监控使用 " 偏移 " 功能创建资源时使用的参数值。Drift 用于标识已更改且不再符合模板设置的资源。</block>
+  <block id="738c328d0087a068339b3d63cd01f51a" category="doc">检查资源是否符合模板要求</block>
+  <block id="8e09fe4243173c7be4058a88ee5dccbe" category="paragraph">此时，偏移会标识资源中更改的参数—您必须手动调整资源，使其恢复与模板的合规性。</block>
+  <block id="2ab3e4cd0d86d65f9d51ef66c0c979a1" category="section-title">漂移的工作原理</block>
+  <block id="270a79863849b0f5a1fb6e3ca8c5e8cf" category="paragraph">Drift 可识别不合规的参数，如下所示：</block>
+  <block id="2f4767232b378f442b114c6df47c9e64" category="list-text">创建模板时，您可以为不希望用户更改的某些参数启用偏移。例如，您可能要求对通过模板创建的所有卷使用 "Default" 策略创建 Snapshot 副本。</block>
+  <block id="176d49d1e84215b444f439fea07a3329" category="inline-image-macro">显示如何对模板中的单个参数启用偏移的屏幕截图。</block>
+  <block id="311336fcea41c68a3d16c7293d66a166" category="paragraph"><block ref="311336fcea41c68a3d16c7293d66a166" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b1b69884668207d8257a2c199585d3c4" category="list-text">打开模板的偏移，然后保存模板。</block>
+  <block id="a58a17de18b8ff4081df6a8a029fddef" category="inline-image-macro">显示如何为模板启用偏移的屏幕截图。</block>
+  <block id="65439c70b898804017251c3d89e4b9a1" category="paragraph"><block ref="65439c70b898804017251c3d89e4b9a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a89edd795717fc5788fde97a150cdbfd" category="list-text">存储管理员运行此模板以创建卷。</block>
+  <block id="702cc5e5b03abb2b13b06653993301cd" category="list-text">稍后，存储管理员将编辑卷并禁用 Snapshot 副本。</block>
+  <block id="e0ea1e6e9a11e8802d9e17bd8c65420e" category="list-text">您可以对所有模板运行偏移检查，并且 AppTemplates 服务会将 Snapshot 副本模板设置与卷中的当前设置进行比较。系统会标记任何不合规值，以便您可以修复不正确的设置。</block>
+  <block id="6f1e06cdf469f6c9e2d5664f82d4cd46" category="section-title">Drift 信息板</block>
+  <block id="eb00a81284bf83afa086db3e1e91383f" category="paragraph">Drift 信息板显示了使用模板创建的资源总数（例如卷），仍然符合模板的数量，不合规（偏离）的数量以及在禁用 Drift 的情况下创建的数量。</block>
+  <block id="55173c154995f28e9df46343a9ce0561" category="inline-image-macro">AppTemplates 服务的 Drift 信息板的屏幕截图。</block>
+  <block id="a7e6e26f0a43b99c8a207a6d0a7bc773" category="paragraph"><block ref="a7e6e26f0a43b99c8a207a6d0a7bc773" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="812ce4d3a07734d12cdaa3ed2010e22f" category="list-text">通过每列顶部的控件，您可以按数字或字母顺序对结果进行排序。</block>
+  <block id="0359e3c0b32dfd6306bd3d50e3c2de03" category="list-text">。 <block ref="3fd7363714f2e2423924118bfd6b7147" category="inline-image-macro-rx" type="image"></block> 用于按模板名称，偏移策略和状态以及操作类型筛选结果。例如：</block>
+  <block id="dc2aed6b9b1f1b0a6c08ee34faba057f" category="inline-image-macro">显示如何使用筛选器小工具细化资源列表的屏幕截图。</block>
+  <block id="226b350675cf80a6c8ef906f3d514866" category="paragraph"><block ref="226b350675cf80a6c8ef906f3d514866" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b50b58694b4498c8af71d92940ef4b4a" category="list-text">通过搜索栏，您可以搜索特定的卷名称或模板名称。</block>
+  <block id="2289aac3f042b380f68ae94d3b80edcc" category="list-text">要了解有关实际资源（或卷）的更多详细信息，例如工作环境和 Storage VM ，您可以单击 <block ref="a74720392297d66ac1ab9a90296912c9" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="b652d688fe7bd49013e097debd62377d" category="inline-image-macro">显示偏移信息板中卷详细信息的屏幕截图。</block>
+  <block id="f94f5da3d864a2802ec18ef34e31c632" category="paragraph"><block ref="f94f5da3d864a2802ec18ef34e31c632" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6ce5c8ea7a5fe26d49cc620ef72e8bf" category="section-title">填充 Drift 信息板</block>
+  <block id="5ae7cb61db9467082e9eea24cffa5c5d" category="paragraph">您必须先对模板运行偏移检查，然后模板才能填充偏移信息板中的值。</block>
+  <block id="6f2802bd954a52da9413653f06974328" category="paragraph">您可以从模板信息板对所有模板运行偏移检查：</block>
+  <block id="d3b285f784c0ba93aec0e96991c6426b" category="inline-image-macro">显示如何对所有模板运行偏移检查的屏幕截图。</block>
+  <block id="6800c3ab10609f87e92b1c2d671d818a" category="paragraph"><block ref="6800c3ab10609f87e92b1c2d671d818a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58e7eda3b48d7587cdb37980702881b8" category="paragraph">您可以从模板信息板对单个模板运行偏移检查：</block>
+  <block id="30055c2914e5982a3d4520c8d7341dae" category="inline-image-macro">显示如何对单个模板运行偏移检查的屏幕截图。</block>
+  <block id="09ba0e6ca6c933763f67961bc73d1c49" category="paragraph"><block ref="09ba0e6ca6c933763f67961bc73d1c49" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b36ada9c7c56f786c71fdfbea02d95d3" category="section-title">为不合规资源创建偏移报告</block>
+  <block id="aeb389bbf15541824e09549764a991ad" category="paragraph">您可以查看单个资源的偏移报告，也可以运行报告下载所有资源的报告。使用此报告，您可以将操作分配给系统管理员，以便进行更改，使资源恢复与模板的合规性。</block>
+  <block id="a5a5986754b343a286af80fd084ea988" category="paragraph">您可以单击 " 漂移信息板 " 中某个资源的 " 漂移 " 图标以查看每个不合规资源中的参数列表。</block>
+  <block id="ecbe0476f7995436a619fbec67b150ea" category="inline-image-macro">单个资源的偏移报告的屏幕截图。</block>
+  <block id="e278cbaa988c388eb4f070a874cc7c84" category="paragraph"><block ref="e278cbaa988c388eb4f070a874cc7c84" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f5aeece6a8367e0a2a950b59ac5d280f" category="paragraph">要查看通过模板创建的资源的偏移报告，请单击 <block ref="6ba48bcb767669a826177023eada095d" category="inline-image-macro-rx" type="image"></block> 下载 .CSV 文件。漂移报告反映了当前在页面上筛选的内容 - 它不会显示所有资源，除非您尚未在页面上应用任何筛选器。</block>
+  <block id="534c380a5cdca5610f18de17fa526847" category="section-title">偏移报告中的复制运行状况详细信息</block>
+  <block id="b5363a8f8717713698cd5f0ade6c4a83" category="inline-link-macro">使用模板在卷上启用复制</block>
+  <block id="6bb92fc8b301ed81b081eeb63f8c277d" category="paragraph">时间 <block ref="eef24c085d3101627e03570b2ef27e8a" category="inline-link-macro-rx"></block>，您可以选择通过在 " 启用复制运行状况监控 " 字段中启用偏移来在偏移报告中显示更详细的复制信息。启用后，偏移报告将显示复制关系的运行状况是运行状况良好还是运行状况不正常（偏离），以及 SnapMirror 滞后时间，状态和上次传输时间。</block>
+  <block id="6ffc1ecbaefdcfbed3ede7fdb124aa93" category="paragraph">此屏幕截图显示了偏移报告中运行状况不正常的 SnapMirror 关系的复制详细信息。</block>
+  <block id="16c2c563a9c70bc38dcd5058d89852a7" category="inline-image-macro">Drift 报告的屏幕截图，显示运行状况不正常的 SnapMirror 关系的复制详细信息。</block>
+  <block id="dda535bed967fed0495f552c6c54b14e" category="paragraph"><block ref="dda535bed967fed0495f552c6c54b14e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9986dfbd663475bd0b9a159d82e3587" category="paragraph">* 注意： * 由于复制最初应用于卷，因此运行状况将返回为 "False" ，这意味着它运行状况不正常。几分钟后，将显示实际复制状态。</block>
+  <block id="cb9d3e42cbdb6c83e7bbe5b75ae88380" category="summary">通过应用程序模板服务，您可以为 Cloud Manager 工作环境标准化资源创建。</block>
+  <block id="91ee6aa91810fc059d494948432212cc" category="doc">AppTemplate 文档</block>
+  <block id="3c10116b37b407ac79092a38ffb292e4" category="summary">在向 NetApp 技术支持创建支持案例之前，您需要先将 NetApp 支持站点帐户添加到 Cloud Manager 中，然后注册获取支持。</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
+  <block id="d53e2559d6ace0e907fc57192bf286b6" category="paragraph"><block ref="d53e2559d6ace0e907fc57192bf286b6" category="inline-link-macro-rx"></block></block>
+  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
+  <block id="0a619ca9c1cd947e450850b3e7de049e" category="sidebar">应用程序模板文档</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">入门</block>
+  <block id="3b23feac64efacc5b166fdf0e70ca630" category="sidebar">了解应用程序模板</block>
+  <block id="e72ae81acd7c30885924cb51631b78d1" category="sidebar">使用应用程序模板</block>
+  <block id="d878dbf9ab702cfef892ea35b53108d3" category="sidebar">使用模板实现资源创建标准化</block>
+  <block id="52b2438a3d1515af5b3918e6d0fa443d" category="sidebar">为您的组织构建模板</block>
+  <block id="1ff123cfbf88ad9c58cfd44c2b72c291" category="sidebar">运行模板以创建资源</block>
+  <block id="4a37630008b707a26bac4e9b9d2d91bc" category="sidebar">使用标记对资源进行组织</block>
+  <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">概念</block>
+  <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知识和支持</block>
+  <block id="7bc0f94286bfd2cf27964ce6056732ac" category="sidebar">了解应用程序模板</block>
+  <block id="35f98b47133ad8954f63b25aef2dad3a" category="sidebar">了解标记</block>
+  <block id="5fef629b836b60819e0c0ce49cd2b9d7" category="sidebar">新增功能</block>
+  <block id="12b8ed36a576a6d4769c8d350b438a8a" category="sidebar">创建模板</block>
+  <block id="59cccee54a9c1422dca33d7662d37b76" category="sidebar">Cloud Volumes ONTAP 工作环境</block>
+  <block id="f829fef4575b38109cd246bafbd6718e" category="sidebar">Cloud Volumes ONTAP 卷</block>
+  <block id="217aec976bd66d37571f1fe0e44a4e77" category="sidebar">Azure NetApp Files 卷</block>
+  <block id="21dc3aafb4a3e393dccd900e9ba42118" category="sidebar">内部 ONTAP 卷</block>
+  <block id="c8ca3079f96c0e324b876d7055a67c46" category="sidebar">使用模板创建资源</block>
+  <block id="70deba7f047a2bcc0d20e5ef94a2abf8" category="sidebar">CVO ，内部和 ANF 的卷</block>
+  <block id="f8de1ec8d7766950989e3205a63d91d9" category="sidebar">使用模板和标记管理资源</block>
+  <block id="e85920abe34a4184988f078bd1e73279" category="sidebar">检查资源的模板合规性（偏差）</block>
+  <block id="441c6d31d8063270a27b242c68cc0e6e" category="sidebar">运行一个可查找现有资源的模板</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客社区</block>
+  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
+  <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
+  <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
+</blocks>

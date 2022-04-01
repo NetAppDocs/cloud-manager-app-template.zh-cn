@@ -1,0 +1,179 @@
+---
+sidebar: sidebar 
+permalink: task-run-templates.html 
+keywords: templates, resource templates, services templates, volume templates, working environment templates 
+summary: 选择您的组织为创建针对特定工作负载和应用程序优化的工作环境或卷而构建的一个应用程序模板。您还可以通过模板在卷或现有卷上激活 Cloud Backup ， Cloud Data sense 和 Replication （ SnapMirror ）。 
+---
+= 使用模板创建或修改资源
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+选择您的组织为创建针对特定工作负载和应用程序优化的工作环境或卷而构建的一个应用程序模板。您还可以通过模板激活 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^]， https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^]，和 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["复制（ SnapMirror ）"^] 在已创建的卷或现有卷上。
+
+通过模板，您可以为 Cloud Volumes ONTAP ， Azure NetApp Files 和内部 ONTAP 系统创建卷。
+
+
+
+== 快速入门
+
+按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。
+
+.跨度 class="image><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt-one"></span> 验证所需的前提条件
+* 在使用模板为 Cloud Volumes ONTAP ，内部 ONTAP 或 Azure NetApp Files 系统创建卷之前，请确保您有权访问要部署此卷的适当工作环境。
+
+
+* 如果模板激活卷上的云服务，例如 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^] 或 https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^]，确保此服务在您的环境中处于活动状态并已获得许可。
+
+
+[role="quick-margin-para"]
+选择 * 应用模板 * 服务，然后单击 * 模板 * 选项卡。
+
+[role="quick-margin-para"]
+选择模板，单击 * 运行模板 * ，然后在可编辑字段中输入值以创建资源。
+
+
+
+== 要求
+
+请阅读以下要求，以确保您的配置受支持。
+
+* 如果您还没有 Connector ， https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["请参见如何创建连接器"^] 适用于 AWS ， Azure 和 GCP 。
+* 创建 Cloud Volumes ONTAP 卷时，请确保您有一个可用的 Cloud Volumes ONTAP 工作环境。
+* 创建内部 ONTAP 卷时，请确保您具有可用的内部 ONTAP 工作环境。
+* 创建 Azure NetApp Files 卷时，请确保您有一个可用的 Azure NetApp Files 工作环境。
+* 如果模板激活卷上的云服务，例如  https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^]， https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^]或 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["复制（ SnapMirror ）"^]，确保此服务在您的环境中处于活动状态并已获得许可。
+
+
+
+
+== 选择并运行卷模板
+
+可以通过多种方法选择和运行模板来创建新卷。
+
+* 从工作环境运行卷模板
+* 从模板信息板运行卷模板
+
+
+无论选择哪种方法，您都可以在以下部分中查看有关必须定义的所需卷参数的详细信息：
+
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-volumes-from-templates["如何配置 Cloud Volumes ONTAP 卷"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf-volumes.html#creating-volumes-from-templates["如何配置 Azure NetApp Files 卷"^]
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-provisioning-ontap.html#creating-volumes-from-templates["如何配置内部 ONTAP 卷"^]
+
+
+
+
+=== 从工作环境运行卷模板
+
+您可以从 _Working Environment_ 页面和 _Volume Details_页面 向现有工作环境添加卷。
+
+.步骤
+. 在 _Working Environment_ 页面或 _Volume Details_ 页面中，单击 * 从模板添加卷 * 。
++
+image:screenshot_template_add_vol_from.png["两个屏幕截图显示了用户如何使用模板创建新卷。"]
+
++
+此时将显示 _Templates Dashboard_ ，它仅列出适用于选定工作环境的模板，例如，它仅显示 Cloud Volumes ONTAP 模板。
+
+. 单击 image:screenshot_horizontal_more_button.gif["更多图标"] 和 * 运行模板 * 。
++
+image:screenshot_template_run_from_dashboard.png["显示如何从模板信息板运行模板的屏幕截图"]
+
++
+此时将显示 _Add Volume from Template_ 页面。
+
+. 在可编辑字段中输入值以创建卷，然后单击 * 运行模板 * 。
++
+image:screenshot_run_template_from_canvas.png["屏幕截图显示了使用模板创建卷所需定义的参数。"]
+
+
+
+
+
+=== 从模板信息板运行卷模板
+
+您可以从 _Templates Dashboard_ 向现有工作环境添加卷。
+
+.步骤
+. 选择 * 应用模板 * 服务，然后单击 * 模板 * 选项卡。
++
+此时将显示 _Templates Dashboard_ 。
+
+. 对于要使用的模板，请单击 image:screenshot_horizontal_more_button.gif["更多图标"] 和 * 运行模板 * 。
++
+image:screenshot_template_run_from_dashboard2.png["显示如何从模板信息板运行模板的屏幕截图"]
+
++
+此时将显示 _Run Template_ 页面。
+
+. 在可编辑字段中输入值以创建卷，然后单击 * 运行模板 * 。
++
+image:screenshot_run_template_from_dashboard.png["屏幕截图显示了使用模板创建卷所需定义的参数。"]
+
++
+请注意，从信息板运行模板时，需要选择工作环境和其他变量（例如 Storage VM 和 / 或聚合）。从工作环境运行模板时，工作环境会自动填充。
+
+
+
+
+
+== 选择并运行工作环境模板
+
+如果贵公司已为此功能创建了模板，则可以从 _Templates Dashboard_ 创建新的工作环境。
+
+如果您对创建工作环境所需的详细信息有任何疑问，请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["在 AWS 中启动 Cloud Volumes ONTAP"^]。
+
+.步骤
+. 选择 * 应用模板 * 服务，然后单击 * 模板 * 选项卡。
++
+此时将显示 _Templates Dashboard_ 。
+
+. 对于要使用的模板，请单击 image:screenshot_horizontal_more_button.gif["更多图标"] 和 * 运行模板 * 。
++
+image:screenshot_template_run_from_dashboard3.png["显示如何从模板信息板运行模板的屏幕截图"]
+
++
+此时将显示 _Run Template_ 页面。
+
+. 在可编辑字段中输入值以创建工作环境和第一个卷，然后单击 * 运行模板 * 。
++
+image:screenshot_template_run_from_dashboard_we.png["屏幕截图显示了使用模板创建工作环境所需定义的参数。"]
+
+
+
+
+
+== 选择并运行一个可查找现有资源的模板
+
+您可以运行一个模板来查找某些资源（例如卷），然后在这些资源（例如 Cloud Backup ）上启用云服务（前提是贵公司已使用此功能创建了一个模板）。运行此模板时，您可以进行一些小调整，以便仅将云服务应用于相应的资源。
+
+.步骤
+. 选择 * 应用模板 * 服务，然后单击 * 模板 * 选项卡。
++
+此时将显示 _Templates Dashboard_ 。
+
+. 对于要使用的模板，请单击 image:screenshot_horizontal_more_button.gif["更多图标"] 和 * 运行模板 * 。
++
+image:screenshot_template_run_from_dashboard4.png["显示如何从模板信息板运行模板的屏幕截图"]
+
++
+此时将显示 _Run Template_ 页面，并立即运行模板中定义的搜索，以查找符合条件的卷。
+
+. 在 _Volume Results_ 区域中查看返回的卷列表。
++
+image:screenshot_template_find_search_results.png["显示从查找资源搜索条件返回的卷的屏幕截图。"]
+
+. 如果结果符合您的预期，请使用模板的 _Enable Cloud Backup on Volume_ 部分中的条件选中要启用 Cloud Backup 的每个卷对应的复选框，然后单击 * 运行模板 * 。
++
+如果结果与您的预期不同，请单击 image:screenshot_edit_icon.gif["编辑铅笔图标"] 在 _Search Criteria_ 旁边，进一步细化搜索范围。
+
+
+
+此模板将运行，并在您根据搜索条件检查的每个卷上启用 Cloud Backup 。
+
+任何错误都会显示在 _Running Your Template_ 页面中，您可以根据需要解决这些问题。

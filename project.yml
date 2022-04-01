@@ -1,0 +1,99 @@
+---
+settings:
+  name: AppTemplate
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-cn,us-en,ja-jp,ko-kr
+sidebar:
+  entries:
+  - title: 所有 Cloud Manager 文档
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: 应用程序模板文档
+    url: "/index.html"
+  - title: 发行说明
+    url: "/whats-new.html"
+  - title: 入门
+    entries:
+    - title: 了解应用程序模板
+      url: "/concept-resource-templates.html"
+    - title: 了解标记
+      url: "/concept-tagging.html"
+  - title: 使用应用程序模板
+    entries:
+    - title: 使用模板实现资源创建标准化
+      entries:
+      - title: 为您的组织构建模板
+        url: "/task-define-templates.html"
+      - title: 检查资源是否符合模板要求
+        url: "/task-check-template-compliance.html"
+      - title: 运行模板以创建资源
+        url: "/task-run-templates.html"
+    - title: 使用标记对资源进行组织
+      entries:
+      - title: 管理资源的标记
+        url: "/task-using-tags.html"
+  - title: 概念
+    entries:
+    - title: 模板组件
+      url: "/reference-template-building-blocks.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/task-support-registration.html"
+    - title: 获取帮助
+      url: "/task-get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 入门
+    links:
+    - title: 了解应用程序模板
+      url: concept-resource-templates.html
+    - title: 了解标记
+      url: concept-tagging.html
+    - title: 新增功能
+      url: whats-new.html
+  - title: 创建模板
+    links:
+    - title: Cloud Volumes ONTAP 工作环境
+      url: task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment
+    - title: Cloud Volumes ONTAP 卷
+      url: task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-volume
+    - title: Azure NetApp Files 卷
+      url: task-define-templates.html#create-a-template-for-an-azure-netapp-files-volume
+    - title: 内部 ONTAP 卷
+      url: task-define-templates.html#create-a-template-for-an-on-premises-ontap-volume
+    - title: 向卷添加备份功能
+      url: task-define-templates.html#add-backup-functionality-to-a-volume
+    - title: 向卷添加数据感知功能
+      url: task-define-templates.html#add-data-sense-functionality-to-a-volume
+    - title: 向卷添加复制功能
+      url: task-define-templates.html#add-replication-functionality-to-a-volume
+  - title: 使用模板创建资源
+    links:
+    - title: Cloud Volumes ONTAP 工作环境
+      url: task-run-templates.html#select-and-run-a-working-environment-template
+    - title: CVO ，内部和 ANF 的卷
+      url: task-run-templates.html#select-and-run-a-volume-template
+  - title: 使用模板和标记管理资源
+    links:
+    - title: 检查资源的模板合规性（偏差）
+      url: task-check-template-compliance.html
+    - title: 运行一个可查找现有资源的模板
+      url: task-run-templates.html#select-and-run-a-template-that-finds-existing-resources
+    - title: 管理资源的标记
+      url: task-using-tags.html
+  - title: 博客社区
+    links:
+    - title: NetApp 社区
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central 博客
+      url: https://cloud.netapp.com/blog
+    - title: 云网络研讨会
+      url: https://cloud.netapp.com/events
+product-family: {}

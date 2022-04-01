@@ -1,0 +1,715 @@
+---
+sidebar: sidebar 
+permalink: task-define-templates.html 
+keywords: templates, resource templates, services templates, volume templates, cvo working environment template, find volumes 
+summary: '选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构建一个应用程序模板，您的组织可以使用该模板开始优化资源创建。' 
+---
+= 为您的组织构建应用程序模板
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构建一个应用程序模板，您的组织可以使用该模板开始优化资源创建。
+
+
+
+== 快速入门
+
+按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。
+
+.跨度 class="image><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] Alt-one"></span> 验证所需的前提条件
+* 在用户使用模板为 Cloud Volumes ONTAP ，内部 ONTAP 或 Azure NetApp Files 系统创建卷之前，请确保他们能够访问要部署此卷的适当工作环境。
+
+
+* 如果您计划向模板添加云服务 " 操作 " ，例如 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^] 或 https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^]，确保此服务在您的环境中处于活动状态并已获得许可。
+
+
+[role="quick-margin-para"]
+选择 * 应用模板 * 服务，单击 * 编辑器 * 选项卡，然后选择要在模板中使用的操作。
+
+[role="quick-margin-para"]
+按照创建步骤进行操作，并定义模板要执行的操作。
+
+
+
+== 要求
+
+请阅读以下要求，以确保您的配置受支持。
+
+* 如果您还没有 Connector ， https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["请参见如何创建连接器"^] 适用于 AWS ， Azure 和 GCP 。
+* 创建 Cloud Volumes ONTAP 卷模板时，请确保您的用户可以使用 Cloud Volumes ONTAP 工作环境。请参见如何在中启动 Cloud Volumes ONTAP 系统 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS"^]， https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure 酒店"^]或中的 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["GCP"^]。
+* 创建内部 ONTAP 卷模板时，请确保您的用户可以使用内部 ONTAP 工作环境。请参见操作说明 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["发现内部部署的 ONTAP 系统"^] 在 Cloud Manager 中。
+* 创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明 https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html["创建 Azure NetApp Files 工作环境"^] 在 Cloud Manager 中。
+* 如果您计划使用 Cloud Backup 备份模板中的卷，请确保您的环境已激活 Cloud Backup 。
+* 如果您计划使用 Cloud Data sense 扫描模板中的卷，请确保您的环境已激活 Cloud Data sense 。
+* 如果您计划在此模板中启用复制，并且此模板适用于内部 ONTAP 卷，则 ONTAP 集群必须具有活动的 SnapMirror 许可证。
+
+
+
+
+== 使用模板创建资源的示例
+
+通过资源模板，您可以创建新卷或新的 Cloud Volumes ONTAP 工作环境。
+
+
+
+=== 为 Cloud Volumes ONTAP 卷创建模板
+
+请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-flexvol-volumes["如何配置 Cloud Volumes ONTAP 卷"^] 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。
+
+在此示例中，我们将创建一个名为 "CVO volume for databases" 的模板，其中包括以下 2 项操作：
+
+* 创建 Cloud Volumes ONTAP 卷
++
+为 AWS 环境创建卷，为其配置 100 GB 的存储，将 Snapshot 策略设置为 " 默认 " 并启用存储效率。
+
+* 启用 Cloud Backup
++
+创建 30 个每日备份， 13 个每周备份和 3 个每月备份（使用 _3 个月保留 _ 策略）。
+
+
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_cvo.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 用于 Cloud Volumes ONTAP 的卷 + 备份 * 作为要创建的资源类型，然后单击 * 开始使用 * 。
++
+此时将显示 _Create Volume in Cloud Volumes ONTAP Action Definition_ 页面。
+
++
+image:screenshot_create_template_define_action_cvo.png["显示您需要填写的空白 CVO 模板的屏幕截图。"]
+
+. * 操作名称 * ：也可以输入自定义操作名称，而不是默认值。
+. * 上下文： * 输入 Cloud Volumes ONTAP 工作环境上下文；如果需要，请输入此上下文。
++
+当用户从现有工作环境启动模板时，此信息将自动填充。
+
++
+当用户从模板信息板启动模板时（不在工作环境环境环境中），他们需要选择工作环境以及要创建卷的 SVM 。这就是这些字段被标记为 " 可编辑 " 的原因。
+
+. * 详细信息： * 输入卷名称和大小。
++
+[cols="25,75"]
+|===
+| 字段 | Description 
+
+
+| 卷名称 | 单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。例如，您可以指定 "db" 为所需的前缀，后缀或包含；要求用户添加卷名称，例如 "db_vol1" ， "vol1_db" 或 "vol_db_1" 。 
+
+
+| 卷大小 | 您可以指定允许的值范围，也可以指定固定大小。此值以 GB 为单位。在本示例中，我们可以添加一个固定值 * 。 100* 。 
+
+
+| Tags | 输入要与此卷关联的标记的名称和值对。例如，您可以将 "Cost Center" 作为标记名称，并将成本中心代码 "6655829" 作为值。您可以通过添加更多标记名称和值对将多个标记与卷关联。 
+|===
+. * 保护： * 选择此卷是否将通过选择 " 默认 " 或其他策略创建 Snapshot 副本，或者如果您不想创建 Snapshot 副本，则选择 " 无 " 。
+. * 使用情况配置文件： * 选择是否对卷应用 NetApp 存储效率功能。其中包括精简配置，重复数据删除和数据压缩。在我们的示例中，保持启用存储效率。
+. * 磁盘类型： * 选择云存储提供程序和磁盘类型。对于某些磁盘选择，您还可以选择最小和最大 IOPS 或吞吐量（ MB/ 秒）值；基本定义特定服务质量（ QoS ）。
+. * 协议选项： * 选择 * NFS * 或 * SMB * 以设置卷的协议。然后，将提供协议详细信息。
++
+[cols="25,75"]
+|===
+| NFS 字段 | Description 
+
+
+| 访问控制 | 选择是否需要访问控制来访问卷。 
+
+
+| 导出策略 | 创建导出策略以定义子网中可访问卷的客户端。 
+
+
+| NFS 版本 | 选择卷的 NFS 版本： _NFSv3_ 或 _NFSv4_ ，或者您也可以同时选择这两者。 
+|===
++
+[cols="25,75"]
+|===
+| SMB 字段 | Description 
+
+
+| 共享名称 | 单击字段并选择 5 个选项之一。您可以让管理员输入任何名称（自由文本），也可以指定共享名称必须具有特定前缀或后缀，它包含 _ 个特定字符，或者它遵循您输入的正则表达式（正则表达式）中的规则。 
+
+
+| 权限 | 选择用户和组对共享的访问级别（也称为访问控制列表或 ACL ）。 
+
+
+| 用户 / 组 | 指定本地或域 Windows 用户或组，或者 UNIX 用户或组。如果指定域 Windows 用户名，则必须使用 domain\username 格式包含用户的域。 
+|===
+. * 分层： * 选择要应用于卷的分层策略，如果不希望将此卷中的冷数据分层到对象存储，则将此策略设置为 " 无 " 。
++
+请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html#volume-tiering-policies["卷分层策略"^] 有关概述，请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["将非活动数据分层到对象存储"^] 以确保您的环境已设置为分层。
+
+. 定义完此操作所需的参数后，单击 * 应用 * 。
++
+如果模板值已正确完成，则会在 "Create Volume in Cloud Volumes ONTAP " 框中添加一个绿色复选标记。
+
+. 单击 * 在卷上启用云备份 * 框，此时将显示 _Enable Cloud Backup on Volume Action Definition_ 对话框，以便您填写 Cloud Backup 详细信息。
++
+image:screenshot_create_template_add_action.png["显示可添加到已创建卷的其他操作的屏幕截图。"]
+
+. 选择 * 3 个月保留 * 备份策略可创建 30 个每日备份， 13 个每周备份和 3 个每月备份。
+. 在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 <<Pass values between template actions,如何填写这些字段>>。
+. 单击 * 应用 * ，此时将保存 Cloud Backup 对话框。
+. 在左上角输入用于 Databases* （本示例）的模板名称 * CVO volume 。
+. 单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。
++
+通过 Drift ， Cloud Manager 可以监控您在创建此模板时为参数输入的硬编码值。
+
+. 单击 * 保存模板 * 。
+
+
+此时将创建此模板，并将您返回到模板信息板，此时将显示新模板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+=== 为 Azure NetApp Files 卷创建模板
+
+为 Azure NetApp Files 卷创建模板的方式与为 Cloud Volumes ONTAP 卷创建模板的方式相同。
+
+请参见 https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf-volumes.html#creating-volumes["如何配置 Azure NetApp Files 卷"^] 有关需要在 ANF 卷模板中完成的所有参数的详细信息。
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_blank.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 空白模板 * ，然后单击 * 开始使用 * 。
+. 选择 * 在 Azure NetApp Files 中创建卷 * 作为要创建的资源类型，然后单击 * 应用 * 。
++
+此时将显示 _Create Volume in Azure NetApp Files Action Definition_ 页面。
+
++
+image:screenshot_create_template_define_action_anf.png["显示需要填写的空白 ANF 模板的屏幕截图。"]
+
+. * 操作名称 * ：也可以输入自定义操作名称，而不是默认值。
+. * 卷详细信息： * 输入卷名称和大小，并可选择为此卷指定标记。
++
+[cols="25,75"]
+|===
+| 字段 | Description 
+
+
+| 卷名称 | 单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。例如，您可以指定 "db" 为所需的前缀，后缀或包含；要求用户添加卷名称，例如 "db_vol1" ， "vol1_db" 或 "vol_db_1" 。 
+
+
+| 卷大小 | 您可以指定允许的值范围，也可以指定固定大小。此值以 GB 为单位。 
+
+
+| Tags | 输入要与此卷关联的标记的名称和值对。例如，您可以将 "Cost Center" 作为标记名称，并将成本中心代码 "6655829" 作为值。您可以通过添加更多标记名称和值对将多个标记与卷关联。 
+|===
+. * 协议： * 选择 * NFSv3* ， * NFSv4.1* 或 * SMB/C* 以设置卷的协议。然后，将提供协议详细信息。
++
+[cols="25,75"]
+|===
+| NFS 字段 | Description 
+
+
+| 卷路径 | 从 5 个选项中选择一个。您可以通过选择 * 自由文本 * 让管理员输入任何路径，也可以指定路径名称必须具有特定前缀或后缀，包含 _ 个字符，或者遵循您输入的正则表达式（ regex ）中的规则。 
+
+
+| 导出策略规则 | 创建导出策略以定义子网中可访问卷的客户端。 
+|===
++
+[cols="25,75"]
+|===
+| SMB 字段 | Description 
+
+
+| 卷路径 | 从 5 个选项中选择一个。您可以通过选择 * 自由文本 * 让管理员输入任何路径，也可以指定路径名称必须具有特定前缀或后缀，包含 _ 个字符，或者遵循您输入的正则表达式（ regex ）中的规则。 
+|===
+. * 上下文： * 输入 Azure NetApp Files 工作环境，新 Azure NetApp Files 帐户或现有 帐户的详细信息以及其他详细信息。
++
+[cols="25,75"]
+|===
+| 字段 | Description 
+
+
+| 工作环境 | 当存储管理员用户从现有工作环境启动模板时，此信息将自动填充。当用户从模板信息板启动模板时（而不是在工作环境环境中），则需要选择要创建卷的工作环境。 
+
+
+| NetApp 帐户名称 | 输入要用于帐户的名称。 
+
+
+| Azure 订阅 ID | 输入 Azure 订阅 ID 。此 ID 为完整 ID ，格式类似于 "2b04f26-7de6-42eb-9234-e2903d7s327" 。 
+
+
+| Region | 使用输入区域 https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.documents.locationnames?view=azure-dotnet#fields["内部区域名称"^]。 
+
+
+| 资源组名称 | 输入要使用的资源组的名称。 
+
+
+| 容量池名称 | 输入现有容量池的名称。 
+
+
+| Subnet | 输入 vNet 和子网。此值包括完整路径，其格式类似于 "/subscriptions/<subscription_id>/resourcegroups/<resource_group>/providers/Microsoft.Network/virtualNetworks/<vpc_name>/subnets/<subhet_name>" 。 
+|===
+. * Snapshot 副本： * 如果要使用现有卷的特征创建此新卷，请输入现有卷 Snapshot 的 Snapshot ID 。
+. 定义完此操作所需的参数后，单击 * 应用 * 。
+. 在左上方输入要用于模板的名称。
+. 单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。
++
+通过 Drift ， Cloud Manager 可以监控您在创建此模板时为参数输入的硬编码值。
+
+. 单击 * 保存模板 * 。
+
+
+此时将创建此模板，并将您返回到模板信息板，此时将显示新模板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+=== 为内部 ONTAP 卷创建模板
+
+请参见 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-provisioning-ontap.html#creating-volumes-for-ontap-clusters["如何配置内部 ONTAP 卷"^] 有关需要在内部部署 ONTAP 卷模板中完成的所有参数的详细信息。
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_blank.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 空白模板 * ，然后单击 * 开始使用 * 。
++
+此时将显示 _Add New Action_ 页面。
+
++
+image:screenshot_create_template_primary_action_onprem.png["显示如何从 \" 添加新操作 \" 页面中选择主操作的屏幕截图。"]
+
+. 选择 * 在内部部署 ONTAP 中创建卷 * 作为要创建的资源类型，然后单击 * 应用 * 。
++
+此时将显示 _Create Volume in On-Premises ONTAP Action Definition_ 页面。
+
++
+image:screenshot_create_template_define_action_onprem.png["显示需要填写的空白 Onprem ONTAP 模板的屏幕截图。"]
+
+. * 操作名称 * ：也可以输入自定义操作名称，而不是默认值。
+. * 上下文： * 根据需要输入内部 ONTAP 工作环境上下文。
++
+当用户从现有工作环境启动模板时，此信息将自动填充。
+
++
+当用户从模板信息板启动模板时（不在工作环境环境环境中），他们需要选择工作环境， SVM 以及要创建卷的聚合。
+
+. * 详细信息： * 输入卷名称和大小。
++
+[cols="25,75"]
+|===
+| 字段 | Description 
+
+
+| 卷名称 | 单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。例如，您可以指定 "db" 为所需的前缀，后缀或包含；要求用户添加卷名称，例如 "db_vol1" ， "vol1_db" 或 "vol_db_1" 。 
+
+
+| 卷大小 | 您可以指定允许的值范围，也可以指定固定大小。此值以 GB 为单位。在本示例中，我们可以添加一个固定值 * 。 100* 。 
+
+
+| Tags | 输入要与此卷关联的标记的名称和值对。例如，您可以将 "Cost Center" 作为标记名称，并将成本中心代码 "6655829" 作为值。您可以通过添加更多标记名称和值对将多个标记与卷关联。 
+|===
+. * 保护： * 选择此卷是否将通过选择 " 默认 " 或其他策略创建 Snapshot 副本，或者如果您不想创建 Snapshot 副本，则选择 " 无 " 。
+. * 使用情况配置文件： * 选择是否对卷应用 NetApp 存储效率功能。其中包括精简配置，重复数据删除和数据压缩。
+. * 协议选项： * 选择 * NFS * 或 * SMB * 以设置卷的协议。然后，将提供协议详细信息。
++
+[cols="25,75"]
+|===
+| NFS 字段 | Description 
+
+
+| 访问控制 | 选择是否需要访问控制来访问卷。 
+
+
+| 导出策略 | 创建导出策略以定义子网中可访问卷的客户端。 
+
+
+| NFS 版本 | 选择卷的 NFS 版本： _NFSv3_ 或 _NFSv4_ ，或者您也可以同时选择这两者。 
+|===
++
+[cols="25,75"]
+|===
+| SMB 字段 | Description 
+
+
+| 共享名称 | 单击字段并选择 5 个选项之一。您可以让管理员输入任何名称（自由文本），也可以指定共享名称必须具有特定前缀或后缀，它包含 _ 个特定字符，或者它遵循您输入的正则表达式（正则表达式）中的规则。 
+
+
+| 权限 | 选择用户和组对共享的访问级别（也称为访问控制列表或 ACL ）。 
+
+
+| 用户 / 组 | 指定本地或域 Windows 用户或组，或者 UNIX 用户或组。如果指定域 Windows 用户名，则必须使用 domain\username 格式包含用户的域。 
+|===
+. 定义完此操作所需的参数后，单击 * 应用 * 。
++
+如果模板值已正确完成，则 " 在内部部署 ONTAP 中创建卷 " 框会添加一个绿色复选标记。
+
+. 在左上方输入模板名称。
+. 单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。
++
+通过 Drift ， Cloud Manager 可以监控您在创建此模板时为参数输入的硬编码值。
+
+. 单击 * 保存模板 * 。
+
+
+此时将创建此模板，并将您返回到显示新模板的模板信息板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+=== 为 Cloud Volumes ONTAP 工作环境创建模板
+
+您可以使用模板创建单节点或高可用性 Cloud Volumes ONTAP 工作环境。
+
+[NOTE]
+====
+* 此支持目前仅适用于 AWS 环境。
+* 此模板不会在工作环境中创建第一个卷。要创建卷，必须在模板中添加 " 在 Cloud Volumes ONTAP 中创建卷 " 操作。
+
+
+====
+请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws["如何在 AWS 中启动单节点 Cloud Volumes ONTAP 系统"^] 或 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws["AWS 中的 Cloud Volumes ONTAP HA 对"] 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_blank.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 空白模板 * ，然后单击 * 开始使用 * 。
++
+此时将显示 _Add New Action_ 页面。
+
++
+image:screenshot_create_template_cvo_env_aws.png["显示如何从 \" 添加新操作 \" 页面中选择主操作的屏幕截图。"]
+
+. 选择 * 在 AWS 中创建工作环境（单节点） * 或 * 在 AWS 中创建工作环境（高可用性） * 作为要创建的资源类型，然后单击 * 应用 * 。
++
+在此示例中，将显示 _Create Working Environment in AWS （ single node ） _ 页面。
+
++
+image:screenshot_create_template_cvo_env_aws1.png["屏幕截图显示了您需要填写的空白 Cloud Volumes ONTAP 工作环境模板。"]
+
+. * 操作名称 * ：也可以输入自定义操作名称，而不是默认值。
+. * 详细信息和凭据 * ：选择要使用的 AWS 凭据，输入工作环境名称，并根据需要添加标记。
++
+本页中的某些字段是不言自明的。下表介绍了可能需要指导的字段：
+
++
+[cols="25,75"]
+|===
+| 字段 | Description 
+
+
+| 凭据 | 这些是 Cloud Volumes ONTAP 集群管理员帐户的凭据。您可以使用这些凭据通过 ONTAP System Manager 或其 CLI 连接到 Cloud Volumes ONTAP 。 
+
+
+| 工作环境名称 | Cloud Manager 使用工作环境名称来命名 Cloud Volumes ONTAP 系统和 Amazon EC2 实例。如果您选择了预定义安全组的前缀，则它还会使用该名称作为前缀。单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定工作环境名称必须具有特定前缀或后缀，它包含 _ 个特定字符，或者它遵循您输入的正则表达式（ regex ）中的规则。 
+
+
+| Tags | AWS 标记是 AWS 资源的元数据。Cloud Manager 将这些标记添加到 Cloud Volumes ONTAP 实例以及与该实例关联的每个 AWS 资源。有关标记的信息，请参见 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html["AWS 文档：标记 Amazon EC2 资源"^]。 
+|===
+. * 位置和连接 * ：输入您在中记录的网络信息 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html#aws-network-information-worksheet["AWS 工作表"^]。其中包括 AWS 地区， VPC ，子网和安全组。
++
+如果您有 AWS 前台，则可以通过选择前台 VPC 在该前台部署单节点 Cloud Volumes ONTAP 系统。体验与 AWS 中的任何其他 VPC 相同。
+
+. * 身份验证方法 * ：选择要使用的 SSH 身份验证方法：密码或密钥对。
+. * 数据加密 * ：不选择数据加密或 AWS 管理的加密。
++
+对于 AWS 管理的加密，您可以从您的帐户或其他 AWS 帐户中选择其他客户主密钥（ CMK ）。
+
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["了解如何为 Cloud Volumes ONTAP 设置 AWS KMS"^]。
+
+. * 充电方法 * ：指定要在此系统中使用的充电选项。
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["了解这些充电方法"^]。
+
+. * NetApp 支持站点帐户 * ：选择一个 NetApp 支持站点帐户。
+. * 预配置软件包 * ：从四个预配置软件包中选择一个，该软件包将确定在工作环境中创建的卷的多个因素。
+. * SMB 配置 * ：如果您计划在此工作环境中使用 SMB 部署卷，则可以设置 CIFS 服务器和相关配置要素。
+. 定义完此操作所需的参数后，单击 * 应用 * 。
++
+如果模板值已正确完成，则会在 "Create work Environment in AWS （ single node ） " 框中添加一个绿色复选标记。
+
+. 您可能需要在此模板中添加另一项操作，以便为此工作环境创建卷。如果是，请单击 image:button_plus_sign_round.png["加号按钮"] 并添加该操作。请参见操作说明 <<Create a template for a Cloud Volumes ONTAP volume,为 Cloud Volumes ONTAP 卷创建模板>> 了解详细信息。
+. 在左上方输入模板名称。
+. 单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。
++
+通过 Drift ， Cloud Manager 可以监控您在创建此模板时为参数输入的硬编码值。
+
+. 单击 * 保存模板 * 。
+
+
+此时将创建此模板，并将您返回到显示新模板的模板信息板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+== 使用模板查找现有资源和启用服务的示例
+
+使用 _find existing resources_ 操作，您可以查找特定的工作环境或查找现有卷并在这些卷上启用云服务。此操作提供了各种筛选器，因此您可以缩小搜索范围，仅搜索您感兴趣的资源。
+
+
+NOTE: 此时，您只能在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您只能在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。
+
+
+
+=== 查找现有卷并激活 Cloud Backup
+
+通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略。因此，这些工作环境中未来的所有卷都可以使用相同的备份策略。
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_blank.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 空白模板 * ，然后单击 * 开始使用 * 。
++
+此时将显示 _Add New Action_ 页面。
+
++
+image:screenshot_create_template_find_resource_action.png["显示如何从添加新操作页面中选择查找现有资源操作的屏幕截图。"]
+
+. 选择 * 查找现有资源 * 作为要定义的操作类型，然后单击 * 应用 * 。
++
+此时将显示 _Find Existing Resources Action Definition_ 页面。
+
++
+image:screenshot_define_find_resource_action1.png["屏幕截图显示了一个空白的 \" 查找现有资源 \" 模板，您需要填写此模板。"]
+
+. * 操作名称 * ：输入自定义操作名称，而不是默认值。例如， " 在集群 ABC 上查找大型卷并启用备份 " 。
+. * 资源类型： * 选择要查找的资源类型。在这种情况下，您可以选择 * Cloud Volumes ONTAP 中的卷 * 。
++
+这是此操作唯一需要的条目。您可以单击 * 立即继续 * ，此时将收到环境中所有 Cloud Volumes ONTAP 系统上所有卷的列表。
+
++
+相反，建议您填写几个筛选器，以减少要应用 Cloud Backup 操作的结果数（在本例中为卷）。
+
+. 在 _context_ 区域中，您可以选择特定的工作环境以及有关该工作环境的其他一些详细信息。
++
+image:screenshot_define_find_resource_filter_context.png["显示可应用于 \" 查找现有资源 \" 模板的上下文筛选器的屏幕截图。"]
+
+. 在 _Details_area 中，您可以选择卷名称和卷大小。
++
+对于卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。
+
++
+对于卷大小，您可以指定一个范围；例如，介于 100 GiB 和 500 GiB 之间的所有卷。
+
++
+image:screenshot_define_find_resource_filter_details.png["屏幕截图显示了可应用于 \" 查找现有资源 \" 模板的详细信息筛选器。"]
+
+. 单击 * 继续 * ，页面将更新以显示您在模板中定义的搜索条件。
++
+image:screenshot_define_find_resource_search_criteria.png["显示为查找现有资源模板定义的搜索条件的屏幕截图。"]
+
+. 单击 * 立即测试搜索条件 * 以查看当前结果。
++
+** 如果结果与您的预期不同，请单击 image:screenshot_edit_icon.gif["编辑铅笔图标"] 在 _Search Criteria_ 旁边，进一步细化搜索范围。
+** 如果结果正常，请单击 * 完成 * 。
++
+已完成的 _find existing resources_ 操作将显示在编辑器窗口中。
+
+
+
+. 单击加号以添加其他操作，选择 * 启用卷上的云备份 * ，然后单击 * 应用 * 。
++
+此时将向窗口添加 _Enable Cloud Backup on Volume_ 操作。
+
++
+image:screenshot_template_add_backup_action.png["显示向模板添加 Cloud Backup 操作的步骤的屏幕截图。"]
+
+. 现在，您可以按中所述定义备份条件 <<Add Backup functionality to a volume,向卷添加备份功能>> 以便模板将正确的备份策略应用于从 _find existing resources_ 操作中选择的卷。
+. 单击 * 应用 * 保存对备份操作所做的自定义设置，然后在完成后单击 * 保存模板 * 。
+
+
+此时将创建此模板，并将您返回到显示新模板的模板信息板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+=== 查找现有工作环境
+
+使用 _find existing resources_ 操作，您可以找到工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。
+
+.步骤
+. 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
++
+此时将显示 _Select_A Template_ 页面。
+
++
+image:screenshot_create_template_primary_action_blank.png["显示如何选择要使用此模板执行的主要操作的屏幕截图。"]
+
+. 选择 * 空白模板 * ，然后单击 * 开始使用 * 。
++
+此时将显示 _Add New Action_ 页面。
+
++
+image:screenshot_create_template_find_resource_action.png["显示如何从添加新操作页面中选择查找现有资源操作的屏幕截图。"]
+
+. 选择 * 查找现有资源 * 作为要定义的操作类型，然后单击 * 应用 * 。
++
+此时将显示 _Find Existing Resources Action Definition_ 页面。
+
++
+image:screenshot_define_find_work_env.png["屏幕截图显示了一个空白的 \" 查找现有资源 \" 模板，您需要填写此模板。"]
+
+. * 操作名称 * ：输入自定义操作名称，而不是默认值。例如， " 查找包括达拉斯的工作环境 " 。
+. * 资源类型： * 选择要查找的资源类型。在这种情况下，您应选择 * 工作环境 * 。
++
+这是此操作唯一需要的条目。您可以单击 * 立即继续 * ，此时将收到环境中所有工作环境的列表。
+
++
+建议您填写几个筛选器以减少结果数量（此处为工作环境）。
+
+. 在 _Details_区域 中定义了一些筛选器后，您可以选择特定的工作环境。
+. 单击 * 继续 * 以保存设置，然后单击 * 完成 * 。
+. 在左上方输入模板名称，然后单击 * 保存模板 *
+
+
+此时将创建此模板，并将您返回到显示新模板的模板信息板。
+
+请参见 <<What to do after you have created the template,您应该向用户介绍有关模板的信息>>。
+
+
+
+== 使用模板启用服务的示例
+
+通过服务模板，您可以在新创建的卷上激活 Cloud Backup ， Cloud Data sense 或 Replication （ SnapMirror ）服务。
+
+
+
+=== 向卷添加备份功能
+
+创建卷模板时，您可以使用在模板中添加要定期创建卷备份的模板 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["云备份"^] 服务
+
+
+TIP: 此操作不适用于 Azure NetApp Files 卷。
+
+image:screenshot_template_backup.png["页面的屏幕截图，用于为卷启用备份功能。"]
+
+. * 策略 * ：选择要使用的备份策略。
+. * 上下文 * ：默认情况下，系统会为工作环境， Storage VM 和卷填充变量，以指示您将为先前在此同一模板中创建的卷创建备份。因此，如果您希望这样做，您就可以完全满足要求。
++
+如果要为其他卷创建备份，可以手动输入这些详细信息。请参见操作说明 link:reference-template-building-blocks.html#pass-values-between-template-actions["填写上下文字段"] 以指示其他卷。
+
+. 单击 * 应用 * 以保存所做的更改。
+
+
+
+
+=== 向卷添加数据感知功能
+
+创建卷模板时，您可以使用在模板中添加要扫描卷的合规性和分类的内容 https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["云数据感知"^] 服务
+
+image:screenshot_template_data_sense.png["页面的屏幕截图，用于为卷启用扫描功能。"]
+
+. * 上下文 * ：默认情况下，系统会为工作环境，卷名称，卷 UUID ，卷路径和协议填充变量，以指示您将扫描先前在此同一模板中创建的卷的数据。因此，如果您希望这样做，您就可以完全满足要求。
++
+如果要扫描其他卷的数据，可以手动输入这些详细信息。请参见操作说明 link:reference-template-building-blocks.html#pass-values-between-template-actions["填写上下文字段"] 以指示其他卷。
+
+. 单击 * 应用 * 以保存所做的更改。
+
+
+
+
+=== 向卷添加复制功能
+
+创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["Replication"] 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。
+
+
+TIP: 此操作不适用于 Azure NetApp Files 卷。
+
+复制功能包括三个部分：选择源卷，选择目标卷以及定义复制设置。下面将介绍每个部分。
+
+. * 源详细信息 * ：输入要复制的源卷的详细信息：
++
+image:screenshot_template_replication_source.png["用于定义复制源卷位置的页面的屏幕截图。"]
+
++
+.. 默认情况下，系统会为工作环境， Storage VM 和卷填写前三个变量，以指示您将复制先前在此同一模板中创建的卷。因此，如果您希望这样做，您就可以完全满足要求。
++
+如果要复制其他卷，可以手动输入这些详细信息。请参见操作说明 link:reference-template-building-blocks.html#pass-values-between-template-actions["填写上下文字段"] 以指示其他卷。
+
+.. 复制要求源和目标工作环境通过其集群间 LIF 进行连接。输入源工作环境的集群间 LIF IP 地址。
++
+要获取此信息，请双击工作环境，单击菜单图标，然后单击信息。
+
+
+
+. * 目标详细信息 * ：输入有关将通过复制操作创建的目标卷的详细信息：
++
+image:screenshot_template_replication_dest.png["用于定义复制目标卷位置的页面的屏幕截图。"]
+
++
+.. 选择要创建卷的工作环境。
+.. 选择卷所在的 Storage VM 。
+.. 将卷复制到 Cloud Volumes ONTAP 集群（而不是本地 ONTAP 集群）时，您需要指定目标提供程序（ AWS ， Azure 或 GCP ）。
+.. 将卷复制到 Cloud Volumes ONTAP 集群时，您可以指定是否在目标卷上启用卷分层。
+.. 对于目标卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。
+.. 复制要求源和目标工作环境通过其集群间 LIF 进行连接。输入目标工作环境的集群间 LIF IP 地址。
+.. 选择卷所在的聚合。
+.. 将卷复制到 Cloud Volumes ONTAP 集群（而不是本地 ONTAP 集群）时，您需要指定要用于新卷的磁盘类型。
+
+
+. * 复制详细信息 * ：输入有关复制操作类型和频率的详细信息：
++
+image:screenshot_template_replication_policy.png["页面的屏幕截图，用于定义此关系的复制设置。"]
+
++
+.. 选择 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication-policies.html#types-of-replication-policies["复制策略"^] 要使用的。
+.. 选择一次性副本或重复复制计划。
+.. 如果希望偏移报告包含 SnapMirror 关系的复制运行状况以及滞后时间，状态和上次传输时间，请启用复制运行状况监控。 link:task-check-template-compliance.html#replication-health-details-in-the-drift-report["请在漂移报告中查看这种情况"]。
+.. 选择是否要设置传输速率限制，然后输入可传输数据的最大速率（以 KB/ 秒为单位）。您可以输入一个固定值，也可以提供最小值和最大值，并让存储管理员在该范围内选择一个值。
+
+
+. 单击 * 应用 * 以保存所做的更改。
+
+
+
+
+== 创建模板后要执行的操作
+
+创建模板后，您应通知存储管理员在创建新的工作环境和卷时使用此模板。
+
+您可以将其指向 link:task-run-templates.html["使用模板创建资源"] 了解详细信息。
+
+
+
+== 编辑或删除模板
+
+如果需要更改任何参数，您可以修改模板。保存更改后，从模板创建的所有未来资源将使用新参数值。
+
+如果您不再需要某个模板，也可以将其删除。删除模板不会影响使用该模板创建的任何资源。但是，删除模板后，无法执行任何偏移合规性检查。
+
+image:screenshot_template_edit_remove.png["显示如何修改模板或删除模板的屏幕截图。"]
+
+
+
+== 创建模板副本
+
+您可以创建现有模板的副本。如果您要创建与现有模板非常相似的新模板，这可以节省大量时间。只需使用新名称进行复制，然后您可以编辑此模板以更改使此模板唯一的几个项。
+
+image:screenshot_template_duplicate.png["显示如何复制模板的屏幕截图。"]
