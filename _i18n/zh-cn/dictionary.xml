@@ -72,22 +72,14 @@
   <block id="329185ee9cca0721a94429c99d157bdf" category="cell">管理存储</block>
   <block id="29a899084977c92604a3d26b10f54ca5" category="summary">了解应用程序模板和标记中的新增功能。</block>
   <block id="79c7b182e7e188861d00e5c2e6128d94" category="doc">应用程序模板和标记的新增功能</block>
-  <block id="42b5df730d6616520195746bafa566eb" category="section-title">2022 年 3 月 3 日</block>
   <block id="750accbcb5f7845669ac5669ec7c505f" category="section-title">现在，您可以构建一个模板来查找特定的工作环境。</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link-macro">有关详细信息，请访问此处</block>
-  <block id="ac8cf21a43287b3320eadc26dc46e2c7" category="paragraph">使用 " 查找现有资源 " 操作，您可以确定工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。 <block ref="3f0db9ccbd4470dc6418f8b2c27bf220" category="inline-link-macro-rx"></block>。</block>
   <block id="eb256592f50cf81901c9060f4f530714" category="section-title">能够在 AWS 中创建 Cloud Volumes ONTAP HA 工作环境。</block>
   <block id="6eed6fdcaa0bf2c22f0c8e78ff686d29" category="inline-link-macro">请参见如何为 Cloud Volumes ONTAP 工作环境创建模板</block>
-  <block id="6bdac40b84678366207c23a1f065fcfd" category="paragraph">现有的 Cloud Volumes ONTAP AWS 工作环境创建支持范围已得到扩展，除了创建单节点系统之外，还可以创建高可用性系统。 <block ref="cd0284b4ef2d7bb07ef04a4c4b7f4a15" category="inline-link-macro-rx"></block>。</block>
-  <block id="9fe54dabf8677a2dd216b421ca613a20" category="section-title">2022 年 2 月 9 日</block>
   <block id="a209c13ddcd9cf86d87b010a08e4eb6e" category="section-title">现在，您可以构建一个模板来查找特定的现有卷，然后启用 Cloud Backup 。</block>
   <block id="98b343467576e58f6658965bc67f83c1" category="paragraph">使用新的 " 查找资源 " 操作，您可以确定要启用 Cloud Backup 的所有卷，然后使用 Cloud Backup 操作在这些卷上启用备份。</block>
-  <block id="5f7aca397c1159eec8840243c23d21ef" category="paragraph">目前支持 Cloud Volumes ONTAP 和内部 ONTAP 系统上的卷。 <block ref="669569957f8d1752c3d36c9709b3f805" category="inline-link-macro-rx"></block>。</block>
-  <block id="f113b79a4bb13850776b0f197bc567c4" category="section-title">2021 年 10 月 31 日</block>
   <block id="4ae195844f422b6b1648655974f47ef9" category="section-title">现在，您可以标记同步关系，以便对其进行分组或分类，以便于访问。</block>
   <block id="049ebb609707e4c76f578eb98777ffdc" category="inline-link-macro">了解有关资源标记的更多信息</block>
-  <block id="ed96aae04d87996c1167c958ef57d92d" category="paragraph"><block ref="c58eac1aa8c871fffca9a439e5057057" category="inline-link-macro-rx"></block>。</block>
-  <block id="a4ff224d7ed6d77fb230202cc45ed6fa" category="section-title">2021 年 10 月 11 日</block>
   <block id="381310632f9a1c2882832a480711e4cf" category="section-title">现在，您可以创建现有模板的副本。</block>
   <block id="addd83032f7bc85573c2d778fbce152b" category="inline-link-macro">请参见如何创建模板副本</block>
   <block id="d8297eba97a5465d726b7dfc48cc13ea" category="paragraph">如果您希望创建与现有模板非常相似的新模板，创建副本可以节省大量时间。只需使用新名称创建副本，然后更改使模板唯一的几个项即可。 <block ref="f91157bfd2bb5cbf5e539da6f97e4710" category="inline-link-macro-rx"></block>。</block>
@@ -96,12 +88,10 @@
   <block id="91d5a3b2a51a086529628af9b87ef105" category="section-title">添加了支持，因此您可以为某些 GCP 资源添加标签。</block>
   <block id="db1b81be614bd9a5ca7dc44b22c02310" category="inline-link-macro">请参见您可以标记的 GCP 资源</block>
   <block id="e4e712eb035bdea737277dd1b8993a0a" category="paragraph">现在，您可以使用 Cloud Manager 标记服务管理 GCP 资源上的标签。您可以查看已应用于资源的 GCP 标签和标签值，也可以将这些标签应用于您管理的其他 GCP 资源。 <block ref="409286efa16f3a61c8f6160b0cdd3b73" category="inline-link-macro-rx"></block>。</block>
-  <block id="3b7a1a77cdd08778e0827fbf312442b7" category="section-title">2021 年 9 月 2 日</block>
   <block id="bd96464dcc320a50a052dba445c1ddaa" category="section-title">现在，您可以使用标记服务管理 Azure 资源上的标记。</block>
   <block id="b4b08857877112938961aaa3e2a131f2" category="inline-link-macro">查看您可以标记的 Azure 资源</block>
   <block id="44e0789645e569abc1d8998ab3015e3d" category="paragraph">您可以查看已应用于资源的 Azure 标记和标记值，也可以将这些标记应用于您正在管理的其他 Azure 资源。 <block ref="566291be7033a26e1b235b2a2d2ef8ff" category="inline-link-macro-rx"></block>。</block>
   <block id="beea1e5bb8f2f2bd9be93638d03e8b08" category="section-title">现在，可以标记其他一些 AWS EC2 资源。</block>
-  <block id="25a162aef74775e949e086ee904f94a8" category="section-title">2021 年 8 月 8 日</block>
   <block id="29c6c5f2894fd20d3b18533527bec317" category="section-title">现在，您可以使用模板创建 Cloud Volumes ONTAP 工作环境。</block>
   <block id="984956ca6b0ab2e60f484c9bada495b5" category="inline-link-macro">为 Cloud Volumes ONTAP 工作环境创建模板</block>
   <block id="05ef6a32f83373b0aaaab04a0cfb067e" category="paragraph">此支持目前仅适用于 AWS 环境，并且仅适用于单节点集群。请参见操作说明 <block ref="b3c0e34ddc6f02981e8f634895a0f3cf" category="inline-link-macro-rx"></block>。</block>
@@ -731,4 +721,14 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central 博客</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
+  <block id="983a4e7f5913304ec713a249baf7be47" category="section-title">2022 年 3 月 3 日</block>
+  <block id="d92cd2c19989d78fa305aa796b16eb3e" category="paragraph">使用 " 查找现有资源 " 操作，您可以确定工作环境，然后使用其他模板操作（例如创建卷）轻松对现有工作环境执行操作。<block ref="9d92075da3fbaa4669bd5d845665bbc5" category="inline-link-rx"></block>。</block>
+  <block id="9f1c9f721b531a16a189c619276f3969" category="paragraph">现有的 Cloud Volumes ONTAP AWS 工作环境创建支持范围已得到扩展，除了创建单节点系统之外，还可以创建高可用性系统。<block ref="35471ca8d19c78b8fa96525b636e5efc" category="inline-link-rx"></block>。</block>
+  <block id="17fc50243c5a80f407e83d268bcab18e" category="section-title">2022 年 2 月 9 日</block>
+  <block id="8b4368f9c9aad8f44dd1b5ba1d4d746a" category="paragraph">目前支持 Cloud Volumes ONTAP 和内部 ONTAP 系统上的卷。<block ref="f7210026d1a7cf546c7270b9d8e104cc" category="inline-link-rx"></block>。</block>
+  <block id="784044bd2af30d58bbb0dbcea3adbad6" category="section-title">2021 年 10 月 31 日</block>
+  <block id="00b4c4979fe8d65dc663ea7c82a1b1c2" category="paragraph"><block ref="ddc85a18edb3f9e32810e603b7ef9eb7" category="inline-link-rx"></block>。</block>
+  <block id="778446633edb0e3ec577cd756d668367" category="section-title">2021 年 10 月 11 日</block>
+  <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2021 年 9 月 2 日</block>
+  <block id="d8cd3b5af685675591328bfe617a63c8" category="section-title">2021 年 8 月 8 日</block>
 </blocks>
