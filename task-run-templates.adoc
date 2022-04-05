@@ -61,8 +61,8 @@ summary: 选择您的组织为创建针对特定工作负载和应用程序优�
 
 无论选择哪种方法，您都可以在以下部分中查看有关必须定义的所需卷参数的详细信息：
 
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-volumes-from-templates["如何配置 Cloud Volumes ONTAP 卷"^]
-* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf-volumes.html#creating-volumes-from-templates["如何配置 Azure NetApp Files 卷"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html#create-a-volume-from-a-template["如何配置 Cloud Volumes ONTAP 卷"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-volumes.html#create-volumes-from-templates["如何配置 Azure NetApp Files 卷"^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-provisioning-ontap.html#creating-volumes-from-templates["如何配置内部 ONTAP 卷"^]
 
 

@@ -144,7 +144,6 @@
   <block id="b927c65793ede8840d859f745c1070b4" category="inline-link">发现内部部署的 ONTAP 系统</block>
   <block id="c8901a7a496874759b4b8b60b0de5c3d" category="list-text">创建内部 ONTAP 卷模板时，请确保您的用户可以使用内部 ONTAP 工作环境。请参见操作说明<block ref="73a5fece0c926f1d97e300f9e1e63b86" category="inline-link-rx"></block> 在 Cloud Manager 中。</block>
   <block id="89bbeb90a25e5540f1875c6148fc07a6" category="inline-link">创建 Azure NetApp Files 工作环境</block>
-  <block id="9d2d3321463aff7e73ef30b5a3ce32a8" category="list-text">创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明<block ref="4701cc78270032c8498a3da46c645bc0" category="inline-link-rx"></block> 在 Cloud Manager 中。</block>
   <block id="e6ed2b3f4bf8b70c7dffd440bfa20748" category="list-text">如果您计划使用 Cloud Backup 备份模板中的卷，请确保您的环境已激活 Cloud Backup 。</block>
   <block id="375fb9ecf54511eed57c23439aba8fa9" category="list-text">如果您计划使用 Cloud Data sense 扫描模板中的卷，请确保您的环境已激活 Cloud Data sense 。</block>
   <block id="b2db245c1e7b0de62f61003787ba3eb2" category="list-text">如果您计划在此模板中启用复制，并且此模板适用于内部 ONTAP 卷，则 ONTAP 集群必须具有活动的 SnapMirror 许可证。</block>
@@ -152,7 +151,6 @@
   <block id="54efaa09fa271348667d3925486f25d8" category="paragraph">通过资源模板，您可以创建新卷或新的 Cloud Volumes ONTAP 工作环境。</block>
   <block id="030a036b48378de1f3003036be2d3597" category="section-title">为 Cloud Volumes ONTAP 卷创建模板</block>
   <block id="ab93b13353c035a51f382bda0bfbed96" category="inline-link">如何配置 Cloud Volumes ONTAP 卷</block>
-  <block id="95fc8ac0e9e615981015162965b46e17" category="paragraph">请参见<block ref="b4d90a018392b441728748f197c63579" category="inline-link-rx"></block> 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。</block>
   <block id="e9e4c331008e320c9b03b119f438ec84" category="paragraph">在此示例中，我们将创建一个名为 "CVO volume for databases" 的模板，其中包括以下 2 项操作：</block>
   <block id="6115c1aa690e31fcf33eef72f8accb32" category="list-text">创建 Cloud Volumes ONTAP 卷</block>
   <block id="4611422bf9a4ff570849e7d651f9c0a2" category="paragraph">为 AWS 环境创建卷，为其配置 100 GB 的存储，将 Snapshot 策略设置为 " 默认 " 并启用存储效率。</block>
@@ -209,7 +207,6 @@
   <block id="1d52e1ed02fe4b810c04939e74af1f18" category="paragraph"><block ref="1d52e1ed02fe4b810c04939e74af1f18" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f558391a06df755ed33bfad6325d0441" category="list-text">选择 * 3 个月保留 * 备份策略可创建 30 个每日备份， 13 个每周备份和 3 个每月备份。</block>
   <block id="ee90c4ccb63dcb129be28139926904d8" category="inline-xref">如何填写这些字段</block>
-  <block id="ec713828140b03b149e442465903607d" category="list-text">在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 <block ref="2ed015b52e0ac4a30a046a0842ac9c50" category="inline-xref-macro-rx"></block>。</block>
   <block id="0728b4f74021dc704fab300222094c8b" category="list-text">单击 * 应用 * ，此时将保存 Cloud Backup 对话框。</block>
   <block id="46725495896c458f104f504d53b4b320" category="list-text">在左上角输入用于 Databases* （本示例）的模板名称 * CVO volume 。</block>
   <block id="d69be6c531037f06436630d128988a41" category="list-text">单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。</block>
@@ -274,7 +271,6 @@
   <block id="cc46cd379c9c1e14c8c28bca9392395f" category="list-text">此模板不会在工作环境中创建第一个卷。要创建卷，必须在模板中添加 " 在 Cloud Volumes ONTAP 中创建卷 " 操作。</block>
   <block id="af78f376877c8c8c70d830fc500a2cca" category="inline-link">如何在 AWS 中启动单节点 Cloud Volumes ONTAP 系统</block>
   <block id="27b91813df07253f9b34c2c33a28dc25" category="inline-link">AWS 中的 Cloud Volumes ONTAP HA 对</block>
-  <block id="418f4922cc1e2119f950d8b304057241" category="paragraph">请参见<block ref="17218100ebd265ac766a5fc208b6c6f8" category="inline-link-rx"></block> 或<block ref="fdfa6348617f66045251f1495e58b8bb" category="inline-link-rx"></block> 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。</block>
   <block id="982967d26b8426889a4c2982331cbefe" category="paragraph"><block ref="982967d26b8426889a4c2982331cbefe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="40bb655abcddd337fbc3dc9a23c1c92b" category="list-text">选择 * 在 AWS 中创建工作环境（单节点） * 或 * 在 AWS 中创建工作环境（高可用性） * 作为要创建的资源类型，然后单击 * 应用 * 。</block>
   <block id="e8547bfeacec12f30aa5d7de4fbd86b4" category="paragraph">在此示例中，将显示 _Create Working Environment in AWS （ single node ） _ 页面。</block>
@@ -373,7 +369,6 @@
   <block id="38c9050a05ab7ae3bc16a77a1ce8e787" category="paragraph">如果要扫描其他卷的数据，可以手动输入这些详细信息。请参见操作说明 <block ref="be096e16163144495d696eb6dce624e2" category="inline-link-macro-rx"></block> 以指示其他卷。</block>
   <block id="e0c791fcd9f870d36b0118528bd195c2" category="section-title">向卷添加复制功能</block>
   <block id="8c340dc334134096f68b880b42a8692c" category="inline-link">Replication</block>
-  <block id="df4d3e197dd1d9726bb6d04f4f1e8c3b" category="paragraph">创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据<block ref="cce583fd996b3229b9a775a453c32d13" category="inline-link-rx"></block> 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。</block>
   <block id="8dcc2a374ce8c093526cc5152324230d" category="paragraph">复制功能包括三个部分：选择源卷，选择目标卷以及定义复制设置。下面将介绍每个部分。</block>
   <block id="4da2d6a9396d0b82185925638b423b25" category="list-text">* 源详细信息 * ：输入要复制的源卷的详细信息：</block>
   <block id="cfae220ef6bc70299c0d06988e12e0b6" category="inline-image-macro">用于定义复制源卷位置的页面的屏幕截图。</block>
@@ -533,9 +528,7 @@
   <block id="7d732f0050089fa03a5ccaf0ef3972e8" category="list-text">从模板信息板运行卷模板</block>
   <block id="2b408048493f7891ab8a18339cbef7b1" category="paragraph">无论选择哪种方法，您都可以在以下部分中查看有关必须定义的所需卷参数的详细信息：</block>
   <block id="1d4cf496ca25a3cab66cbc73d2b1c000" category="inline-link">如何配置 Cloud Volumes ONTAP 卷</block>
-  <block id="fd2dc88b92570ea35c3a58cc7d5e0985" category="list-text"><block ref="fd2dc88b92570ea35c3a58cc7d5e0985" category="inline-link-rx"></block></block>
   <block id="96483bf24dd5d282884c28a8c230bfde" category="inline-link">如何配置 Azure NetApp Files 卷</block>
-  <block id="002a9d28d8b22f7755aac03a979f0a60" category="list-text"><block ref="002a9d28d8b22f7755aac03a979f0a60" category="inline-link-rx"></block></block>
   <block id="df4a9164b01ccf35f74c9520638ad0b7" category="inline-link">如何配置内部 ONTAP 卷</block>
   <block id="34b8afcdd2d501d158f8dfa46a70068b" category="list-text"><block ref="34b8afcdd2d501d158f8dfa46a70068b" category="inline-link-rx"></block></block>
   <block id="c07fd60a71244d7a4ab72c83beb068d6" category="section-title">从工作环境运行卷模板</block>
@@ -731,4 +724,11 @@
   <block id="778446633edb0e3ec577cd756d668367" category="section-title">2021 年 10 月 11 日</block>
   <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2021 年 9 月 2 日</block>
   <block id="d8cd3b5af685675591328bfe617a63c8" category="section-title">2021 年 8 月 8 日</block>
+  <block id="fb68c4d66bb3415869da179d1c3cca51" category="list-text">创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明<block ref="476f1ab3b7492b38993b3c305f1332d8" category="inline-link-rx"></block> 在 Cloud Manager 中。</block>
+  <block id="821f9fc7a9c5e046eb762a4d185a08f7" category="paragraph">请参见<block ref="154a2016582f1d0d3d1ef7ccb4cc4af7" category="inline-link-rx"></block> 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。</block>
+  <block id="102438db076a8d87db11f71b80bc5d27" category="list-text">在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 <block ref="0f494e6e7e9db827f82823d25be045fa" category="inline-link-macro-rx"></block>。</block>
+  <block id="cc8cd5a43afbf50d3c76ca4927c286d1" category="paragraph">请参见<block ref="17218100ebd265ac766a5fc208b6c6f8" category="inline-link-rx"></block> 或<block ref="e59af64db55d6d6b5c59844c08c8e1b5" category="inline-link-rx"></block> 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。</block>
+  <block id="e91e8aaf9f11e77bfda39b40027b045f" category="paragraph">创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据<block ref="f2bb37938a60ba7c308705367c1f4d0b" category="inline-link-rx"></block> 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。</block>
+  <block id="2be95708ec7ad744a5fa35812c4330a3" category="list-text"><block ref="2be95708ec7ad744a5fa35812c4330a3" category="inline-link-rx"></block></block>
+  <block id="ed7e85ad682d7c827abfc065cc610813" category="list-text"><block ref="ed7e85ad682d7c827abfc065cc610813" category="inline-link-rx"></block></block>
 </blocks>

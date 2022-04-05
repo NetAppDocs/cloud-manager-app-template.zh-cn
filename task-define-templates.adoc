@@ -43,7 +43,7 @@ summary: '选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构�
 * 如果您还没有 Connector ， https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["请参见如何创建连接器"^] 适用于 AWS ， Azure 和 GCP 。
 * 创建 Cloud Volumes ONTAP 卷模板时，请确保您的用户可以使用 Cloud Volumes ONTAP 工作环境。请参见如何在中启动 Cloud Volumes ONTAP 系统 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS"^]， https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure 酒店"^]或中的 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["GCP"^]。
 * 创建内部 ONTAP 卷模板时，请确保您的用户可以使用内部 ONTAP 工作环境。请参见操作说明 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["发现内部部署的 ONTAP 系统"^] 在 Cloud Manager 中。
-* 创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明 https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html["创建 Azure NetApp Files 工作环境"^] 在 Cloud Manager 中。
+* 创建 Azure NetApp Files 卷模板时，请确保您的用户可以使用 Azure NetApp Files 工作环境。请参见操作说明 https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["创建 Azure NetApp Files 工作环境"^] 在 Cloud Manager 中。
 * 如果您计划使用 Cloud Backup 备份模板中的卷，请确保您的环境已激活 Cloud Backup 。
 * 如果您计划使用 Cloud Data sense 扫描模板中的卷，请确保您的环境已激活 Cloud Data sense 。
 * 如果您计划在此模板中启用复制，并且此模板适用于内部 ONTAP 卷，则 ONTAP 集群必须具有活动的 SnapMirror 许可证。
@@ -59,7 +59,7 @@ summary: '选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构�
 
 === 为 Cloud Volumes ONTAP 卷创建模板
 
-请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-flexvol-volumes["如何配置 Cloud Volumes ONTAP 卷"^] 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。
+请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html["如何配置 Cloud Volumes ONTAP 卷"^] 有关需要在 Cloud Volumes ONTAP 卷模板中完成的所有参数的详细信息。
 
 在此示例中，我们将创建一个名为 "CVO volume for databases" 的模板，其中包括以下 2 项操作：
 
@@ -156,7 +156,7 @@ image:screenshot_create_template_define_action_cvo.png["显示您需要填写的
 image:screenshot_create_template_add_action.png["显示可添加到已创建卷的其他操作的屏幕截图。"]
 
 . 选择 * 3 个月保留 * 备份策略可创建 30 个每日备份， 13 个每周备份和 3 个每月备份。
-. 在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 <<Pass values between template actions,如何填写这些字段>>。
+. 在 "Working Environment" 和 "Volume Name" 字段下方，您可以选择三个选项来指示要启用备份的卷。请参见 link:reference-template-building-blocks.html#pass-values-between-template-actions["如何填写这些字段"]。
 . 单击 * 应用 * ，此时将保存 Cloud Backup 对话框。
 . 在左上角输入用于 Databases* （本示例）的模板名称 * CVO volume 。
 . 单击 * 设置和偏移 * 以提供更详细的问题描述，以便可以将此模板与其他类似模板区分开，从而可以为整个模板启用偏移，然后单击 * 应用 * 。
@@ -382,7 +382,7 @@ image:screenshot_create_template_define_action_onprem.png["显示需要填写的
 
 
 ====
-请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws["如何在 AWS 中启动单节点 Cloud Volumes ONTAP 系统"^] 或 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws["AWS 中的 Cloud Volumes ONTAP HA 对"] 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。
+请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws["如何在 AWS 中启动单节点 Cloud Volumes ONTAP 系统"^] 或 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws["AWS 中的 Cloud Volumes ONTAP HA 对"^] 了解必须具备的前提条件，以及需要在此模板中定义的所有参数的详细信息。
 
 .步骤
 . 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
@@ -637,7 +637,7 @@ image:screenshot_template_data_sense.png["页面的屏幕截图，用于为卷�
 
 === 向卷添加复制功能
 
-创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["Replication"] 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。
+创建卷模板时，您可以使用在模板中添加要将卷中的数据复制到另一个卷的数据 https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["Replication"^] 服务您可以将数据复制到 Cloud Volumes ONTAP 集群或内部 ONTAP 集群。
 
 
 TIP: 此操作不适用于 Azure NetApp Files 卷。
