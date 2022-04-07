@@ -18,11 +18,11 @@ sidebar:
     url: "/whats-new.html"
   - title: 入门
     entries:
-    - title: 了解应用程序模板
+    - title: 了解 AppTemplate
       url: "/concept-resource-templates.html"
     - title: 了解标记
       url: "/concept-tagging.html"
-  - title: 使用应用程序模板
+  - title: 使用 AppTemplate
     entries:
     - title: 使用模板实现资源创建标准化
       entries:
@@ -52,7 +52,7 @@ homepage:
   tiles:
   - title: 入门
     links:
-    - title: 了解应用程序模板
+    - title: 了解 AppTemplate
       url: concept-resource-templates.html
     - title: 了解标记
       url: concept-tagging.html
@@ -68,12 +68,8 @@ homepage:
       url: task-define-templates.html#create-a-template-for-an-azure-netapp-files-volume
     - title: 内部 ONTAP 卷
       url: task-define-templates.html#create-a-template-for-an-on-premises-ontap-volume
-    - title: 向卷添加备份功能
-      url: task-define-templates.html#add-backup-functionality-to-a-volume
-    - title: 向卷添加数据感知功能
-      url: task-define-templates.html#add-data-sense-functionality-to-a-volume
-    - title: 向卷添加复制功能
-      url: task-define-templates.html#add-replication-functionality-to-a-volume
+    - title: 向卷添加备份，数据感知或复制功能
+      url: task-define-templates.html#examples-of-enabling-services-using-templates
   - title: 使用模板创建资源
     links:
     - title: Cloud Volumes ONTAP 工作环境
