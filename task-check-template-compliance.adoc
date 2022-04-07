@@ -6,6 +6,7 @@ summary: 'Cloud Manager 可以监控使用 " 偏移 " 功能创建资源时使�
 ---
 = 检查资源是否符合模板要求
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

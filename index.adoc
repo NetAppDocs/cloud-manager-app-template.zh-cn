@@ -7,6 +7,7 @@ summary: 通过 AppTemplate 服务，您可以为 Cloud Manager 工作环境标�
 ---
 = AppTemplate 文档
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

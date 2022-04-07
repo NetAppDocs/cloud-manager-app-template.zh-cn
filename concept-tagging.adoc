@@ -6,6 +6,7 @@ summary: 您可以通过 Cloud Manager 将标记应用于 _exist_ 资源，以�
 ---
 = 了解标记
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

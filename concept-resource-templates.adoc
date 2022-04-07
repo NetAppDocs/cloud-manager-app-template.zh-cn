@@ -6,6 +6,7 @@ summary: '通过 AppTemplate 服务，您可以在工作环境中标准化资源
 ---
 = 了解 AppTemplate
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

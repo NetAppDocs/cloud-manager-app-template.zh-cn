@@ -6,6 +6,7 @@ summary: 您可以使用 Cloud Manager 标记服务查看，添加，修改和�
 ---
 = 管理资源的标记
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

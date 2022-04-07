@@ -6,6 +6,7 @@ summary: '选择 NetApp 提供的一个或多个 " 操作 " ，然后快速构�
 ---
 = 为您的组织构建应用程序模板
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 在构建模板时，您可以使用某些功能在操作之间传递�
 ---
 = 模板组件
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
