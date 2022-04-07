@@ -280,11 +280,6 @@
   <block id="daa7684c9693e9b5412a05c7d060a1ef" category="inline-image-macro">加号按钮</block>
   <block id="abd25867aae2404fdbef96ae0b0057ee" category="inline-xref">为 Cloud Volumes ONTAP 卷创建模板</block>
   <block id="520d34c754a3e963e32a0fc19ab1421c" category="list-text">您可能需要在此模板中添加另一项操作，以便为此工作环境创建卷。如果是，请单击 <block ref="f928d2751b49d5f69d575bc7f78c5aae" category="inline-image-macro-rx" type="image"></block> 并添加该操作。请参见操作说明 <block ref="f498f1e6b10c72f9f04179db4da15305" category="inline-xref-macro-rx"></block> 了解详细信息。</block>
-  <block id="6375b33aa338dc1017d6313b28a3c363" category="section-title">使用模板查找现有资源和启用服务的示例</block>
-  <block id="68f7b83818f20b7e8979e2dda6a61b21" category="paragraph">使用 _find existing resources_ 操作，您可以查找特定的工作环境或查找现有卷并在这些卷上启用云服务。此操作提供了各种筛选器，因此您可以缩小搜索范围，仅搜索您感兴趣的资源。</block>
-  <block id="595f244394c7e3873ac213fc3b4a7521" category="admonition">此时，您只能在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您只能在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。</block>
-  <block id="3f20fe561065439fa56df3c9ca94e6ed" category="section-title">查找现有卷并激活 Cloud Backup</block>
-  <block id="0ba4ecc2c8a2452e16fbf3776c91fda1" category="paragraph">通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略。因此，这些工作环境中未来的所有卷都可以使用相同的备份策略。</block>
   <block id="6d0c20318ee7bcc13d58fa262e33c7d2" category="inline-image-macro">显示如何从添加新操作页面中选择查找现有资源操作的屏幕截图。</block>
   <block id="0e9d27a36a1187dea1616df501ce108d" category="paragraph"><block ref="0e9d27a36a1187dea1616df501ce108d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11c981e1d4ed40ea0925d9ae06dae41f" category="list-text">选择 * 查找现有资源 * 作为要定义的操作类型，然后单击 * 应用 * 。</block>
@@ -298,7 +293,6 @@
   <block id="759a269bf5c05fa6647b728a4b6acab7" category="list-text">在 _context_ 区域中，您可以选择特定的工作环境以及有关该工作环境的其他一些详细信息。</block>
   <block id="70b9fbef4c70dff460de52b0d7c1eb40" category="inline-image-macro">显示可应用于 " 查找现有资源 " 模板的上下文筛选器的屏幕截图。</block>
   <block id="7a978f856247996229928441e0d8ef1d" category="paragraph"><block ref="7a978f856247996229928441e0d8ef1d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7ce9821e289ff97c6897cdf26f259fa8" category="list-text">在 _Details_area 中，您可以选择卷名称和卷大小。</block>
   <block id="f3ab419ac906615be19ae0d551c2ddd6" category="paragraph">对于卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。</block>
   <block id="8567823797f59455548dc8dd1f03f80e" category="paragraph">对于卷大小，您可以指定一个范围；例如，介于 100 GiB 和 500 GiB 之间的所有卷。</block>
   <block id="be9642dda4ebe2b728f2c474b3d3a411" category="inline-image-macro">屏幕截图显示了可应用于 " 查找现有资源 " 模板的详细信息筛选器。</block>
@@ -394,8 +388,6 @@
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">有关 Cloud Manager 3.9 的注意事项</block>
   <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
-  <block id="b5b938da8856a26053eadd6c64760087" category="inline-link-macro">应用程序模板注意事项</block>
-  <block id="c5339dceaf3a5c5a6c1b7dc27a40604b" category="list-text"><block ref="c5339dceaf3a5c5a6c1b7dc27a40604b" category="inline-link-macro-rx"></block></block>
   <block id="f56a22734fbef43dcef97b492e9cd352" category="summary">在构建模板时，您可以使用某些功能在操作之间传递值（例如卷名称），在有条件的情况下分支以将操作连接在一起（在新卷上启用备份），以及帮助用户在使用此模板时自定义资源。</block>
   <block id="889ecb758e53f24c9efd4553bc09c14a" category="doc">模板组件</block>
   <block id="4312f94678a5f3a99677eff317710d96" category="section-title">特殊模板控件</block>
@@ -656,7 +648,6 @@
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
   <block id="d53e2559d6ace0e907fc57192bf286b6" category="paragraph"><block ref="d53e2559d6ace0e907fc57192bf286b6" category="inline-link-macro-rx"></block></block>
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
-  <block id="0a619ca9c1cd947e450850b3e7de049e" category="sidebar">应用程序模板文档</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">入门</block>
   <block id="d878dbf9ab702cfef892ea35b53108d3" category="sidebar">使用模板实现资源创建标准化</block>
@@ -730,4 +721,14 @@
   <block id="98af7a1c0ade78de5b8dcbfc4ca16024" category="summary">通过 AppTemplate 服务，您可以为 Cloud Manager 工作环境标准化资源创建。</block>
   <block id="973d48daa10556f358647cfe1cc53216" category="sidebar">使用 AppTemplate</block>
   <block id="dc771c253d08d9cdafc72d7919e16d98" category="sidebar">向卷添加备份，数据感知或复制功能</block>
+  <block id="45a406745a298842b185cafcdaedc62b" category="section-title">使用模板查找现有资源的示例</block>
+  <block id="f7322605429ac37b6517eaccfdebcdfe" category="paragraph">使用 _find existing resources_ 操作，您可以通过提供各种筛选器来查找特定的工作环境或查找现有卷，以便可以将搜索范围缩小到仅搜索您感兴趣的资源。找到正确的资源后，您可以将卷添加到工作环境中，或者在生成的卷上启用云服务。</block>
+  <block id="18bc86c303dfcce839364dfb6f86c8d7" category="admonition">此时，您可以在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您可以在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。</block>
+  <block id="38e15ec3e6bd73e018349ed1f0bf12bb" category="section-title">查找现有卷并激活云服务</block>
+  <block id="80252c15af311783e16e6d31bb72ca0b" category="paragraph">通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 或 Cloud Data sense 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略，以便这些工作环境中未来的所有卷都可以使用相同的备份策略。</block>
+  <block id="ad47acd6a839d467d8e7d8cc0ab575bb" category="list-text">在 _Details_area 中，您可以选择卷名称，卷大小范围以及分配给卷的任何标记。</block>
+  <block id="75aa65993e3f52840fc5b343dbb63651" category="paragraph">对于标记，您可以进一步缩小搜索范围，以便结果仅显示具有特定标记键 / 值对的卷。</block>
+  <block id="6fab7ff15514de4d3ca2883bd502b6e7" category="inline-link-macro">AppTemplate 通知</block>
+  <block id="775a83959890feedd00e6dc592c3e60f" category="list-text"><block ref="775a83959890feedd00e6dc592c3e60f" category="inline-link-macro-rx"></block></block>
+  <block id="01861a2435910cac249c0a1eaea3e27b" category="sidebar">应用模板文档</block>
 </blocks>

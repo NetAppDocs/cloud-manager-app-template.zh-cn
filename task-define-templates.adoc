@@ -463,18 +463,18 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 
 
-== 使用模板查找现有资源和启用服务的示例
+== 使用模板查找现有资源的示例
 
-使用 _find existing resources_ 操作，您可以查找特定的工作环境或查找现有卷并在这些卷上启用云服务。此操作提供了各种筛选器，因此您可以缩小搜索范围，仅搜索您感兴趣的资源。
-
-
-NOTE: 此时，您只能在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您只能在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。
+使用 _find existing resources_ 操作，您可以通过提供各种筛选器来查找特定的工作环境或查找现有卷，以便可以将搜索范围缩小到仅搜索您感兴趣的资源。找到正确的资源后，您可以将卷添加到工作环境中，或者在生成的卷上启用云服务。
 
 
+NOTE: 此时，您可以在 Cloud Volumes ONTAP ，内部 ONTAP 和 Azure NetApp Files 系统中找到卷。您可以在 Cloud Volumes ONTAP 和内部 ONTAP 卷上启用云备份。稍后将提供其他资源和服务。
 
-=== 查找现有卷并激活 Cloud Backup
 
-通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略。因此，这些工作环境中未来的所有卷都可以使用相同的备份策略。
+
+=== 查找现有卷并激活云服务
+
+通过当前的 _find existing resources_ 操作功能，您可以在 Cloud Volumes ONTAP 和内部 ONTAP 工作环境中查找当前未启用 Cloud Backup 或 Cloud Data sense 的卷。在特定卷上启用 Cloud Backup 时，此操作还会将您配置的备份策略设置为该工作环境的默认策略，以便这些工作环境中未来的所有卷都可以使用相同的备份策略。
 
 .步骤
 . 选择 * 应用模板 * 服务，单击 * 模板 * 选项卡，然后单击 * 添加新模板 * 。
@@ -510,12 +510,15 @@ image:screenshot_define_find_resource_action1.png["屏幕截图显示了一个�
 +
 image:screenshot_define_find_resource_filter_context.png["显示可应用于 \" 查找现有资源 \" 模板的上下文筛选器的屏幕截图。"]
 
-. 在 _Details_area 中，您可以选择卷名称和卷大小。
+. 在 _Details_area 中，您可以选择卷名称，卷大小范围以及分配给卷的任何标记。
 +
 对于卷名称，单击字段并选择 5 个选项之一。您可以通过选择 * 自由文本 * 让管理员输入任何名称，也可以指定卷名称必须具有特定前缀或后缀，卷名称必须包含 _ 个特定字符，或者卷名称遵循您输入的正则表达式（ regex ）中的规则。
 
 +
 对于卷大小，您可以指定一个范围；例如，介于 100 GiB 和 500 GiB 之间的所有卷。
+
++
+对于标记，您可以进一步缩小搜索范围，以便结果仅显示具有特定标记键 / 值对的卷。
 
 +
 image:screenshot_define_find_resource_filter_details.png["屏幕截图显示了可应用于 \" 查找现有资源 \" 模板的详细信息筛选器。"]
