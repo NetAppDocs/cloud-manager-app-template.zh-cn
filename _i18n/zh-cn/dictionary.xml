@@ -438,10 +438,7 @@
   <block id="3a07949495aa0f10524a38b2f8b42ff9" category="list-text">自动化并改进基础架构的设计和开发</block>
   <block id="628898f2daed85c109f1e353f32ae510" category="list-text">提供一个位置来激活不同的 NetApp 云服务，例如 Cloud Backup 和 Cloud Data sense</block>
   <block id="b56e74814d72e13b8bd9eb4561010dba" category="list-text">确定已更改且不再符合模板的资源（使用 " 偏移 " 功能）</block>
-  <block id="8c1079a8c3d5e5b11329bf8605fb5f44" category="section-title">什么是 " 漂移 " ？</block>
-  <block id="118aedda50dccbbf52d8108f072f5aed" category="paragraph">"Drift " 允许 Cloud Manager 监控使用模板创建资源时使用的参数值。此时， " 偏差 " 可以确定资源何时发生更改，以便您可以手动进行调整，使其恢复与模板的合规性。将来，我们可以在资源不合规时向您发送通知，甚至可以反转用户的更改，以便从模板创建的所有资源自动恢复合规。</block>
   <block id="535863b7811f106bde3e7f273a118764" category="inline-link-macro">了解有关漂移的更多信息</block>
-  <block id="ab043d15e26e04a4e88771647e66f422" category="paragraph"><block ref="070f7b254d8faecc6fc5a699202bdab9" category="inline-link-macro-rx"></block>。</block>
   <block id="04d8b8693a17205c619758eaa8d300e2" category="section-title">可用模板操作</block>
   <block id="1521fcd4ef1bd7f293c2968ccf8c8162" category="paragraph">模板是一系列 " 操作 " ，其中包含一些预定义值。您可以构建包含以下操作的模板：</block>
   <block id="d7b818155971ac6a308c49db2d58706d" category="paragraph">* 资源操作： *</block>
@@ -595,7 +592,6 @@
   <block id="6f195138d995bb3980eb20df6cd6b372" category="list-text">如果您在 _review_ 页面中所做的更改看起来正确，请单击 * 保存 * ，标记键 / 值对将从资源或所有选定资源中删除。</block>
   <block id="e1f059ce610c426bc048a916e53ae32d" category="summary">Cloud Manager 可以监控使用 " 偏移 " 功能创建资源时使用的参数值。Drift 用于标识已更改且不再符合模板设置的资源。</block>
   <block id="738c328d0087a068339b3d63cd01f51a" category="doc">检查资源是否符合模板要求</block>
-  <block id="8e09fe4243173c7be4058a88ee5dccbe" category="paragraph">此时，偏移会标识资源中更改的参数—您必须手动调整资源，使其恢复与模板的合规性。</block>
   <block id="2ab3e4cd0d86d65f9d51ef66c0c979a1" category="section-title">漂移的工作原理</block>
   <block id="270a79863849b0f5a1fb6e3ca8c5e8cf" category="paragraph">Drift 可识别不合规的参数，如下所示：</block>
   <block id="2f4767232b378f442b114c6df47c9e64" category="list-text">创建模板时，您可以为不希望用户更改的某些参数启用偏移。例如，您可能要求对通过模板创建的所有卷使用 "Default" 策略创建 Snapshot 副本。</block>
@@ -777,4 +773,6 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">单击 * 致电我们 * 可查找 NetApp 技术支持的电话号码。</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">单击 * 打开问题描述 * ，选择一个选项，然后单击 * 发送 * 。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">NetApp 代表将审核您的案例，并尽快与您联系。</block>
+  <block id="214a61ce436e46b661501acdeee5221c" category="paragraph">此时，偏移会标识资源中更改的参数—您必须手动调整资源，使其恢复与模板的合规性。将来，我们可以在资源不合规时向您发送通知，甚至可以反转用户的更改，以便从模板创建的所有资源自动恢复合规。</block>
+  <block id="5bd5bf968b8be74cc15838b062223bc7" category="paragraph">此时、您需要手动进行调整、以使资源恢复与模板的合规性。 <block ref="070f7b254d8faecc6fc5a699202bdab9" category="inline-link-macro-rx"></block>。</block>
 </blocks>

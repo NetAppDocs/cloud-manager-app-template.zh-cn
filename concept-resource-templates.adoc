@@ -27,15 +27,10 @@ AppTemplate 具有以下功能和优势：
 * 自动化并改进基础架构的设计和开发
 * 提供一个位置来激活不同的 NetApp 云服务，例如 Cloud Backup 和 Cloud Data sense
 * 确定已更改且不再符合模板的资源（使用 " 偏移 " 功能）
++
+此时、您需要手动进行调整、以使资源恢复与模板的合规性。 link:task-check-template-compliance.html["了解有关漂移的更多信息"]。
 
 
-
-
-==== 什么是 " 漂移 " ？
-
-"Drift " 允许 Cloud Manager 监控使用模板创建资源时使用的参数值。此时， " 偏差 " 可以确定资源何时发生更改，以便您可以手动进行调整，使其恢复与模板的合规性。将来，我们可以在资源不合规时向您发送通知，甚至可以反转用户的更改，以便从模板创建的所有资源自动恢复合规。
-
-link:task-check-template-compliance.html["了解有关漂移的更多信息"]。
 
 
 
